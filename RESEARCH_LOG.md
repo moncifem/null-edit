@@ -347,3 +347,21 @@ macro-average 69 vs 34; modified-lines-only labels 65.7 vs 39.5.
   before it reached the repository.
 - `g31b_conf` started at 17:32 UTC and was stopped by hand at 17:36 (exit 143), and the rest of the DGX
   queue was cleared: nothing it produced could still enter the paper. The DGX is idle.
+
+### 18:25–19:50 UTC, 2026-11-12 — presentation, dataset release, Kaggle draft
+
+- Two figures added, no new experiment: a method schematic on the held-out example of the hazard figure
+  (real code lines and hazards) and a chart of asking against the map at each size, with the intervals
+  of `report_asked_sizes.md`. Figures renumbered 1–5. Formulas typeset; paper 2,994 words (strict count).
+- Dataset published at https://huggingface.co/datasets/moncefem/null-edit: every tracked file of
+  `results/` (as `mac_4bit/`) and `results_dgx/` (as `dgx_bf16/`), a per-file metrics table
+  (2,299 rows) built from the `an_*.json` files, the figures, and a card (`hf_dataset_card.md`).
+  The card's two quick-start numbers were checked against the table (0.69 and 0.51).
+- Kaggle writeup created as a draft: title, subtitle, body (`paper/kaggle_body.md`), card image,
+  five gallery images, links to the repository and the dataset. Rendering checked in the browser:
+  display formulas, both tables, five figures, 21 references. Three rendering problems found and
+  fixed: `&lt;` inside inline HTML broke subscripts (now display formulas); "@5" in a table header
+  became a user mention (now "top-5"); paragraphs with inline HTML kept their line breaks (the body is
+  now one line per paragraph). Kaggle's own counter shows 3,344 words for the body including the
+  reference list (387 tokens by our count).
+- Not done by the agent: clicking Submit. The draft is marked "Ready to Submit".
