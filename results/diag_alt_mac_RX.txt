@@ -1,0 +1,48 @@
+
+pytest-dev__pytest-7982 src/_pytest/pathlib.py (5627 tokens)
+  token 5314: p(bf16) = 0.0003, p(4-bit) = 0.0030
+    before   'n the common part shared with the other path, or None if there is\n    '
+    original 'no common part.\n\n    If one path is relative and one is absolute, retu'
+    model    'one path is relative and one is absolute, returns None.\n    """\n    try:\n        return Pa'
+  token 5310: p(bf16) = 0.0049, p(4-bit) = 0.0000
+    before   ':\n    """Return the common part shared with the other path, or None if'
+    original ' there is\n    no common part.\n\n    If one path is relative and one is '
+    model    ' one path is relative and one is absolute.\n\n    If one path is relative and one is absolut'
+
+sympy__sympy-24661 sympy/parsing/sympy_parser.py (11293 tokens)
+  token 9229: p(bf16) = 0.0000, p(4-bit) = 0.0000
+    before   'call last):\n    ...\n    SyntaxError: invalid syntax\n    >>> parse_expr'
+    original '("2x", transformations=T[:6])\n    2*x\n    >>> parse_expr(\'.3\', transfo'
+    model    '(".3x", transformations=T[:6])\n    2*x\n    >>> parse_expr(\'.3\','
+  token 9354: p(bf16) = 0.0000, p(4-bit) = 0.0001
+    before   "pr('.3x', transformations='all')\n    3*x/10\n\n    See Also\n    ========"
+    original '\n\n    stringify_expr, eval_expr, standard_transformations,\n    implici'
+    model    '\n    stringify_expr, eval_expr, standard_transformations,\n    implicit_multiplication_appl'
+  token 8985: p(bf16) = 0.0000, p(4-bit) = 0.0000
+    before   'g ``transformations``:\n\n    >>> from sympy.parsing.sympy_parser import'
+    original ' transformations\n\n    >>> print(transformations)\n    0: lambda_notatio'
+    model    ' T\n    >>> print(transformations)\n    0: lambda_notation\n    1: auto_symbol\n'
+
+sphinx-doc__sphinx-9320 sphinx/cmd/quickstart.py (6414 tokens)
+  token 1646: p(bf16) = 0.0000, p(4-bit) = 0.0002
+    before   '    author names\n    * version:   version of project\n    * release:   '
+    original 'release of project\n    * language:  document language\n    * suffix:   '
+    model    'project release\n    * language:   document language\n    * suffix:     source file suffix\n '
+  token 2485: p(bf16) = 0.0001, p(4-bit) = 0.0027
+    before   " in a language other than English,\\n'\n                 'you can select"
+    original " a language here by its language code. Sphinx will then\\n'\n           "
+    model    " the language here by its language code. Sphinx will then\\n'\n                 'translate t"
+  token 2373: p(bf16) = 0.0006, p(4-bit) = 0.0002
+    before   "ease is\\n'\n                 'something like 2.5.1 or 3.0a1. If you don"
+    original "\\'t need this dual structure,\\n'\n                 'just set both to th"
+    model    "'t need this dual structure,\\n'\n                 'just set both to the same value.'))\n    "
+
+django__django-14771 django/utils/autoreload.py (6193 tokens)
+  token 3861: p(bf16) = 0.0000, p(4-bit) = 0.0000
+    before   ' the\n        # changes, however, as this is currently an internal API,'
+    original '  no files\n        # will be being watched outside of sys.path. Fixing'
+    model    '\n        # no files will be being watched outside of sys.path. Fixing this by checking\n   '
+  token 3903: p(bf16) = 0.0045, p(4-bit) = 0.0024
+    before   'atch_glob() and watch_dir() is expensive, instead this could\n        #'
+    original ' could fall back to the StatReloader if this case is detected? For\n   '
+    model    'ly fall back to the StatReloader if this case is detected? For\n        #now, watching its '

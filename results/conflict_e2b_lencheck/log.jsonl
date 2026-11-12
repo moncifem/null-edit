@@ -1,0 +1,22 @@
+{"iid": "django__django-10097", "path": "django/core/validators.py", "n_tok": 5246, "secs": {"R": 2.54, "RX": 2.46}, "gold": true, "x_issue": "django__django-15098"}
+{"iid": "pytest-dev__pytest-7982", "path": "src/_pytest/pathlib.py", "n_tok": 5627, "secs": {"R": 2.55, "RX": 2.54}, "gold": true, "x_issue": "pytest-dev__pytest-7571"}
+{"iid": "sympy__sympy-14531", "path": "sympy/printing/str.py", "n_tok": 8138, "secs": {"R": 3.96, "RX": 3.85}, "gold": true, "x_issue": "sympy__sympy-14976"}
+{"iid": "django__django-16819", "path": "django/db/migrations/operations/models.py", "n_tok": 10702, "secs": {"R": 5.21, "RX": 5.25}, "gold": true, "x_issue": "django__django-10880"}
+{"iid": "sympy__sympy-24661", "path": "sympy/parsing/sympy_parser.py", "n_tok": 11293, "secs": {"R": 5.52, "RX": 5.63}, "gold": true, "x_issue": "sympy__sympy-13757"}
+{"iid": "django__django-14765", "path": "django/db/migrations/state.py", "n_tok": 9229, "secs": {"R": 4.39, "RX": 4.41}, "gold": true, "x_issue": "django__django-14155"}
+{"iid": "sphinx-doc__sphinx-9320", "path": "sphinx/cmd/quickstart.py", "n_tok": 6414, "secs": {"R": 2.93, "RX": 3.02}, "gold": true, "x_issue": "sphinx-doc__sphinx-8459"}
+{"iid": "pytest-dev__pytest-7571", "path": "src/_pytest/logging.py", "n_tok": 7909, "secs": {"R": 3.69, "RX": 3.73}, "gold": true, "x_issue": "pytest-dev__pytest-8399"}
+{"iid": "django__django-14771", "path": "django/utils/autoreload.py", "n_tok": 6193, "secs": {"R": 2.86, "RX": 2.82}, "gold": true, "x_issue": "django__django-10914"}
+{"iid": "psf__requests-1142", "path": "requests/models.py", "n_tok": 5265, "secs": {"R": 2.3, "RX": 2.54}, "gold": true, "x_issue": "psf__requests-6028"}
+{"iid": "django__django-13810", "path": "django/core/handlers/base.py", "n_tok": 3247, "secs": {"R": 1.49, "RX": 1.59}, "gold": true, "x_issue": "django__django-16256"}
+{"iid": "pylint-dev__pylint-4661", "path": "pylint/config/__init__.py", "n_tok": 1667, "secs": {"R": 0.74, "RX": 0.79}, "gold": true, "x_issue": "pylint-dev__pylint-4551"}
+{"iid": "sphinx-doc__sphinx-9367", "path": "sphinx/pycode/ast.py", "n_tok": 2536, "secs": {"R": 1.08, "RX": 1.18}, "gold": true, "x_issue": "sphinx-doc__sphinx-8593"}
+{"iid": "sphinx-doc__sphinx-7985", "path": "sphinx/builders/linkcheck.py", "n_tok": 3698, "secs": {"R": 1.68, "RX": 1.78}, "gold": true, "x_issue": "sphinx-doc__sphinx-9711"}
+{"iid": "scikit-learn__scikit-learn-25973", "path": "sklearn/feature_selection/_sequential.py", "n_tok": 3282, "secs": {"R": 1.51, "RX": 1.61}, "gold": true, "x_issue": "scikit-learn__scikit-learn-14496"}
+{"iid": "sympy__sympy-15017", "path": "sympy/tensor/array/dense_ndim_array.py", "n_tok": 1795, "secs": {"R": 0.76, "RX": 0.84}, "gold": true, "x_issue": "sympy__sympy-19954"}
+{"iid": "django__django-13363", "path": "django/db/models/functions/datetime.py", "n_tok": 3128, "secs": {"R": 1.61, "RX": 1.47}, "gold": true, "x_issue": "django__django-16569"}
+{"iid": "django__django-14053", "path": "django/contrib/staticfiles/storage.py", "n_tok": 4377, "secs": {"R": 2.06, "RX": 2.2}, "gold": true, "x_issue": "django__django-13028"}
+{"iid": "sphinx-doc__sphinx-7590", "path": "sphinx/domains/c.py", "skip": "size", "n_tok": 34570}
+{"iid": "sphinx-doc__sphinx-7590", "path": "sphinx/domains/cpp.py", "skip": "size", "n_tok": 73465}
+{"iid": "sphinx-doc__sphinx-7590", "path": "sphinx/util/cfamily.py", "n_tok": 4111, "secs": {"R": 1.8, "RX": 1.88}, "gold": true, "x_issue": "sphinx-doc__sphinx-9258"}
+{"iid": "django__django-11119", "path": "django/template/engine.py", "n_tok": 1624, "secs": {"R": 0.7, "RX": 0.73}, "gold": true, "x_issue": "django__django-11095"}

@@ -1,0 +1,2162 @@
+{
+"django__django-13810": {
+"paths": [
+"django/core/handlers/base.py",
+"django/core/handlers/asgi.py",
+"django/conf/global_settings.py",
+"django/utils/decorators.py"
+],
+"gold": [
+"django/core/handlers/base.py"
+],
+"bm25_rank": {
+"django/core/handlers/base.py": 1,
+"django/core/handlers/asgi.py": 2,
+"django/conf/global_settings.py": 3,
+"django/utils/decorators.py": 4
+},
+"n_files": 686
+},
+"django__django-10097": {
+"paths": [
+"django/core/validators.py",
+"django/utils/http.py",
+"django/forms/fields.py",
+"django/utils/html.py"
+],
+"gold": [
+"django/core/validators.py"
+],
+"bm25_rank": {
+"django/core/validators.py": 10,
+"django/utils/http.py": 1,
+"django/forms/fields.py": 2,
+"django/utils/html.py": 3
+},
+"n_files": 663
+},
+"pytest-dev__pytest-7982": {
+"paths": [
+"src/_pytest/pathlib.py",
+"src/_pytest/config/__init__.py",
+"src/_pytest/python_api.py",
+"src/_pytest/main.py"
+],
+"gold": [
+"src/_pytest/pathlib.py"
+],
+"bm25_rank": {
+"src/_pytest/pathlib.py": 1,
+"src/_pytest/config/__init__.py": 2,
+"src/_pytest/python_api.py": 3,
+"src/_pytest/main.py": 4
+},
+"n_files": 72
+},
+"sympy__sympy-14531": {
+"paths": [
+"sympy/printing/str.py",
+"sympy/integrals/rubi/parsetools/parse.py",
+"sympy/integrals/integrals.py",
+"sympy/logic/boolalg.py"
+],
+"gold": [
+"sympy/printing/str.py"
+],
+"bm25_rank": {
+"sympy/printing/str.py": 1,
+"sympy/integrals/rubi/parsetools/parse.py": 2,
+"sympy/integrals/integrals.py": 7,
+"sympy/logic/boolalg.py": 9
+},
+"n_files": 657
+},
+"django__django-15957": {
+"paths": [
+"django/db/models/fields/related_descriptors.py",
+"django/contrib/contenttypes/fields.py",
+"django/db/models/options.py",
+"django/template/defaulttags.py"
+],
+"gold": [
+"django/db/models/fields/related_descriptors.py"
+],
+"bm25_rank": {
+"django/db/models/fields/related_descriptors.py": 2,
+"django/contrib/contenttypes/fields.py": 3,
+"django/db/models/options.py": 7,
+"django/template/defaulttags.py": 8
+},
+"n_files": 692
+},
+"sphinx-doc__sphinx-9367": {
+"paths": [
+"sphinx/pycode/ast.py",
+"sphinx/util/inspect.py",
+"sphinx/domains/python.py",
+"sphinx/ext/doctest.py"
+],
+"gold": [
+"sphinx/pycode/ast.py"
+],
+"bm25_rank": {
+"sphinx/pycode/ast.py": 19,
+"sphinx/util/inspect.py": 3,
+"sphinx/domains/python.py": 4,
+"sphinx/ext/doctest.py": 5
+},
+"n_files": 181
+},
+"django__django-16819": {
+"paths": [
+"django/db/migrations/operations/models.py",
+"django/db/migrations/operations/__init__.py",
+"django/contrib/postgres/operations.py",
+"django/core/management/commands/squashmigrations.py"
+],
+"gold": [
+"django/db/migrations/operations/models.py"
+],
+"bm25_rank": {
+"django/db/migrations/operations/models.py": 3,
+"django/db/migrations/operations/__init__.py": 1,
+"django/contrib/postgres/operations.py": 2,
+"django/core/management/commands/squashmigrations.py": 5
+},
+"n_files": 695
+},
+"sympy__sympy-24661": {
+"paths": [
+"sympy/parsing/sympy_parser.py",
+"sympy/core/sympify.py",
+"sympy/core/relational.py",
+"sympy/simplify/radsimp.py"
+],
+"gold": [
+"sympy/parsing/sympy_parser.py"
+],
+"bm25_rank": {
+"sympy/parsing/sympy_parser.py": 1,
+"sympy/core/sympify.py": 2,
+"sympy/core/relational.py": 3,
+"sympy/simplify/radsimp.py": 5
+},
+"n_files": 821
+},
+"django__django-14765": {
+"paths": [
+"django/db/migrations/state.py",
+"django/db/migrations/graph.py",
+"django/db/migrations/executor.py",
+"django/db/migrations/loader.py"
+],
+"gold": [
+"django/db/migrations/state.py"
+],
+"bm25_rank": {
+"django/db/migrations/state.py": 2,
+"django/db/migrations/graph.py": 1,
+"django/db/migrations/executor.py": 3,
+"django/db/migrations/loader.py": 4
+},
+"n_files": 686
+},
+"sphinx-doc__sphinx-7985": {
+"paths": [
+"sphinx/builders/linkcheck.py",
+"sphinx/application.py",
+"sphinx/cmd/quickstart.py",
+"sphinx/builders/__init__.py"
+],
+"gold": [
+"sphinx/builders/linkcheck.py"
+],
+"bm25_rank": {
+"sphinx/builders/linkcheck.py": 1,
+"sphinx/application.py": 2,
+"sphinx/cmd/quickstart.py": 3,
+"sphinx/builders/__init__.py": 4
+},
+"n_files": 185
+},
+"scikit-learn__scikit-learn-25973": {
+"paths": [
+"sklearn/feature_selection/_sequential.py",
+"examples/release_highlights/plot_release_highlights_0_24_0.py",
+"sklearn/feature_selection/_rfe.py",
+"examples/feature_selection/plot_select_from_model_diabetes.py"
+],
+"gold": [
+"sklearn/feature_selection/_sequential.py"
+],
+"bm25_rank": {
+"sklearn/feature_selection/_sequential.py": 1,
+"examples/release_highlights/plot_release_highlights_0_24_0.py": 2,
+"sklearn/feature_selection/_rfe.py": 3,
+"examples/feature_selection/plot_select_from_model_diabetes.py": 7
+},
+"n_files": 609
+},
+"sympy__sympy-15017": {
+"paths": [
+"sympy/tensor/array/dense_ndim_array.py",
+"sympy/tensor/indexed.py",
+"sympy/tensor/array/ndim_array.py",
+"sympy/tensor/array/arrayop.py"
+],
+"gold": [
+"sympy/tensor/array/dense_ndim_array.py"
+],
+"bm25_rank": {
+"sympy/tensor/array/dense_ndim_array.py": 16,
+"sympy/tensor/indexed.py": 1,
+"sympy/tensor/array/ndim_array.py": 2,
+"sympy/tensor/array/arrayop.py": 3
+},
+"n_files": 706
+},
+"django__django-13363": {
+"paths": [
+"django/db/models/functions/datetime.py",
+"django/db/backends/base/operations.py",
+"django/db/backends/oracle/operations.py",
+"django/db/backends/sqlite3/operations.py"
+],
+"gold": [
+"django/db/models/functions/datetime.py"
+],
+"bm25_rank": {
+"django/db/models/functions/datetime.py": 1,
+"django/db/backends/base/operations.py": 2,
+"django/db/backends/oracle/operations.py": 3,
+"django/db/backends/sqlite3/operations.py": 4
+},
+"n_files": 680
+},
+"django__django-14053": {
+"paths": [
+"django/contrib/staticfiles/storage.py",
+"django/contrib/admin/tests.py",
+"django/forms/widgets.py",
+"django/contrib/staticfiles/management/commands/collectstatic.py"
+],
+"gold": [
+"django/contrib/staticfiles/storage.py"
+],
+"bm25_rank": {
+"django/contrib/staticfiles/storage.py": 1,
+"django/contrib/admin/tests.py": 2,
+"django/forms/widgets.py": 3,
+"django/contrib/staticfiles/management/commands/collectstatic.py": 4
+},
+"n_files": 685
+},
+"django__django-11119": {
+"paths": [
+"django/template/engine.py",
+"django/template/base.py",
+"django/template/defaulttags.py",
+"django/template/loader.py"
+],
+"gold": [
+"django/template/engine.py"
+],
+"bm25_rank": {
+"django/template/engine.py": 2,
+"django/template/base.py": 1,
+"django/template/defaulttags.py": 3,
+"django/template/loader.py": 4
+},
+"n_files": 666
+},
+"sphinx-doc__sphinx-11510": {
+"paths": [
+"sphinx/directives/other.py",
+"sphinx/application.py",
+"sphinx/cmd/quickstart.py",
+"doc/conf.py"
+],
+"gold": [
+"sphinx/directives/other.py"
+],
+"bm25_rank": {
+"sphinx/directives/other.py": 50,
+"sphinx/application.py": 1,
+"sphinx/cmd/quickstart.py": 2,
+"doc/conf.py": 3
+},
+"n_files": 171
+},
+"django__django-15569": {
+"paths": [
+"django/db/models/query_utils.py",
+"django/contrib/postgres/apps.py",
+"django/db/models/lookups.py",
+"docs/conf.py"
+],
+"gold": [
+"django/db/models/query_utils.py"
+],
+"bm25_rank": {
+"django/db/models/query_utils.py": 1,
+"django/contrib/postgres/apps.py": 2,
+"django/db/models/lookups.py": 3,
+"docs/conf.py": 6
+},
+"n_files": 692
+},
+"sphinx-doc__sphinx-9320": {
+"paths": [
+"sphinx/cmd/quickstart.py",
+"sphinx/util/__init__.py",
+"sphinx/ext/apidoc.py",
+"sphinx/util/docutils.py"
+],
+"gold": [
+"sphinx/cmd/quickstart.py"
+],
+"bm25_rank": {
+"sphinx/cmd/quickstart.py": 1,
+"sphinx/util/__init__.py": 2,
+"sphinx/ext/apidoc.py": 3,
+"sphinx/util/docutils.py": 4
+},
+"n_files": 181
+},
+"pytest-dev__pytest-7571": {
+"paths": [
+"src/_pytest/logging.py",
+"doc/en/conf.py",
+"src/_pytest/junitxml.py",
+"src/_pytest/nodes.py"
+],
+"gold": [
+"src/_pytest/logging.py"
+],
+"bm25_rank": {
+"src/_pytest/logging.py": 1,
+"doc/en/conf.py": 2,
+"src/_pytest/junitxml.py": 3,
+"src/_pytest/nodes.py": 4
+},
+"n_files": 73
+},
+"django__django-16527": {
+"paths": [
+"django/contrib/admin/templatetags/admin_modify.py",
+"django/contrib/auth/admin.py",
+"django/contrib/admin/helpers.py",
+"django/contrib/admin/sites.py"
+],
+"gold": [
+"django/contrib/admin/templatetags/admin_modify.py"
+],
+"bm25_rank": {
+"django/contrib/admin/templatetags/admin_modify.py": 1,
+"django/contrib/auth/admin.py": 3,
+"django/contrib/admin/helpers.py": 4,
+"django/contrib/admin/sites.py": 5
+},
+"n_files": 694
+},
+"sphinx-doc__sphinx-8269": {
+"paths": [
+"sphinx/builders/linkcheck.py",
+"sphinx/cmd/quickstart.py",
+"setup.py",
+"sphinx/ext/doctest.py"
+],
+"gold": [
+"sphinx/builders/linkcheck.py"
+],
+"bm25_rank": {
+"sphinx/builders/linkcheck.py": 1,
+"sphinx/cmd/quickstart.py": 2,
+"setup.py": 3,
+"sphinx/ext/doctest.py": 4
+},
+"n_files": 185
+},
+"django__django-14771": {
+"paths": [
+"django/utils/autoreload.py",
+"django/core/management/base.py",
+"django/core/management/commands/migrate.py",
+"django/core/management/__init__.py"
+],
+"gold": [
+"django/utils/autoreload.py"
+],
+"bm25_rank": {
+"django/utils/autoreload.py": 1,
+"django/core/management/base.py": 2,
+"django/core/management/commands/migrate.py": 3,
+"django/core/management/__init__.py": 4
+},
+"n_files": 687
+},
+"pydata__xarray-4356": {
+"paths": [
+"xarray/core/nanops.py",
+"xarray/core/rolling.py",
+"xarray/core/ops.py",
+"xarray/core/duck_array_ops.py"
+],
+"gold": [
+"xarray/core/nanops.py"
+],
+"bm25_rank": {
+"xarray/core/nanops.py": 3,
+"xarray/core/rolling.py": 1,
+"xarray/core/ops.py": 6,
+"xarray/core/duck_array_ops.py": 7
+},
+"n_files": 93
+},
+"sympy__sympy-13480": {
+"paths": [
+"sympy/functions/elementary/hyperbolic.py",
+"sympy/simplify/trigsimp.py",
+"sympy/integrals/rubi/parsetools/parse.py",
+"sympy/functions/elementary/complexes.py"
+],
+"gold": [
+"sympy/functions/elementary/hyperbolic.py"
+],
+"bm25_rank": {
+"sympy/functions/elementary/hyperbolic.py": 2,
+"sympy/simplify/trigsimp.py": 5,
+"sympy/integrals/rubi/parsetools/parse.py": 7,
+"sympy/functions/elementary/complexes.py": 10
+},
+"n_files": 635
+},
+"psf__requests-1142": {
+"paths": [
+"requests/models.py",
+"requests/utils.py",
+"requests/cookies.py",
+"requests/packages/urllib3/request.py"
+],
+"gold": [
+"requests/models.py"
+],
+"bm25_rank": {
+"requests/models.py": 1,
+"requests/utils.py": 2,
+"requests/cookies.py": 3,
+"requests/packages/urllib3/request.py": 4
+},
+"n_files": 66
+},
+"django__django-16429": {
+"paths": [
+"django/utils/timesince.py",
+"django/utils/timezone.py",
+"django/templatetags/tz.py",
+"django/contrib/humanize/templatetags/humanize.py"
+],
+"gold": [
+"django/utils/timesince.py"
+],
+"bm25_rank": {
+"django/utils/timesince.py": 18,
+"django/utils/timezone.py": 1,
+"django/templatetags/tz.py": 2,
+"django/contrib/humanize/templatetags/humanize.py": 3
+},
+"n_files": 697
+},
+"pytest-dev__pytest-5809": {
+"paths": [
+"src/_pytest/pastebin.py",
+"src/_pytest/capture.py",
+"src/_pytest/junitxml.py",
+"src/_pytest/doctest.py"
+],
+"gold": [
+"src/_pytest/pastebin.py"
+],
+"bm25_rank": {
+"src/_pytest/pastebin.py": 1,
+"src/_pytest/capture.py": 2,
+"src/_pytest/junitxml.py": 3,
+"src/_pytest/doctest.py": 4
+},
+"n_files": 68
+},
+"django__django-13279": {
+"paths": [
+"django/contrib/sessions/backends/base.py",
+"django/contrib/auth/hashers.py",
+"django/core/signing.py",
+"django/contrib/auth/tokens.py"
+],
+"gold": [
+"django/contrib/sessions/backends/base.py"
+],
+"bm25_rank": {
+"django/contrib/sessions/backends/base.py": 15,
+"django/contrib/auth/hashers.py": 1,
+"django/core/signing.py": 2,
+"django/contrib/auth/tokens.py": 3
+},
+"n_files": 680
+},
+"django__django-15161": {
+"paths": [
+"django/db/models/expressions.py",
+"django/db/models/indexes.py",
+"django/db/models/fields/files.py",
+"django/db/migrations/writer.py"
+],
+"gold": [
+"django/db/models/expressions.py"
+],
+"bm25_rank": {
+"django/db/models/expressions.py": 25,
+"django/db/models/indexes.py": 2,
+"django/db/models/fields/files.py": 4,
+"django/db/migrations/writer.py": 6
+},
+"n_files": 690
+},
+"django__django-11276": {
+"paths": [
+"django/utils/html.py",
+"django/template/defaultfilters.py",
+"django/template/defaulttags.py",
+"docs/conf.py"
+],
+"gold": [
+"django/utils/html.py"
+],
+"bm25_rank": {
+"django/utils/html.py": 1,
+"django/template/defaultfilters.py": 2,
+"django/template/defaulttags.py": 3,
+"docs/conf.py": 4
+},
+"n_files": 666
+},
+"sphinx-doc__sphinx-10323": {
+"paths": [
+"sphinx/directives/code.py",
+"sphinx/application.py",
+"setup.py",
+"sphinx/util/nodes.py"
+],
+"gold": [
+"sphinx/directives/code.py"
+],
+"bm25_rank": {
+"sphinx/directives/code.py": 1,
+"sphinx/application.py": 3,
+"setup.py": 5,
+"sphinx/util/nodes.py": 6
+},
+"n_files": 175
+},
+"django__django-15098": {
+"paths": [
+"django/utils/translation/trans_real.py",
+"django/conf/global_settings.py",
+"django/utils/translation/__init__.py",
+"django/middleware/locale.py"
+],
+"gold": [
+"django/utils/translation/trans_real.py"
+],
+"bm25_rank": {
+"django/utils/translation/trans_real.py": 9,
+"django/conf/global_settings.py": 1,
+"django/utils/translation/__init__.py": 2,
+"django/middleware/locale.py": 3
+},
+"n_files": 689
+},
+"django__django-10999": {
+"paths": [
+"django/utils/dateparse.py",
+"django/utils/dateformat.py",
+"django/utils/duration.py",
+"django/utils/http.py"
+],
+"gold": [
+"django/utils/dateparse.py"
+],
+"bm25_rank": {
+"django/utils/dateparse.py": 1,
+"django/utils/dateformat.py": 2,
+"django/utils/duration.py": 3,
+"django/utils/http.py": 4
+},
+"n_files": 666
+},
+"django__django-14500": {
+"paths": [
+"django/db/migrations/executor.py",
+"django/db/migrations/loader.py",
+"django/db/migrations/graph.py",
+"django/core/management/commands/migrate.py"
+],
+"gold": [
+"django/db/migrations/executor.py"
+],
+"bm25_rank": {
+"django/db/migrations/executor.py": 1,
+"django/db/migrations/loader.py": 2,
+"django/db/migrations/graph.py": 3,
+"django/core/management/commands/migrate.py": 4
+},
+"n_files": 686
+},
+"django__django-13794": {
+"paths": [
+"django/utils/functional.py",
+"django/template/base.py",
+"django/template/defaultfilters.py",
+"django/template/defaulttags.py"
+],
+"gold": [
+"django/utils/functional.py"
+],
+"bm25_rank": {
+"django/utils/functional.py": 2,
+"django/template/base.py": 1,
+"django/template/defaultfilters.py": 3,
+"django/template/defaulttags.py": 4
+},
+"n_files": 686
+},
+"sympy__sympy-13974": {
+"paths": [
+"sympy/physics/quantum/tensorproduct.py",
+"sympy/diffgeom/diffgeom.py",
+"sympy/physics/paulialgebra.py",
+"sympy/physics/quantum/density.py"
+],
+"gold": [
+"sympy/physics/quantum/tensorproduct.py"
+],
+"bm25_rank": {
+"sympy/physics/quantum/tensorproduct.py": 1,
+"sympy/diffgeom/diffgeom.py": 2,
+"sympy/physics/paulialgebra.py": 4,
+"sympy/physics/quantum/density.py": 5
+},
+"n_files": 640
+},
+"django__django-14493": {
+"paths": [
+"django/contrib/staticfiles/storage.py",
+"django/contrib/staticfiles/management/commands/collectstatic.py",
+"django/conf/global_settings.py",
+"django/contrib/staticfiles/finders.py"
+],
+"gold": [
+"django/contrib/staticfiles/storage.py"
+],
+"bm25_rank": {
+"django/contrib/staticfiles/storage.py": 1,
+"django/contrib/staticfiles/management/commands/collectstatic.py": 2,
+"django/conf/global_settings.py": 3,
+"django/contrib/staticfiles/finders.py": 4
+},
+"n_files": 686
+},
+"django__django-16612": {
+"paths": [
+"django/contrib/admin/sites.py",
+"django/contrib/flatpages/views.py",
+"django/middleware/common.py",
+"django/views/generic/base.py"
+],
+"gold": [
+"django/contrib/admin/sites.py"
+],
+"bm25_rank": {
+"django/contrib/admin/sites.py": 1,
+"django/contrib/flatpages/views.py": 2,
+"django/middleware/common.py": 4,
+"django/views/generic/base.py": 5
+},
+"n_files": 694
+},
+"scikit-learn__scikit-learn-13496": {
+"paths": [
+"sklearn/ensemble/iforest.py",
+"sklearn/ensemble/bagging.py",
+"examples/ensemble/plot_ensemble_oob.py",
+"examples/plot_anomaly_comparison.py"
+],
+"gold": [
+"sklearn/ensemble/iforest.py"
+],
+"bm25_rank": {
+"sklearn/ensemble/iforest.py": 2,
+"sklearn/ensemble/bagging.py": 3,
+"examples/ensemble/plot_ensemble_oob.py": 4,
+"examples/plot_anomaly_comparison.py": 5
+},
+"n_files": 547
+},
+"sphinx-doc__sphinx-9698": {
+"paths": [
+"sphinx/domains/python.py",
+"sphinx/builders/linkcheck.py",
+"sphinx/application.py",
+"sphinx/domains/javascript.py"
+],
+"gold": [
+"sphinx/domains/python.py"
+],
+"bm25_rank": {
+"sphinx/domains/python.py": 3,
+"sphinx/builders/linkcheck.py": 1,
+"sphinx/application.py": 2,
+"sphinx/domains/javascript.py": 4
+},
+"n_files": 181
+},
+"sympy__sympy-24066": {
+"paths": [
+"sympy/physics/units/unitsystem.py",
+"sympy/physics/units/dimensions.py",
+"sympy/physics/units/quantities.py",
+"sympy/physics/units/util.py"
+],
+"gold": [
+"sympy/physics/units/unitsystem.py"
+],
+"bm25_rank": {
+"sympy/physics/units/unitsystem.py": 1,
+"sympy/physics/units/dimensions.py": 2,
+"sympy/physics/units/quantities.py": 3,
+"sympy/physics/units/util.py": 4
+},
+"n_files": 844
+},
+"astropy__astropy-13579": {
+"paths": [
+"astropy/wcs/wcsapi/wrappers/sliced_wcs.py",
+"astropy/wcs/utils.py",
+"astropy/wcs/wcsapi/fitswcs.py",
+"astropy/visualization/wcsaxes/wcsapi.py"
+],
+"gold": [
+"astropy/wcs/wcsapi/wrappers/sliced_wcs.py"
+],
+"bm25_rank": {
+"astropy/wcs/wcsapi/wrappers/sliced_wcs.py": 10,
+"astropy/wcs/utils.py": 1,
+"astropy/wcs/wcsapi/fitswcs.py": 3,
+"astropy/visualization/wcsaxes/wcsapi.py": 5
+},
+"n_files": 475
+},
+"psf__requests-5414": {
+"paths": [
+"requests/models.py",
+"requests/help.py",
+"requests/utils.py",
+"setup.py"
+],
+"gold": [
+"requests/models.py"
+],
+"bm25_rank": {
+"requests/models.py": 2,
+"requests/help.py": 1,
+"requests/utils.py": 3,
+"setup.py": 4
+},
+"n_files": 21
+},
+"sympy__sympy-18199": {
+"paths": [
+"sympy/ntheory/residue_ntheory.py",
+"sympy/functions/elementary/miscellaneous.py",
+"sympy/ntheory/primetest.py",
+"sympy/functions/special/hyper.py"
+],
+"gold": [
+"sympy/ntheory/residue_ntheory.py"
+],
+"bm25_rank": {
+"sympy/ntheory/residue_ntheory.py": 1,
+"sympy/functions/elementary/miscellaneous.py": 4,
+"sympy/ntheory/primetest.py": 10,
+"sympy/functions/special/hyper.py": 14
+},
+"n_files": 740
+},
+"sphinx-doc__sphinx-9230": {
+"paths": [
+"sphinx/util/docfields.py",
+"sphinx/builders/_epub_base.py",
+"sphinx/application.py",
+"sphinx/ext/napoleon/__init__.py"
+],
+"gold": [
+"sphinx/util/docfields.py"
+],
+"bm25_rank": {
+"sphinx/util/docfields.py": 78,
+"sphinx/builders/_epub_base.py": 1,
+"sphinx/application.py": 2,
+"sphinx/ext/napoleon/__init__.py": 3
+},
+"n_files": 181
+},
+"astropy__astropy-14182": {
+"paths": [
+"astropy/io/ascii/rst.py",
+"astropy/io/ascii/ui.py",
+"astropy/io/ascii/docs.py",
+"astropy/io/registry/interface.py"
+],
+"gold": [
+"astropy/io/ascii/rst.py"
+],
+"bm25_rank": {
+"astropy/io/ascii/rst.py": 71,
+"astropy/io/ascii/ui.py": 1,
+"astropy/io/ascii/docs.py": 3,
+"astropy/io/registry/interface.py": 4
+},
+"n_files": 477
+},
+"pytest-dev__pytest-7236": {
+"paths": [
+"src/_pytest/unittest.py",
+"src/_pytest/hookspec.py",
+"src/_pytest/fixtures.py",
+"src/_pytest/python.py"
+],
+"gold": [
+"src/_pytest/unittest.py"
+],
+"bm25_rank": {
+"src/_pytest/unittest.py": 1,
+"src/_pytest/hookspec.py": 2,
+"src/_pytest/fixtures.py": 3,
+"src/_pytest/python.py": 4
+},
+"n_files": 73
+},
+"django__django-16485": {
+"paths": [
+"django/template/defaultfilters.py",
+"django/contrib/gis/utils/layermapping.py",
+"django/contrib/humanize/templatetags/humanize.py",
+"django/db/backends/mysql/introspection.py"
+],
+"gold": [
+"django/template/defaultfilters.py"
+],
+"bm25_rank": {
+"django/template/defaultfilters.py": 1,
+"django/contrib/gis/utils/layermapping.py": 2,
+"django/contrib/humanize/templatetags/humanize.py": 3,
+"django/db/backends/mysql/introspection.py": 4
+},
+"n_files": 694
+},
+"django__django-14999": {
+"paths": [
+"django/db/migrations/operations/models.py",
+"django/db/backends/sqlite3/schema.py",
+"django/contrib/contenttypes/management/__init__.py",
+"django/db/backends/oracle/schema.py"
+],
+"gold": [
+"django/db/migrations/operations/models.py"
+],
+"bm25_rank": {
+"django/db/migrations/operations/models.py": 2,
+"django/db/backends/sqlite3/schema.py": 1,
+"django/contrib/contenttypes/management/__init__.py": 5,
+"django/db/backends/oracle/schema.py": 6
+},
+"n_files": 687
+},
+"sympy__sympy-13551": {
+"paths": [
+"sympy/concrete/products.py",
+"sympy/functions/combinatorial/factorials.py",
+"sympy/polys/polyroots.py",
+"sympy/functions/combinatorial/numbers.py"
+],
+"gold": [
+"sympy/concrete/products.py"
+],
+"bm25_rank": {
+"sympy/concrete/products.py": 4,
+"sympy/functions/combinatorial/factorials.py": 2,
+"sympy/polys/polyroots.py": 3,
+"sympy/functions/combinatorial/numbers.py": 5
+},
+"n_files": 636
+},
+"sympy__sympy-23950": {
+"paths": [
+"sympy/sets/contains.py",
+"sympy/functions/elementary/piecewise.py",
+"sympy/sets/fancysets.py",
+"sympy/sets/conditionset.py"
+],
+"gold": [
+"sympy/sets/contains.py"
+],
+"bm25_rank": {
+"sympy/sets/contains.py": 146,
+"sympy/functions/elementary/piecewise.py": 3,
+"sympy/sets/fancysets.py": 6,
+"sympy/sets/conditionset.py": 8
+},
+"n_files": 837
+},
+"sphinx-doc__sphinx-8621": {
+"paths": [
+"sphinx/builders/html/transforms.py",
+"sphinx/writers/html.py",
+"sphinx/writers/html5.py",
+"sphinx/roles.py"
+],
+"gold": [
+"sphinx/builders/html/transforms.py"
+],
+"bm25_rank": {
+"sphinx/builders/html/transforms.py": 3,
+"sphinx/writers/html.py": 1,
+"sphinx/writers/html5.py": 2,
+"sphinx/roles.py": 4
+},
+"n_files": 186
+},
+"sphinx-doc__sphinx-9658": {
+"paths": [
+"sphinx/ext/autodoc/mock.py",
+"sphinx/cmd/quickstart.py",
+"sphinx/cmd/build.py",
+"sphinx/application.py"
+],
+"gold": [
+"sphinx/ext/autodoc/mock.py"
+],
+"bm25_rank": {
+"sphinx/ext/autodoc/mock.py": 48,
+"sphinx/cmd/quickstart.py": 1,
+"sphinx/cmd/build.py": 2,
+"sphinx/application.py": 3
+},
+"n_files": 181
+},
+"scikit-learn__scikit-learn-26323": {
+"paths": [
+"sklearn/compose/_column_transformer.py",
+"examples/compose/plot_column_transformer_mixed_types.py",
+"examples/ensemble/plot_gradient_boosting_categorical.py",
+"examples/miscellaneous/plot_set_output.py"
+],
+"gold": [
+"sklearn/compose/_column_transformer.py"
+],
+"bm25_rank": {
+"sklearn/compose/_column_transformer.py": 1,
+"examples/compose/plot_column_transformer_mixed_types.py": 2,
+"examples/ensemble/plot_gradient_boosting_categorical.py": 3,
+"examples/miscellaneous/plot_set_output.py": 4
+},
+"n_files": 615
+},
+"django__django-16901": {
+"paths": [
+"django/db/models/sql/where.py",
+"django/contrib/auth/backends.py",
+"django/contrib/admin/utils.py",
+"django/contrib/contenttypes/models.py"
+],
+"gold": [
+"django/db/models/sql/where.py"
+],
+"bm25_rank": {
+"django/db/models/sql/where.py": 75,
+"django/contrib/auth/backends.py": 1,
+"django/contrib/admin/utils.py": 3,
+"django/contrib/contenttypes/models.py": 4
+},
+"n_files": 695
+},
+"django__django-14580": {
+"paths": [
+"django/db/migrations/serializer.py",
+"django/db/migrations/writer.py",
+"django/db/migrations/questioner.py",
+"django/core/management/commands/migrate.py"
+],
+"gold": [
+"django/db/migrations/serializer.py"
+],
+"bm25_rank": {
+"django/db/migrations/serializer.py": 66,
+"django/db/migrations/writer.py": 1,
+"django/db/migrations/questioner.py": 2,
+"django/core/management/commands/migrate.py": 3
+},
+"n_files": 685
+},
+"astropy__astropy-7336": {
+"paths": [
+"astropy/units/decorators.py",
+"astropy/utils/decorators.py",
+"astropy/nddata/decorators.py",
+"astropy/utils/misc.py"
+],
+"gold": [
+"astropy/units/decorators.py"
+],
+"bm25_rank": {
+"astropy/units/decorators.py": 1,
+"astropy/utils/decorators.py": 2,
+"astropy/nddata/decorators.py": 4,
+"astropy/utils/misc.py": 5
+},
+"n_files": 374
+},
+"sympy__sympy-23262": {
+"paths": [
+"sympy/utilities/lambdify.py",
+"sympy/plotting/experimental_lambdify.py",
+"sympy/utilities/autowrap.py",
+"sympy/core/symbol.py"
+],
+"gold": [
+"sympy/utilities/lambdify.py"
+],
+"bm25_rank": {
+"sympy/utilities/lambdify.py": 1,
+"sympy/plotting/experimental_lambdify.py": 2,
+"sympy/utilities/autowrap.py": 6,
+"sympy/core/symbol.py": 7
+},
+"n_files": 839
+},
+"django__django-11087": {
+"paths": [
+"django/db/models/deletion.py",
+"setup.py",
+"django/core/management/base.py",
+"docs/_ext/djangodocs.py"
+],
+"gold": [
+"django/db/models/deletion.py"
+],
+"bm25_rank": {
+"django/db/models/deletion.py": 117,
+"setup.py": 1,
+"django/core/management/base.py": 2,
+"docs/_ext/djangodocs.py": 3
+},
+"n_files": 666
+},
+"pytest-dev__pytest-5262": {
+"paths": [
+"src/_pytest/capture.py",
+"src/_pytest/compat.py",
+"src/_pytest/terminal.py",
+"src/_pytest/tmpdir.py"
+],
+"gold": [
+"src/_pytest/capture.py"
+],
+"bm25_rank": {
+"src/_pytest/capture.py": 15,
+"src/_pytest/compat.py": 1,
+"src/_pytest/terminal.py": 2,
+"src/_pytest/tmpdir.py": 3
+},
+"n_files": 67
+},
+"scikit-learn__scikit-learn-14710": {
+"paths": [
+"sklearn/ensemble/_hist_gradient_boosting/gradient_boosting.py",
+"sklearn/neural_network/multilayer_perceptron.py",
+"sklearn/base.py",
+"sklearn/metrics/scorer.py"
+],
+"gold": [
+"sklearn/ensemble/_hist_gradient_boosting/gradient_boosting.py"
+],
+"bm25_rank": {
+"sklearn/ensemble/_hist_gradient_boosting/gradient_boosting.py": 1,
+"sklearn/neural_network/multilayer_perceptron.py": 3,
+"sklearn/base.py": 4,
+"sklearn/metrics/scorer.py": 5
+},
+"n_files": 520
+},
+"sympy__sympy-15345": {
+"paths": [
+"sympy/printing/mathematica.py",
+"sympy/parsing/mathematica.py",
+"sympy/integrals/rubi/__init__.py",
+"sympy/functions/special/delta_functions.py"
+],
+"gold": [
+"sympy/printing/mathematica.py"
+],
+"bm25_rank": {
+"sympy/printing/mathematica.py": 1,
+"sympy/parsing/mathematica.py": 2,
+"sympy/integrals/rubi/__init__.py": 3,
+"sympy/functions/special/delta_functions.py": 4
+},
+"n_files": 706
+},
+"scikit-learn__scikit-learn-14629": {
+"paths": [
+"sklearn/multioutput.py",
+"sklearn/discriminant_analysis.py",
+"sklearn/metrics/scorer.py",
+"sklearn/multiclass.py"
+],
+"gold": [
+"sklearn/multioutput.py"
+],
+"bm25_rank": {
+"sklearn/multioutput.py": 1,
+"sklearn/discriminant_analysis.py": 3,
+"sklearn/metrics/scorer.py": 4,
+"sklearn/multiclass.py": 5
+},
+"n_files": 519
+},
+"django__django-14539": {
+"paths": [
+"django/utils/html.py",
+"docs/conf.py",
+"django/contrib/sitemaps/__init__.py",
+"django/http/request.py"
+],
+"gold": [
+"django/utils/html.py"
+],
+"bm25_rank": {
+"django/utils/html.py": 1,
+"docs/conf.py": 2,
+"django/contrib/sitemaps/__init__.py": 3,
+"django/http/request.py": 4
+},
+"n_files": 686
+},
+"django__django-13786": {
+"paths": [
+"django/db/migrations/operations/models.py",
+"django/db/migrations/executor.py",
+"django/db/migrations/operations/base.py",
+"django/db/migrations/operations/__init__.py"
+],
+"gold": [
+"django/db/migrations/operations/models.py"
+],
+"bm25_rank": {
+"django/db/migrations/operations/models.py": 1,
+"django/db/migrations/executor.py": 3,
+"django/db/migrations/operations/base.py": 4,
+"django/db/migrations/operations/__init__.py": 5
+},
+"n_files": 686
+},
+"django__django-11815": {
+"paths": [
+"django/db/migrations/serializer.py",
+"django/contrib/auth/models.py",
+"django/forms/fields.py",
+"django/contrib/gis/utils/layermapping.py"
+],
+"gold": [
+"django/db/migrations/serializer.py"
+],
+"bm25_rank": {
+"django/db/migrations/serializer.py": 13,
+"django/contrib/auth/models.py": 1,
+"django/forms/fields.py": 3,
+"django/contrib/gis/utils/layermapping.py": 4
+},
+"n_files": 671
+},
+"django__django-12304": {
+"paths": [
+"django/db/models/enums.py",
+"django/db/backends/base/operations.py",
+"django/core/management/__init__.py",
+"django/template/defaulttags.py"
+],
+"gold": [
+"django/db/models/enums.py"
+],
+"bm25_rank": {
+"django/db/models/enums.py": 211,
+"django/db/backends/base/operations.py": 1,
+"django/core/management/__init__.py": 2,
+"django/template/defaulttags.py": 3
+},
+"n_files": 673
+},
+"sympy__sympy-15349": {
+"paths": [
+"sympy/algebras/quaternion.py",
+"sympy/vector/coordsysrect.py",
+"sympy/physics/vector/frame.py",
+"sympy/physics/vector/functions.py"
+],
+"gold": [
+"sympy/algebras/quaternion.py"
+],
+"bm25_rank": {
+"sympy/algebras/quaternion.py": 1,
+"sympy/vector/coordsysrect.py": 2,
+"sympy/physics/vector/frame.py": 3,
+"sympy/physics/vector/functions.py": 4
+},
+"n_files": 706
+},
+"sphinx-doc__sphinx-11445": {
+"paths": [
+"sphinx/util/rst.py",
+"sphinx/application.py",
+"sphinx/cmd/quickstart.py",
+"sphinx/transforms/i18n.py"
+],
+"gold": [
+"sphinx/util/rst.py"
+],
+"bm25_rank": {
+"sphinx/util/rst.py": 8,
+"sphinx/application.py": 1,
+"sphinx/cmd/quickstart.py": 2,
+"sphinx/transforms/i18n.py": 3
+},
+"n_files": 168
+},
+"django__django-14017": {
+"paths": [
+"django/db/models/query_utils.py",
+"django/db/models/expressions.py",
+"django/contrib/postgres/search.py",
+"django/utils/tree.py"
+],
+"gold": [
+"django/db/models/query_utils.py"
+],
+"bm25_rank": {
+"django/db/models/query_utils.py": 1,
+"django/db/models/expressions.py": 2,
+"django/contrib/postgres/search.py": 3,
+"django/utils/tree.py": 6
+},
+"n_files": 685
+},
+"astropy__astropy-14598": {
+"paths": [
+"astropy/io/fits/card.py",
+"astropy/io/fits/hdu/hdulist.py",
+"astropy/io/fits/scripts/fitsheader.py",
+"astropy/io/fits/convenience.py"
+],
+"gold": [
+"astropy/io/fits/card.py"
+],
+"bm25_rank": {
+"astropy/io/fits/card.py": 4,
+"astropy/io/fits/hdu/hdulist.py": 2,
+"astropy/io/fits/scripts/fitsheader.py": 3,
+"astropy/io/fits/convenience.py": 7
+},
+"n_files": 480
+},
+"pallets__flask-5014": {
+"paths": [
+"src/flask/blueprints.py",
+"src/flask/helpers.py",
+"src/flask/wrappers.py",
+"src/flask/ctx.py"
+],
+"gold": [
+"src/flask/blueprints.py"
+],
+"bm25_rank": {
+"src/flask/blueprints.py": 9,
+"src/flask/helpers.py": 2,
+"src/flask/wrappers.py": 3,
+"src/flask/ctx.py": 4
+},
+"n_files": 30
+},
+"pydata__xarray-4075": {
+"paths": [
+"xarray/core/weighted.py",
+"xarray/util/print_versions.py",
+"xarray/backends/api.py",
+"xarray/core/common.py"
+],
+"gold": [
+"xarray/core/weighted.py"
+],
+"bm25_rank": {
+"xarray/core/weighted.py": 7,
+"xarray/util/print_versions.py": 1,
+"xarray/backends/api.py": 2,
+"xarray/core/common.py": 3
+},
+"n_files": 90
+},
+"django__django-13089": {
+"paths": [
+"django/core/cache/backends/db.py",
+"setup.py",
+"django/core/cache/backends/filebased.py",
+"django/db/backends/oracle/operations.py"
+],
+"gold": [
+"django/core/cache/backends/db.py"
+],
+"bm25_rank": {
+"django/core/cache/backends/db.py": 1,
+"setup.py": 2,
+"django/core/cache/backends/filebased.py": 3,
+"django/db/backends/oracle/operations.py": 4
+},
+"n_files": 676
+},
+"django__django-16454": {
+"paths": [
+"django/core/management/base.py",
+"django/core/management/__init__.py",
+"django/contrib/gis/management/commands/ogrinspect.py",
+"django/core/management/templates.py"
+],
+"gold": [
+"django/core/management/base.py"
+],
+"bm25_rank": {
+"django/core/management/base.py": 1,
+"django/core/management/__init__.py": 2,
+"django/contrib/gis/management/commands/ogrinspect.py": 3,
+"django/core/management/templates.py": 4
+},
+"n_files": 694
+},
+"django__django-15499": {
+"paths": [
+"django/db/migrations/operations/models.py",
+"django/db/migrations/operations/__init__.py",
+"django/db/migrations/optimizer.py",
+"django/contrib/auth/migrations/0001_initial.py"
+],
+"gold": [
+"django/db/migrations/operations/models.py"
+],
+"bm25_rank": {
+"django/db/migrations/operations/models.py": 2,
+"django/db/migrations/operations/__init__.py": 1,
+"django/db/migrations/optimizer.py": 3,
+"django/contrib/auth/migrations/0001_initial.py": 4
+},
+"n_files": 692
+},
+"scikit-learn__scikit-learn-25931": {
+"paths": [
+"sklearn/ensemble/_iforest.py",
+"sklearn/utils/_testing.py",
+"sklearn/utils/__init__.py",
+"examples/miscellaneous/plot_anomaly_comparison.py"
+],
+"gold": [
+"sklearn/ensemble/_iforest.py"
+],
+"bm25_rank": {
+"sklearn/ensemble/_iforest.py": 1,
+"sklearn/utils/_testing.py": 2,
+"sklearn/utils/__init__.py": 3,
+"examples/miscellaneous/plot_anomaly_comparison.py": 4
+},
+"n_files": 609
+},
+"django__django-13658": {
+"paths": [
+"django/core/management/__init__.py",
+"django/core/management/base.py",
+"django/core/management/utils.py",
+"django/core/management/commands/makemessages.py"
+],
+"gold": [
+"django/core/management/__init__.py"
+],
+"bm25_rank": {
+"django/core/management/__init__.py": 1,
+"django/core/management/base.py": 2,
+"django/core/management/utils.py": 3,
+"django/core/management/commands/makemessages.py": 4
+},
+"n_files": 682
+},
+"pytest-dev__pytest-5631": {
+"paths": [
+"src/_pytest/compat.py",
+"src/_pytest/python.py",
+"src/_pytest/config/__init__.py",
+"src/_pytest/fixtures.py"
+],
+"gold": [
+"src/_pytest/compat.py"
+],
+"bm25_rank": {
+"src/_pytest/compat.py": 1,
+"src/_pytest/python.py": 2,
+"src/_pytest/config/__init__.py": 3,
+"src/_pytest/fixtures.py": 4
+},
+"n_files": 67
+},
+"django__django-11179": {
+"paths": [
+"django/db/models/deletion.py",
+"django/contrib/contenttypes/fields.py",
+"django/db/models/fields/related_descriptors.py",
+"django/db/models/sql/subqueries.py"
+],
+"gold": [
+"django/db/models/deletion.py"
+],
+"bm25_rank": {
+"django/db/models/deletion.py": 1,
+"django/contrib/contenttypes/fields.py": 5,
+"django/db/models/fields/related_descriptors.py": 7,
+"django/db/models/sql/subqueries.py": 8
+},
+"n_files": 666
+},
+"pytest-dev__pytest-5787": {
+"paths": [
+"src/_pytest/reports.py",
+"src/_pytest/nodes.py",
+"src/_pytest/python_api.py",
+"src/_pytest/config/__init__.py"
+],
+"gold": [
+"src/_pytest/reports.py"
+],
+"bm25_rank": {
+"src/_pytest/reports.py": 14,
+"src/_pytest/nodes.py": 1,
+"src/_pytest/python_api.py": 2,
+"src/_pytest/config/__init__.py": 3
+},
+"n_files": 68
+},
+"pytest-dev__pytest-10356": {
+"paths": [
+"src/_pytest/mark/structures.py",
+"src/_pytest/nodes.py",
+"src/_pytest/python_api.py",
+"src/_pytest/pathlib.py"
+],
+"gold": [
+"src/_pytest/mark/structures.py"
+],
+"bm25_rank": {
+"src/_pytest/mark/structures.py": 2,
+"src/_pytest/nodes.py": 3,
+"src/_pytest/python_api.py": 4,
+"src/_pytest/pathlib.py": 7
+},
+"n_files": 77
+},
+"sympy__sympy-17655": {
+"paths": [
+"sympy/geometry/point.py",
+"sympy/geometry/ellipse.py",
+"sympy/geometry/entity.py",
+"sympy/geometry/util.py"
+],
+"gold": [
+"sympy/geometry/point.py"
+],
+"bm25_rank": {
+"sympy/geometry/point.py": 1,
+"sympy/geometry/ellipse.py": 4,
+"sympy/geometry/entity.py": 5,
+"sympy/geometry/util.py": 6
+},
+"n_files": 725
+},
+"django__django-10973": {
+"paths": [
+"django/db/backends/postgresql/client.py",
+"django/utils/autoreload.py",
+"setup.py",
+"django/db/backends/base/base.py"
+],
+"gold": [
+"django/db/backends/postgresql/client.py"
+],
+"bm25_rank": {
+"django/db/backends/postgresql/client.py": 54,
+"django/utils/autoreload.py": 1,
+"setup.py": 2,
+"django/db/backends/base/base.py": 3
+},
+"n_files": 666
+},
+"sympy__sympy-20916": {
+"paths": [
+"sympy/printing/conventions.py",
+"sympy/abc.py",
+"sympy/printing/pretty/pretty_symbology.py",
+"isympy.py"
+],
+"gold": [
+"sympy/printing/conventions.py"
+],
+"bm25_rank": {
+"sympy/printing/conventions.py": 134,
+"sympy/abc.py": 1,
+"sympy/printing/pretty/pretty_symbology.py": 3,
+"isympy.py": 6
+},
+"n_files": 800
+},
+"sympy__sympy-16766": {
+"paths": [
+"sympy/printing/pycode.py",
+"sympy/utilities/lambdify.py",
+"sympy/utilities/autowrap.py",
+"sympy/printing/rust.py"
+],
+"gold": [
+"sympy/printing/pycode.py"
+],
+"bm25_rank": {
+"sympy/printing/pycode.py": 9,
+"sympy/utilities/lambdify.py": 1,
+"sympy/utilities/autowrap.py": 2,
+"sympy/printing/rust.py": 3
+},
+"n_files": 711
+},
+"django__django-14608": {
+"paths": [
+"django/forms/formsets.py",
+"django/forms/forms.py",
+"django/contrib/admin/helpers.py",
+"django/forms/models.py"
+],
+"gold": [
+"django/forms/formsets.py"
+],
+"bm25_rank": {
+"django/forms/formsets.py": 1,
+"django/forms/forms.py": 2,
+"django/contrib/admin/helpers.py": 3,
+"django/forms/models.py": 4
+},
+"n_files": 686
+},
+"django__django-12039": {
+"paths": [
+"django/db/backends/ddl_references.py",
+"django/db/backends/postgresql/schema.py",
+"django/db/backends/sqlite3/introspection.py",
+"django/db/models/indexes.py"
+],
+"gold": [
+"django/db/backends/ddl_references.py"
+],
+"bm25_rank": {
+"django/db/backends/ddl_references.py": 5,
+"django/db/backends/postgresql/schema.py": 1,
+"django/db/backends/sqlite3/introspection.py": 2,
+"django/db/models/indexes.py": 3
+},
+"n_files": 671
+},
+"django__django-16333": {
+"paths": [
+"django/contrib/auth/forms.py",
+"django/contrib/auth/admin.py",
+"django/contrib/admin/utils.py",
+"django/core/serializers/base.py"
+],
+"gold": [
+"django/contrib/auth/forms.py"
+],
+"bm25_rank": {
+"django/contrib/auth/forms.py": 4,
+"django/contrib/auth/admin.py": 1,
+"django/contrib/admin/utils.py": 7,
+"django/core/serializers/base.py": 8
+},
+"n_files": 696
+},
+"django__django-16595": {
+"paths": [
+"django/db/migrations/operations/fields.py",
+"django/contrib/auth/migrations/0008_alter_user_username_max_length.py",
+"django/contrib/auth/migrations/0004_alter_user_username_opts.py",
+"django/contrib/redirects/migrations/0002_alter_redirect_new_path_help_text.py"
+],
+"gold": [
+"django/db/migrations/operations/fields.py"
+],
+"bm25_rank": {
+"django/db/migrations/operations/fields.py": 4,
+"django/contrib/auth/migrations/0008_alter_user_username_max_length.py": 1,
+"django/contrib/auth/migrations/0004_alter_user_username_opts.py": 2,
+"django/contrib/redirects/migrations/0002_alter_redirect_new_path_help_text.py": 3
+},
+"n_files": 694
+},
+"sympy__sympy-15875": {
+"paths": [
+"sympy/core/add.py",
+"sympy/calculus/util.py",
+"sympy/core/relational.py",
+"sympy/functions/elementary/exponential.py"
+],
+"gold": [
+"sympy/core/add.py"
+],
+"bm25_rank": {
+"sympy/core/add.py": 15,
+"sympy/calculus/util.py": 3,
+"sympy/core/relational.py": 7,
+"sympy/functions/elementary/exponential.py": 8
+},
+"n_files": 710
+},
+"django__django-11477": {
+"paths": [
+"django/urls/resolvers.py",
+"django/utils/regex_helper.py",
+"django/views/i18n.py",
+"django/urls/base.py"
+],
+"gold": [
+"django/urls/resolvers.py"
+],
+"bm25_rank": {
+"django/urls/resolvers.py": 3,
+"django/utils/regex_helper.py": 1,
+"django/views/i18n.py": 2,
+"django/urls/base.py": 4
+},
+"n_files": 669
+},
+"pylint-dev__pylint-7277": {
+"paths": [
+"pylint/__init__.py",
+"pylint/epylint.py",
+"pylint/lint/pylinter.py",
+"pylint/lint/run.py"
+],
+"gold": [
+"pylint/__init__.py"
+],
+"bm25_rank": {
+"pylint/__init__.py": 3,
+"pylint/epylint.py": 1,
+"pylint/lint/pylinter.py": 2,
+"pylint/lint/run.py": 4
+},
+"n_files": 269
+},
+"sphinx-doc__sphinx-8638": {
+"paths": [
+"sphinx/domains/python.py",
+"sphinx/application.py",
+"sphinx/cmd/quickstart.py",
+"doc/usage/extensions/example_numpy.py"
+],
+"gold": [
+"sphinx/domains/python.py"
+],
+"bm25_rank": {
+"sphinx/domains/python.py": 15,
+"sphinx/application.py": 1,
+"sphinx/cmd/quickstart.py": 2,
+"doc/usage/extensions/example_numpy.py": 3
+},
+"n_files": 179
+},
+"sympy__sympy-11618": {
+"paths": [
+"sympy/geometry/point.py",
+"sympy/geometry/ellipse.py",
+"sympy/geometry/line.py",
+"sympy/geometry/plane.py"
+],
+"gold": [
+"sympy/geometry/point.py"
+],
+"bm25_rank": {
+"sympy/geometry/point.py": 3,
+"sympy/geometry/ellipse.py": 1,
+"sympy/geometry/line.py": 4,
+"sympy/geometry/plane.py": 5
+},
+"n_files": 589
+},
+"sphinx-doc__sphinx-7757": {
+"paths": [
+"sphinx/util/inspect.py",
+"sphinx/cmd/quickstart.py",
+"sphinx/application.py",
+"sphinx/environment/__init__.py"
+],
+"gold": [
+"sphinx/util/inspect.py"
+],
+"bm25_rank": {
+"sphinx/util/inspect.py": 3,
+"sphinx/cmd/quickstart.py": 1,
+"sphinx/application.py": 2,
+"sphinx/environment/__init__.py": 4
+},
+"n_files": 185
+},
+"sympy__sympy-14711": {
+"paths": [
+"sympy/physics/vector/vector.py",
+"sympy/physics/vector/dyadic.py",
+"sympy/physics/vector/frame.py",
+"sympy/physics/vector/functions.py"
+],
+"gold": [
+"sympy/physics/vector/vector.py"
+],
+"bm25_rank": {
+"sympy/physics/vector/vector.py": 1,
+"sympy/physics/vector/dyadic.py": 2,
+"sympy/physics/vector/frame.py": 3,
+"sympy/physics/vector/functions.py": 4
+},
+"n_files": 658
+},
+"psf__requests-6028": {
+"paths": [
+"requests/utils.py",
+"requests/help.py",
+"requests/__init__.py",
+"setup.py"
+],
+"gold": [
+"requests/utils.py"
+],
+"bm25_rank": {
+"requests/utils.py": 3,
+"requests/help.py": 1,
+"requests/__init__.py": 2,
+"setup.py": 4
+},
+"n_files": 21
+},
+"django__django-15252": {
+"paths": [
+"django/db/migrations/executor.py",
+"django/db/migrations/recorder.py",
+"django/db/migrations/loader.py",
+"django/core/management/commands/migrate.py"
+],
+"gold": [
+"django/db/migrations/executor.py"
+],
+"bm25_rank": {
+"django/db/migrations/executor.py": 1,
+"django/db/migrations/recorder.py": 2,
+"django/db/migrations/loader.py": 3,
+"django/core/management/commands/migrate.py": 4
+},
+"n_files": 690
+},
+"sympy__sympy-22456": {
+"paths": [
+"sympy/codegen/ast.py",
+"sympy/printing/codeprinter.py",
+"sympy/printing/octave.py",
+"sympy/parsing/fortran/fortran_parser.py"
+],
+"gold": [
+"sympy/codegen/ast.py"
+],
+"bm25_rank": {
+"sympy/codegen/ast.py": 1,
+"sympy/printing/codeprinter.py": 2,
+"sympy/printing/octave.py": 3,
+"sympy/parsing/fortran/fortran_parser.py": 4
+},
+"n_files": 834
+},
+"psf__requests-1724": {
+"paths": [
+"requests/sessions.py",
+"requests/models.py",
+"requests/packages/urllib3/connectionpool.py",
+"requests/api.py"
+],
+"gold": [
+"requests/sessions.py"
+],
+"bm25_rank": {
+"requests/sessions.py": 4,
+"requests/models.py": 1,
+"requests/packages/urllib3/connectionpool.py": 2,
+"requests/api.py": 3
+},
+"n_files": 70
+},
+"django__django-13741": {
+"paths": [
+"django/contrib/auth/forms.py",
+"django/contrib/auth/models.py",
+"django/contrib/auth/base_user.py",
+"django/contrib/auth/__init__.py"
+],
+"gold": [
+"django/contrib/auth/forms.py"
+],
+"bm25_rank": {
+"django/contrib/auth/forms.py": 1,
+"django/contrib/auth/models.py": 2,
+"django/contrib/auth/base_user.py": 3,
+"django/contrib/auth/__init__.py": 4
+},
+"n_files": 682
+},
+"django__django-16255": {
+"paths": [
+"django/contrib/sitemaps/__init__.py",
+"django/contrib/sitemaps/views.py",
+"django/core/handlers/base.py",
+"django/views/i18n.py"
+],
+"gold": [
+"django/contrib/sitemaps/__init__.py"
+],
+"bm25_rank": {
+"django/contrib/sitemaps/__init__.py": 2,
+"django/contrib/sitemaps/views.py": 1,
+"django/core/handlers/base.py": 3,
+"django/views/i18n.py": 5
+},
+"n_files": 693
+},
+"matplotlib__matplotlib-24637": {
+"paths": [
+"lib/matplotlib/offsetbox.py",
+"examples/text_labels_and_annotations/demo_annotation_box.py",
+"tutorials/text/annotations.py",
+"examples/text_labels_and_annotations/demo_text_path.py"
+],
+"gold": [
+"lib/matplotlib/offsetbox.py"
+],
+"bm25_rank": {
+"lib/matplotlib/offsetbox.py": 4,
+"examples/text_labels_and_annotations/demo_annotation_box.py": 1,
+"tutorials/text/annotations.py": 2,
+"examples/text_labels_and_annotations/demo_text_path.py": 3
+},
+"n_files": 770
+},
+"sympy__sympy-19040": {
+"paths": [
+"sympy/polys/factortools.py",
+"release/fabfile.py",
+"doc/src/conf.py",
+"sympy/utilities/enumerative.py"
+],
+"gold": [
+"sympy/polys/factortools.py"
+],
+"bm25_rank": {
+"sympy/polys/factortools.py": 170,
+"release/fabfile.py": 1,
+"doc/src/conf.py": 3,
+"sympy/utilities/enumerative.py": 10
+},
+"n_files": 752
+},
+"django__django-15863": {
+"paths": [
+"django/template/defaultfilters.py",
+"django/contrib/humanize/templatetags/humanize.py",
+"django/db/backends/oracle/base.py",
+"django/conf/global_settings.py"
+],
+"gold": [
+"django/template/defaultfilters.py"
+],
+"bm25_rank": {
+"django/template/defaultfilters.py": 1,
+"django/contrib/humanize/templatetags/humanize.py": 2,
+"django/db/backends/oracle/base.py": 3,
+"django/conf/global_settings.py": 4
+},
+"n_files": 693
+},
+"sympy__sympy-19495": {
+"paths": [
+"sympy/sets/conditionset.py",
+"sympy/sets/handlers/intersection.py",
+"sympy/sets/fancysets.py",
+"sympy/__init__.py"
+],
+"gold": [
+"sympy/sets/conditionset.py"
+],
+"bm25_rank": {
+"sympy/sets/conditionset.py": 7,
+"sympy/sets/handlers/intersection.py": 2,
+"sympy/sets/fancysets.py": 3,
+"sympy/__init__.py": 5
+},
+"n_files": 757
+},
+"django__django-14915": {
+"paths": [
+"django/forms/models.py",
+"django/forms/widgets.py",
+"django/contrib/admin/widgets.py",
+"django/forms/boundfield.py"
+],
+"gold": [
+"django/forms/models.py"
+],
+"bm25_rank": {
+"django/forms/models.py": 3,
+"django/forms/widgets.py": 1,
+"django/contrib/admin/widgets.py": 2,
+"django/forms/boundfield.py": 6
+},
+"n_files": 687
+},
+"django__django-11551": {
+"paths": [
+"django/contrib/admin/checks.py",
+"django/contrib/admin/utils.py",
+"django/db/models/options.py",
+"django/forms/models.py"
+],
+"gold": [
+"django/contrib/admin/checks.py"
+],
+"bm25_rank": {
+"django/contrib/admin/checks.py": 1,
+"django/contrib/admin/utils.py": 3,
+"django/db/models/options.py": 6,
+"django/forms/models.py": 7
+},
+"n_files": 669
+},
+"django__django-17087": {
+"paths": [
+"django/db/migrations/serializer.py",
+"django/contrib/postgres/fields/array.py",
+"django/contrib/auth/models.py",
+"django/forms/fields.py"
+],
+"gold": [
+"django/db/migrations/serializer.py"
+],
+"bm25_rank": {
+"django/db/migrations/serializer.py": 100,
+"django/contrib/postgres/fields/array.py": 2,
+"django/contrib/auth/models.py": 3,
+"django/forms/fields.py": 4
+},
+"n_files": 694
+},
+"django__django-11603": {
+"paths": [
+"django/db/models/aggregates.py",
+"django/db/backends/sqlite3/operations.py",
+"docs/conf.py",
+"django/db/models/sql/where.py"
+],
+"gold": [
+"django/db/models/aggregates.py"
+],
+"bm25_rank": {
+"django/db/models/aggregates.py": 1,
+"django/db/backends/sqlite3/operations.py": 2,
+"docs/conf.py": 5,
+"django/db/models/sql/where.py": 6
+},
+"n_files": 670
+},
+"sphinx-doc__sphinx-10449": {
+"paths": [
+"sphinx/ext/autodoc/typehints.py",
+"sphinx/cmd/quickstart.py",
+"sphinx/application.py",
+"doc/conf.py"
+],
+"gold": [
+"sphinx/ext/autodoc/typehints.py"
+],
+"bm25_rank": {
+"sphinx/ext/autodoc/typehints.py": 99,
+"sphinx/cmd/quickstart.py": 1,
+"sphinx/application.py": 2,
+"doc/conf.py": 3
+},
+"n_files": 175
+},
+"matplotlib__matplotlib-26291": {
+"paths": [
+"lib/mpl_toolkits/axes_grid1/inset_locator.py",
+"lib/matplotlib/_tight_bbox.py",
+"galleries/examples/axes_grid1/inset_locator_demo.py",
+"lib/mpl_toolkits/axes_grid1/axes_divider.py"
+],
+"gold": [
+"lib/mpl_toolkits/axes_grid1/inset_locator.py"
+],
+"bm25_rank": {
+"lib/mpl_toolkits/axes_grid1/inset_locator.py": 3,
+"lib/matplotlib/_tight_bbox.py": 4,
+"galleries/examples/axes_grid1/inset_locator_demo.py": 5,
+"lib/mpl_toolkits/axes_grid1/axes_divider.py": 6
+},
+"n_files": 764
+},
+"django__django-15278": {
+"paths": [
+"django/db/backends/sqlite3/schema.py",
+"django/db/backends/sqlite3/base.py",
+"django/db/backends/sqlite3/operations.py",
+"django/db/backends/mysql/base.py"
+],
+"gold": [
+"django/db/backends/sqlite3/schema.py"
+],
+"bm25_rank": {
+"django/db/backends/sqlite3/schema.py": 2,
+"django/db/backends/sqlite3/base.py": 1,
+"django/db/backends/sqlite3/operations.py": 3,
+"django/db/backends/mysql/base.py": 4
+},
+"n_files": 690
+},
+"astropy__astropy-14365": {
+"paths": [
+"astropy/io/ascii/qdp.py",
+"astropy/io/ascii/__init__.py",
+"astropy/io/fits/util.py",
+"astropy/io/ascii/cds.py"
+],
+"gold": [
+"astropy/io/ascii/qdp.py"
+],
+"bm25_rank": {
+"astropy/io/ascii/qdp.py": 1,
+"astropy/io/ascii/__init__.py": 2,
+"astropy/io/fits/util.py": 3,
+"astropy/io/ascii/cds.py": 4
+},
+"n_files": 481
+},
+"sphinx-doc__sphinx-8056": {
+"paths": [
+"sphinx/ext/napoleon/docstring.py",
+"sphinx/cmd/quickstart.py",
+"sphinx/ext/napoleon/__init__.py",
+"doc/conf.py"
+],
+"gold": [
+"sphinx/ext/napoleon/docstring.py"
+],
+"bm25_rank": {
+"sphinx/ext/napoleon/docstring.py": 11,
+"sphinx/cmd/quickstart.py": 1,
+"sphinx/ext/napoleon/__init__.py": 2,
+"doc/conf.py": 3
+},
+"n_files": 185
+},
+"django__django-15731": {
+"paths": [
+"django/db/models/manager.py",
+"django/db/models/fields/related_descriptors.py",
+"django/template/base.py",
+"django/db/backends/base/creation.py"
+],
+"gold": [
+"django/db/models/manager.py"
+],
+"bm25_rank": {
+"django/db/models/manager.py": 13,
+"django/db/models/fields/related_descriptors.py": 2,
+"django/template/base.py": 3,
+"django/db/backends/base/creation.py": 4
+},
+"n_files": 692
+},
+"sphinx-doc__sphinx-8459": {
+"paths": [
+"sphinx/ext/autodoc/typehints.py",
+"sphinx/ext/napoleon/__init__.py",
+"sphinx/application.py",
+"sphinx/ext/autosummary/__init__.py"
+],
+"gold": [
+"sphinx/ext/autodoc/typehints.py"
+],
+"bm25_rank": {
+"sphinx/ext/autodoc/typehints.py": 2,
+"sphinx/ext/napoleon/__init__.py": 3,
+"sphinx/application.py": 4,
+"sphinx/ext/autosummary/__init__.py": 5
+},
+"n_files": 185
+},
+"django__django-14351": {
+"paths": [
+"django/db/models/lookups.py",
+"django/contrib/auth/models.py",
+"django/db/backends/base/features.py",
+"django/contrib/contenttypes/fields.py"
+],
+"gold": [
+"django/db/models/lookups.py"
+],
+"bm25_rank": {
+"django/db/models/lookups.py": 25,
+"django/contrib/auth/models.py": 4,
+"django/db/backends/base/features.py": 5,
+"django/contrib/contenttypes/fields.py": 6
+},
+"n_files": 686
+},
+"django__django-10914": {
+"paths": [
+"django/conf/global_settings.py",
+"django/core/files/uploadedfile.py",
+"django/core/files/uploadhandler.py",
+"django/core/files/storage.py"
+],
+"gold": [
+"django/conf/global_settings.py"
+],
+"bm25_rank": {
+"django/conf/global_settings.py": 2,
+"django/core/files/uploadedfile.py": 1,
+"django/core/files/uploadhandler.py": 3,
+"django/core/files/storage.py": 4
+},
+"n_files": 666
+}
+}

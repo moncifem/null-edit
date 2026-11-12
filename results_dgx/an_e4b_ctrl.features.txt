@@ -1,0 +1,162 @@
+<unknown>:609: SyntaxWarning: invalid escape sequence '\*'
+files analysed: 111; median lines 493; median units 60; chance unit hit@1 0.063
+
+LINE level (rank of best gold line among all lines of the file)
+feature                 AUROC  hit@1  hit@5 hit@10 medRank
+drop_R-RX_pos           0.893  0.360  0.604  0.757       3
+Hnorm                   0.890  0.297  0.613  0.730       4
+drop_R-RX_max           0.890  0.351  0.595  0.739       3
+drop_R-RB_sum           0.878  0.342  0.604  0.748       4
+drop_R-RB_pos           0.878  0.342  0.604  0.748       4
+drop_R-R0_pos           0.876  0.324  0.586  0.739       4
+drop_R-R0_sum           0.876  0.324  0.586  0.748       4
+drop_R-RB_max           0.876  0.333  0.586  0.730       4
+drop_R-RX_sum           0.875  0.360  0.604  0.757       3
+drop_R-R0_max           0.874  0.315  0.568  0.721       4
+surp_R_sum              0.873  0.315  0.586  0.739       4
+surp_R_max              0.870  0.306  0.568  0.721       4
+Snorm                   0.869  0.279  0.550  0.685       4
+first_R                 0.846  0.324  0.559  0.721       4
+drop_RB-R0_pos          0.684  0.099  0.261  0.396      23
+drop_RB-R0_max          0.684  0.099  0.252  0.387      22
+bm25                    0.671  0.072  0.297  0.378      23
+first_RB                0.670  0.081  0.225  0.342      27
+surp_RB_sum             0.669  0.081  0.234  0.351      25
+surp_RB_max             0.664  0.072  0.225  0.351      24
+drop_RX-R0_pos          0.643  0.027  0.099  0.153      46
+first_RX                0.642  0.018  0.099  0.180      49
+drop_RX-R0_sum          0.642  0.027  0.108  0.153      46
+drop_RX-R0_max          0.641  0.027  0.108  0.162      44
+surp_RX_sum             0.637  0.027  0.099  0.135      41
+surp_RX_max             0.633  0.027  0.099  0.153      39
+line_ntok               0.608  0.000  0.135  0.189      51
+surp_R0_sum             0.606  0.027  0.135  0.225      54
+first_R0                0.602  0.027  0.108  0.198      55
+surp_R0_max             0.596  0.027  0.126  0.207      53
+gain_RB-R0_pos          0.584  0.036  0.117  0.234      68
+drop_RB-R0_sum          0.583  0.108  0.243  0.378      23
+random                  0.515  0.009  0.072  0.117      76
+gain_RX-R0_pos          0.499  0.000  0.063  0.126      85
+position                0.489  0.009  0.036  0.081     172
+gain_R-R0_pos           0.467  0.009  0.081  0.090     122
+gain_R-RB_pos           0.441  0.000  0.027  0.054     105
+gain_R-RX_pos           0.302  0.027  0.045  0.063     186
+
+UNIT (function) level
+feature|agg                   hit@1  hit@3  hit@5    MRR
+drop_R-RX_pos|sum             0.595  0.820  0.919  0.726
+drop_R-RX_sum|top3            0.595  0.811  0.919  0.721
+drop_R-RX_max|sum             0.586  0.811  0.910  0.720
+drop_R-RX_sum|sum             0.586  0.820  0.910  0.719
+drop_R-RX_pos|top3            0.595  0.793  0.919  0.719
+drop_R-RX_sum|max             0.595  0.766  0.919  0.715
+drop_R-RX_pos|max             0.595  0.775  0.919  0.715
+drop_R-RX_max|top3            0.586  0.802  0.910  0.713
+Hnorm|sum                     0.568  0.802  0.910  0.710
+drop_R-RX_max|max             0.586  0.766  0.901  0.707
+Hnorm|top3                    0.559  0.766  0.901  0.701
+drop_R-RB_pos|sum             0.559  0.820  0.892  0.699
+drop_R-RB_max|sum             0.559  0.793  0.892  0.699
+Hnorm|max                     0.550  0.784  0.892  0.693
+drop_R-R0_pos|sum             0.550  0.802  0.901  0.693
+drop_R-R0_max|sum             0.550  0.766  0.901  0.691
+drop_R-RB_sum|sum             0.541  0.802  0.892  0.685
+drop_R-RB_sum|max             0.559  0.757  0.856  0.685
+drop_R-RB_pos|max             0.559  0.757  0.856  0.685
+surp_R_sum|sum                0.541  0.784  0.883  0.684
+drop_R-RB_sum|top3            0.550  0.775  0.883  0.684
+drop_R-RB_pos|top3            0.550  0.775  0.883  0.684
+surp_R_max|sum                0.541  0.757  0.883  0.683
+drop_R-RB_max|top3            0.550  0.757  0.874  0.682
+drop_R-R0_sum|sum             0.532  0.793  0.901  0.680
+drop_R-R0_sum|top3            0.541  0.784  0.874  0.680
+drop_R-R0_pos|top3            0.541  0.784  0.874  0.680
+drop_R-R0_max|top3            0.541  0.748  0.874  0.679
+drop_R-RB_max|max             0.550  0.766  0.856  0.678
+surp_R_sum|top3               0.541  0.766  0.856  0.676
+drop_R-R0_sum|max             0.541  0.766  0.856  0.676
+drop_R-R0_pos|max             0.541  0.766  0.856  0.676
+surp_R_max|top3               0.532  0.748  0.865  0.671
+Snorm|sum                     0.523  0.757  0.874  0.671
+drop_R-R0_max|max             0.532  0.757  0.856  0.670
+Snorm|top3                    0.532  0.739  0.865  0.669
+surp_R_sum|max                0.532  0.748  0.847  0.665
+Snorm|max                     0.523  0.748  0.838  0.664
+first_R|top3                  0.541  0.730  0.856  0.663
+first_R|max                   0.541  0.703  0.847  0.660
+first_R|sum                   0.532  0.748  0.865  0.658
+surp_R_max|max                0.514  0.748  0.847  0.656
+bm25|top3                     0.450  0.640  0.739  0.579
+bm25_unit|-                   0.432  0.649  0.757  0.578
+bm25|sum                      0.414  0.604  0.703  0.548
+bm25|max                      0.360  0.595  0.775  0.526
+line_ntok|sum                 0.369  0.532  0.604  0.482
+unit_length|-                 0.351  0.514  0.604  0.469
+drop_RB-R0_pos|sum            0.333  0.486  0.631  0.468
+random|sum                    0.360  0.514  0.622  0.468
+drop_RB-R0_max|sum            0.315  0.477  0.622  0.456
+drop_RB-R0_sum|top3           0.306  0.486  0.640  0.448
+drop_RB-R0_pos|top3           0.297  0.486  0.640  0.442
+drop_RB-R0_max|top3           0.297  0.477  0.622  0.441
+drop_RB-R0_sum|max            0.306  0.441  0.613  0.440
+drop_RB-R0_pos|max            0.288  0.441  0.604  0.429
+first_RB|sum                  0.261  0.505  0.613  0.423
+drop_RB-R0_max|max            0.279  0.441  0.613  0.423
+surp_RB_sum|sum               0.261  0.486  0.604  0.419
+surp_RB_max|sum               0.261  0.505  0.586  0.415
+first_RB|top3                 0.252  0.514  0.595  0.408
+surp_RB_sum|top3              0.252  0.495  0.586  0.404
+surp_RB_max|top3              0.252  0.495  0.595  0.402
+surp_RB_max|max               0.252  0.495  0.595  0.402
+first_RB|max                  0.252  0.495  0.604  0.401
+surp_RB_sum|max               0.252  0.486  0.604  0.398
+first_R0|sum                  0.252  0.441  0.514  0.387
+line_ntok|top3                0.243  0.432  0.559  0.383
+gain_RB-R0_pos|sum            0.225  0.441  0.550  0.381
+first_R0|top3                 0.252  0.441  0.514  0.379
+gain_RB-R0_pos|max            0.234  0.423  0.523  0.379
+first_R0|max                  0.243  0.450  0.523  0.377
+surp_R0_max|sum               0.243  0.423  0.514  0.374
+surp_R0_sum|sum               0.234  0.423  0.514  0.373
+surp_R0_max|top3              0.243  0.423  0.495  0.370
+surp_R0_sum|top3              0.243  0.423  0.505  0.369
+gain_RB-R0_pos|top3           0.216  0.432  0.532  0.369
+surp_R0_sum|max               0.234  0.432  0.514  0.368
+surp_R0_max|max               0.234  0.432  0.505  0.366
+drop_RB-R0_sum|sum            0.243  0.396  0.523  0.364
+random|top3                   0.225  0.387  0.523  0.362
+first_RX|sum                  0.216  0.423  0.514  0.355
+gain_RX-R0_pos|sum            0.207  0.396  0.505  0.353
+first_RX|top3                 0.216  0.414  0.505  0.350
+gain_RX-R0_pos|top3           0.198  0.396  0.477  0.348
+first_RX|max                  0.216  0.396  0.468  0.346
+surp_RX_max|sum               0.198  0.378  0.477  0.340
+surp_RX_sum|sum               0.198  0.387  0.486  0.340
+line_ntok|max                 0.189  0.387  0.495  0.338
+gain_RX-R0_pos|max            0.189  0.378  0.468  0.335
+surp_RX_max|max               0.180  0.405  0.486  0.333
+surp_RX_sum|top3              0.180  0.378  0.477  0.332
+surp_RX_max|top3              0.180  0.387  0.477  0.330
+surp_RX_sum|max               0.171  0.405  0.486  0.329
+gain_R-R0_pos|sum             0.171  0.405  0.495  0.328
+drop_RX-R0_max|sum            0.180  0.378  0.459  0.327
+drop_RX-R0_pos|sum            0.180  0.378  0.450  0.326
+gain_R-R0_pos|top3            0.171  0.414  0.495  0.323
+gain_R-R0_pos|max             0.171  0.396  0.505  0.323
+drop_RX-R0_max|max            0.162  0.387  0.477  0.320
+drop_RX-R0_sum|sum            0.171  0.369  0.450  0.317
+drop_RX-R0_sum|top3           0.162  0.360  0.468  0.316
+drop_RX-R0_pos|top3           0.162  0.360  0.468  0.316
+drop_RX-R0_sum|max            0.153  0.387  0.486  0.316
+drop_RX-R0_pos|max            0.153  0.387  0.486  0.316
+drop_RX-R0_max|top3           0.162  0.360  0.459  0.314
+gain_R-RB_pos|sum             0.180  0.333  0.468  0.307
+gain_R-RB_pos|top3            0.171  0.324  0.468  0.301
+gain_R-RB_pos|max             0.171  0.324  0.468  0.299
+random|max                    0.144  0.360  0.432  0.293
+gain_R-RX_pos|sum             0.153  0.342  0.423  0.287
+gain_R-RX_pos|max             0.153  0.333  0.432  0.287
+gain_R-RX_pos|top3            0.153  0.333  0.432  0.285
+position|max                  0.180  0.270  0.360  0.279
+position|top3                 0.180  0.270  0.360  0.279
+position|sum                  0.036  0.189  0.234  0.150

@@ -1,0 +1,16 @@
+{"iid": "astropy__astropy-12907", "path": "astropy/modeling/separable.py", "n_tok": 2805, "secs": {"U": 2.18, "B": 3.32, "F": 2.91, "X": 2.82}, "gold": true, "x_issue": "astropy__astropy-14539"}
+{"iid": "astropy__astropy-8707", "path": "astropy/io/fits/card.py", "n_tok": 12520, "secs": {"U": 12.95, "B": 10.51, "F": 10.95, "X": 14.8}, "gold": true, "x_issue": "astropy__astropy-14539"}
+{"iid": "astropy__astropy-8707", "path": "astropy/io/fits/header.py", "n_tok": 18744, "secs": {"U": 20.15, "B": 18.53, "F": 20.74, "X": 21.42}, "gold": true, "x_issue": "astropy__astropy-14539"}
+{"iid": "django__django-11211", "path": "django/db/models/fields/__init__.py", "n_tok": 21369, "secs": {"U": 21.61, "B": 23.75, "F": 22.78, "X": 22.49}, "gold": true, "x_issue": "django__django-11119"}
+{"iid": "django__django-11790", "path": "django/contrib/auth/forms.py", "n_tok": 3980, "secs": {"U": 6.14, "B": 5.94, "F": 5.05, "X": 4.74}, "gold": true, "x_issue": "django__django-12774"}
+{"iid": "django__django-12308", "path": "django/contrib/admin/utils.py", "n_tok": 5179, "secs": {"U": 5.27, "B": 5.99, "F": 6.17, "X": 6.13}, "gold": true, "x_issue": "django__django-14376"}
+{"iid": "django__django-13128", "path": "django/db/models/expressions.py", "n_tok": 12842, "secs": {"U": 13.54, "B": 15.7, "F": 14.52, "X": 15.18}, "gold": true, "x_issue": "django__django-14238"}
+{"iid": "django__django-13568", "path": "django/contrib/auth/checks.py", "n_tok": 1886, "secs": {"U": 4.0, "B": 4.18, "F": 2.42, "X": 2.68}, "gold": true, "x_issue": "django__django-13786"}
+{"iid": "django__django-14034", "path": "django/forms/boundfield.py", "n_tok": 2807, "secs": {"U": 3.1, "B": 3.4, "F": 4.1, "X": 5.22}, "gold": true, "x_issue": "django__django-16263"}
+{"iid": "django__django-14559", "path": "django/db/models/query.py", "n_tok": 21487, "secs": {"U": 23.9, "B": 21.36, "F": 20.56, "X": 20.67}, "gold": true, "x_issue": "django__django-16612"}
+{"iid": "django__django-15128", "path": "django/db/models/sql/query.py", "n_tok": 27461, "secs": {"U": 26.9, "B": 27.85, "F": 27.62, "X": 26.84}, "gold": true, "x_issue": "django__django-13121"}
+{"iid": "django__django-15572", "path": "django/template/autoreload.py", "n_tok": 441, "secs": {"U": 0.34, "B": 0.75, "F": 0.71, "X": 0.62}, "gold": true, "x_issue": "django__django-14140"}
+{"iid": "django__django-16145", "path": "django/core/management/commands/runserver.py", "n_tok": 1848, "secs": {"U": 1.51, "B": 1.77, "F": 1.75, "X": 1.95}, "gold": true, "x_issue": "django__django-13410"}
+{"iid": "django__django-16667", "path": "django/forms/widgets.py", "n_tok": 10144, "secs": {"U": 8.6, "B": 9.07, "F": 9.22, "X": 9.16}, "gold": true, "x_issue": "django__django-14855"}
+{"iid": "matplotlib__matplotlib-22719", "path": "lib/matplotlib/category.py", "n_tok": 1885, "secs": {"U": 1.48, "B": 3.35, "F": 3.15, "X": 2.17}, "gold": true, "x_issue": "matplotlib__matplotlib-24026"}
+{"iid": "matplotlib__matplotlib-25775", "path": "lib/matplotlib/backends/backend_agg.py", "n_tok": 5758, "secs": {"U": 4.71, "B": 5.08, "F": 4.99, "X": 5.23}, "gold": true, "x_issue": "matplotlib__matplotlib-26466"}

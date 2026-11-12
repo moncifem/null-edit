@@ -1,0 +1,34 @@
+{"iid": "astropy__astropy-12907", "path": "astropy/modeling/separable.py", "n_tok": 2805, "secs": {"R": 5.02, "D": 5.38, "RX": 5.37, "RB": 5.01, "R0": 5.22}, "gold": true, "x_issue": "astropy__astropy-14539"}
+{"iid": "astropy__astropy-8707", "path": "astropy/io/fits/card.py", "n_tok": 12520, "secs": {"R": 24.39, "D": 24.62, "RX": 23.88, "RB": 24.41, "R0": 24.19}, "gold": true, "x_issue": "astropy__astropy-14539"}
+{"iid": "astropy__astropy-8707", "path": "astropy/io/fits/header.py", "n_tok": 18744, "secs": {"R": 39.68, "D": 40.5, "RX": 40.06, "RB": 40.9, "R0": 39.15}, "gold": true, "x_issue": "astropy__astropy-14539"}
+{"iid": "django__django-11211", "path": "django/db/models/fields/__init__.py", "skip": "size", "n_tok": 21369}
+{"iid": "django__django-11790", "path": "django/contrib/auth/forms.py", "n_tok": 3980, "secs": {"R": 7.2, "D": 7.41, "RX": 7.4, "RB": 7.27, "R0": 7.14}, "gold": true, "x_issue": "django__django-12774"}
+{"iid": "django__django-12308", "path": "django/contrib/admin/utils.py", "n_tok": 5179, "secs": {"R": 9.34, "D": 10.99, "RX": 11.17, "RB": 9.09, "R0": 7.85}, "gold": true, "x_issue": "django__django-14376"}
+{"iid": "django__django-13128", "path": "django/db/models/expressions.py", "n_tok": 12842, "secs": {"R": 23.89, "D": 24.93, "RX": 26.07, "RB": 24.96, "R0": 24.85}, "gold": true, "x_issue": "django__django-14238"}
+{"iid": "django__django-13568", "path": "django/contrib/auth/checks.py", "n_tok": 1886, "secs": {"R": 3.45, "D": 3.56, "RX": 3.53, "RB": 3.5, "R0": 3.27}, "gold": true, "x_issue": "django__django-13786"}
+{"iid": "django__django-14034", "path": "django/forms/boundfield.py", "n_tok": 2807, "secs": {"R": 5.03, "D": 5.95, "RX": 4.67, "RB": 5.17, "R0": 4.4}, "gold": true, "x_issue": "django__django-16263"}
+{"iid": "django__django-14559", "path": "django/db/models/query.py", "skip": "size", "n_tok": 21487}
+{"iid": "django__django-15128", "path": "django/db/models/sql/query.py", "skip": "size", "n_tok": 27461}
+{"iid": "django__django-15572", "path": "django/template/autoreload.py", "n_tok": 441, "secs": {"R": 0.98, "D": 1.07, "RX": 0.87, "RB": 1.2, "R0": 0.7}, "gold": true, "x_issue": "django__django-14140"}
+{"iid": "django__django-16145", "path": "django/core/management/commands/runserver.py", "n_tok": 1848, "secs": {"R": 3.11, "D": 3.33, "RX": 3.79, "RB": 3.44, "R0": 3.37}, "gold": true, "x_issue": "django__django-13410"}
+{"iid": "django__django-16667", "path": "django/forms/widgets.py", "n_tok": 10144, "secs": {"R": 18.99, "D": 19.09, "RX": 19.59, "RB": 18.57, "R0": 17.12}, "gold": true, "x_issue": "django__django-14855"}
+{"iid": "matplotlib__matplotlib-22719", "path": "lib/matplotlib/category.py", "n_tok": 1885, "secs": {"R": 4.24, "D": 4.7, "RX": 3.42, "RB": 4.34, "R0": 2.93}, "gold": true, "x_issue": "matplotlib__matplotlib-24026"}
+{"iid": "matplotlib__matplotlib-25775", "path": "lib/matplotlib/backends/backend_agg.py", "n_tok": 5758, "secs": {"R": 9.35, "D": 9.66, "RX": 9.46, "RB": 9.14, "R0": 8.89}, "gold": true, "x_issue": "matplotlib__matplotlib-26466"}
+{"iid": "matplotlib__matplotlib-25775", "path": "lib/matplotlib/backends/backend_cairo.py", "n_tok": 5225, "secs": {"R": 8.71, "D": 9.92, "RX": 13.11, "RB": 10.57, "R0": 13.71}, "gold": true, "x_issue": "matplotlib__matplotlib-26466"}
+{"iid": "matplotlib__matplotlib-25775", "path": "lib/matplotlib/text.py", "n_tok": 17896, "secs": {"R": 44.99, "D": 38.69, "RX": 38.41, "RB": 36.41, "R0": 37.08}, "gold": true, "x_issue": "matplotlib__matplotlib-26466"}
+{"iid": "pydata__xarray-3151", "path": "xarray/core/combine.py", "n_tok": 7332, "secs": {"R": 13.36, "D": 14.57, "RX": 12.96, "RB": 13.1, "R0": 12.3}, "gold": true, "x_issue": "pydata__xarray-3993"}
+{"iid": "pylint-dev__pylint-4551", "path": "pylint/pyreverse/diagrams.py", "n_tok": 2359, "secs": {"R": 3.98, "D": 4.06, "RX": 4.55, "RB": 4.98, "R0": 3.58}, "gold": true, "x_issue": "pylint-dev__pylint-6528"}
+{"iid": "pylint-dev__pylint-4551", "path": "pylint/pyreverse/inspector.py", "n_tok": 3256, "secs": {"R": 5.47, "D": 5.78, "RX": 5.88, "RB": 5.57, "R0": 5.49}, "gold": true, "x_issue": "pylint-dev__pylint-6528"}
+{"iid": "pylint-dev__pylint-4551", "path": "pylint/pyreverse/utils.py", "n_tok": 1925, "secs": {"R": 3.57, "D": 3.89, "RX": 3.67, "RB": 3.27, "R0": 3.2}, "gold": true, "x_issue": "pylint-dev__pylint-6528"}
+{"iid": "pylint-dev__pylint-4551", "path": "pylint/pyreverse/writer.py", "n_tok": 2357, "secs": {"R": 4.27, "D": 4.78, "RX": 5.08, "RB": 3.92, "R0": 3.99}, "gold": true, "x_issue": "pylint-dev__pylint-6528"}
+{"iid": "pytest-dev__pytest-7205", "path": "src/_pytest/setuponly.py", "n_tok": 694, "secs": {"R": 3.81, "D": 3.96, "RX": 2.52, "RB": 3.73, "R0": 1.91}, "gold": true, "x_issue": "pytest-dev__pytest-5631"}
+{"iid": "scikit-learn__scikit-learn-13328", "path": "sklearn/linear_model/huber.py", "n_tok": 3301, "secs": {"R": 9.97, "D": 7.31, "RX": 6.47, "RB": 7.46, "R0": 5.69}, "gold": true, "x_issue": "scikit-learn__scikit-learn-25232"}
+{"iid": "scikit-learn__scikit-learn-9288", "path": "sklearn/cluster/k_means_.py", "n_tok": 17750, "secs": {"R": 38.0, "D": 39.61, "RX": 35.11, "RB": 37.95, "R0": 36.02}, "gold": true, "x_issue": "scikit-learn__scikit-learn-11310"}
+{"iid": "sphinx-doc__sphinx-8120", "path": "sphinx/application.py", "n_tok": 12385, "secs": {"R": 32.1, "D": 24.91, "RX": 24.75, "RB": 24.78, "R0": 23.72}, "gold": true, "x_issue": "sphinx-doc__sphinx-9658"}
+{"iid": "sphinx-doc__sphinx-8120", "path": "sphinx/locale/__init__.py", "n_tok": 2339, "secs": {"R": 4.14, "D": 4.25, "RX": 4.58, "RB": 4.79, "R0": 3.61}, "gold": true, "x_issue": "sphinx-doc__sphinx-9658"}
+{"iid": "sphinx-doc__sphinx-9602", "path": "sphinx/domains/python.py", "n_tok": 14431, "secs": {"R": 28.44, "D": 27.96, "RX": 28.87, "RB": 27.75, "R0": 28.31}, "gold": true, "x_issue": "sphinx-doc__sphinx-7985"}
+{"iid": "sympy__sympy-13877", "path": "sympy/matrices/matrices.py", "skip": "size", "n_tok": 39805}
+{"iid": "sympy__sympy-13877", "path": "sympy/utilities/randtest.py", "n_tok": 1607, "secs": {"R": 3.94, "D": 4.1, "RX": 2.77, "RB": 3.95, "R0": 2.87}, "gold": true, "x_issue": "sympy__sympy-24066"}
+{"iid": "sympy__sympy-17318", "path": "sympy/simplify/radsimp.py", "n_tok": 11126, "secs": {"R": 22.39, "D": 22.09, "RX": 20.44, "RB": 23.56, "R0": 27.02}, "gold": true, "x_issue": "sympy__sympy-14248"}
+{"iid": "sympy__sympy-17318", "path": "sympy/simplify/sqrtdenest.py", "n_tok": 7430, "secs": {"R": 22.66, "D": 15.98, "RX": 13.42, "RB": 16.52, "R0": 15.52}, "gold": true, "x_issue": "sympy__sympy-14248"}
+{"iid": "sympy__sympy-21379", "path": "sympy/core/mod.py", "n_tok": 2107, "secs": {"R": 3.98, "D": 4.55, "RX": 3.92, "RB": 4.44, "R0": 3.95}, "gold": true, "x_issue": "sympy__sympy-18199"}

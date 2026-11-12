@@ -1,0 +1,70 @@
+
+pytest-dev__pytest-7982 src/_pytest/pathlib.py (5627 tokens)
+  token 5166: p(bf16) = 0.0000, p(4-bit) = 0.0003
+    before   'ies\n    for entry in entries:\n        if entry.is_dir(follow_symlinks='
+    original 'False) and recurse(entry):\n            yield from visit(entry.path, re'
+    model    'True) and recurse(entry):\n            yield from visit(entry.path, recurse)\n\n\ndef absolut'
+  token 5307: p(bf16) = 0.0420, p(4-bit) = 0.0000
+    before   'ional[Path]:\n    """Return the common part shared with the other path,'
+    original ' or None if there is\n    no common part.\n\n    If one path is relative '
+    model    ' if one path is relative and one is absolute, returns None."""\n    try:\n        return Pat'
+
+sympy__sympy-24661 sympy/parsing/sympy_parser.py (11293 tokens)
+  token 7720: p(bf16) = 0.0000, p(4-bit) = 0.0000
+    before   '  appropriate Eq instances. Also works with nested equals signs.\n\n    '
+    original 'Does not yet play well with function arguments.\n    For example, the e'
+    model    'See also\n    ========\n    convert_equality_operators\n\n    Examples\n    ========\n\n    >>> f'
+  token 8985: p(bf16) = 0.0000, p(4-bit) = 0.0000
+    before   'g ``transformations``:\n\n    >>> from sympy.parsing.sympy_parser import'
+    original ' transformations\n\n    >>> print(transformations)\n    0: lambda_notatio'
+    model    ' T\n    >>> print(transformations)\n    0: lambda_notation\n    1: auto_symbol\n'
+  token 4403: p(bf16) = 0.0001, p(4-bit) = 0.0018
+    before   'atten(res3)\n    return result\n\n\ndef implicit_application(tokens: List['
+    original 'TOKEN], local_dict: DICT,\n                         global_dict: DICT) '
+    model    'tUnion[TOKEN,_AppliedFunction]], local_dict: DICT,\n                         global_dict: D'
+
+django__django-14765 django/db/migrations/state.py (9229 tokens)
+  token 973: p(bf16) = 0.0000, p(4-bit) = 0.0000
+    before   'n registry, usually unmigrated ones\n        if real_apps:\n            '
+    original 'self.real_apps = real_apps if isinstance(real_apps, set) else set(real'
+    model    'assert isinstance(real_apps, set)\n            self.real_apps = real_apps\n        else:'
+  token 982: p(bf16) = 0.0067, p(4-bit) = 0.0000
+    before   'ated ones\n        if real_apps:\n            self.real_apps = real_apps'
+    original ' if isinstance(real_apps, set) else set(real_apps)\n        else:\n     '
+    model    '\n        else:\n            self.real_apps = set()\n        self.is_delayed = False\n'
+
+sphinx-doc__sphinx-9320 sphinx/cmd/quickstart.py (6414 tokens)
+  token 1966: p(bf16) = 0.0000, p(4-bit) = 0.0002
+    before   "root path (or just Enter to exit)'),\n                              '',"
+    original " is_path)\n        if not d['path']:\n            sys.exit(1)\n\n    if 's"
+    model    " allow_empty)\n        if not d['path']:\n            sys.exit(1)\n\n    if '"
+
+pytest-dev__pytest-7571 src/_pytest/logging.py (7909 tokens)
+  token 4325: p(bf16) = 0.0000, p(4-bit) = 0.0001
+    before   'Record instances\n    * caplog.record_tuples   -> list of (logger_name,'
+    original ' level, message) tuples\n    * caplog.clear()         -> clear captured'
+    model    ' log_level, message) tuples\n    * caplog.clear()         -> clear captured records and for'
+  token 3711: p(bf16) = 0.0000, p(4-bit) = 0.0441
+    before   'ceback or stack info (from :func:`logging.exception` or the `exc_info`'
+    original ' or `stack_info` arguments\n        to the logging functions) is not in'
+    model    ' and `stack_info` arguments\n        to the logging functions) is not included, as this is '
+
+django__django-14771 django/utils/autoreload.py (6193 tokens)
+  token 3861: p(bf16) = 0.0000, p(4-bit) = 0.0000
+    before   ' the\n        # changes, however, as this is currently an internal API,'
+    original '  no files\n        # will be being watched outside of sys.path. Fixing'
+    model    '\n        # no files will be and_s_files will be watched outside of sys.path.\n        #'
+
+psf__requests-1142 requests/models.py (5265 tokens)
+  token 3604: p(bf16) = 0.0000, p(4-bit) = 0.0009
+    before   "ponse Headers.\n        #: For example, ``headers['content-encoding']``"
+    original " will return the\n        #: value of a ``'Content-Encoding'`` response"
+    model    " returns the value of a ``'Content-Encoding'`` response header.\n        self.headers = Cas"
+  token 3120: p(bf16) = 0.0002, p(4-bit) = 0.0004
+    before   'self.body = body\n\n    def prepare_content_length(self, body):\n        '
+    original "self.headers['Content-Length'] = '0'\n        if hasattr(body, 'seek') "
+    model    "if self.method in ('GET', 'HEAD', 'DELETE', 'TRACE'):\n            return\n        \n        "
+  token 4723: p(bf16) = 0.0141, p(4-bit) = 0.0349
+    before   'ncoding was not found which could\n            # indicate a misspelling'
+    original ' or similar mistake.\n            #\n            # A TypeError can be ra'
+    model    ' of the encoding.\n            #\n            # A TypeError can be raised if encoding is Non'
