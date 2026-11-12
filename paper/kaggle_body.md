@@ -136,4 +136,44 @@ Asking improves with size where the map does not. On the 111 files, line ranges 
 
 Author lists are given as verified on the cited page (surnames; "et al." where the page was not read in full).
 
-[1] Jimenez, Yang, Wettig, Yao, Pei, Press, Narasimhan. SWE-bench: Can Language Models Resolve Real-World GitHub Issues? ICLR 2024. arXiv:2310.06770. [2] SWE-bench Verified: a human-validated subset of 500 SWE-bench instances, created in collaboration with OpenAI. 2024. https://www.swebench.com/verified.html [3] Zhang, He, Zhang, et al. SWE-bench Goes Live! 2025. arXiv:2505.23419. [4] Yang, Jimenez, Wettig, Lieret, Yao, Narasimhan, Press. SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering. 2024. arXiv:2405.15793. [5] Xia, Deng, Dunn, Zhang. Agentless: Demystifying LLM-based Software Engineering Agents. 2024. arXiv:2407.01489. [6] Chen, Tang, Deng, et al. LocAgent: Graph-Guided LLM Agents for Code Localization. 2025. arXiv:2503.09089. [7] Reddy, Suresh, Doo, et al. SweRank: Software Issue Localization with Code Ranking. 2025. arXiv:2505.07849. [8] Leviathan, Kalman, Matias. Fast Inference from Transformers via Speculative Decoding. ICML 2023. arXiv:2211.17192. See also Chen, Borgeaud, Irving, et al. Accelerating Large Language Model Decoding with Speculative Sampling. 2023. arXiv:2302.01318. [9] Wang, Zhang, Liu, et al. EfficientEdit: Accelerating Code Editing via Edit-Oriented Speculative Decoding. ASE 2025. arXiv:2506.02780. [10] Ray, Hellendoorn, Godhane, Tu, Bacchelli, Devanbu. On the "Naturalness" of Buggy Code. 2015. arXiv:1506.01159. [11] Yang, Kolak, Hellendoorn, Martins, Le Goues. Revisiting Unnaturalness for Automated Program Repair in the Era of Large Language Models. 2024. arXiv:2404.15236. [12] Yang, Martins, Le Goues, Hellendoorn. Large Language Models for Test-Free Fault Localization. 2023. arXiv:2310.01726. [13] Campos. Bug Detection and Localization using Pre-trained Code Language Models. INFORMATIK 2024. doi:10.18420/inf2024_124. [14] Hennara, Hreden, Aldallal, Chrouf, AlModhayan. Let the Fixer Decide: Training a Code Localizer from the Fixer's Likelihood. 2026. arXiv:2611.12164. [15] OpenAI. Predicted Outputs (API documentation). https://developers.openai.com/api/docs/guides/predicted-outputs ; Cursor. Editing Files at 1000 Tokens per Second. 2024. https://cursor.com/blog/instant-apply [16] Google. Gemma 4 model card. https://ai.google.dev/gemma/docs/core/model_card_4 ; Gemma Team. Gemma 4 Technical Report. 2026. arXiv:2607.02770. [17] Liang, Garg, Zilouchian Moghaddam. The SWE-Bench Illusion: When State-of-the-Art LLMs Remember Instead of Reason. 2025. arXiv:2506.12286. [18] Cao, Cao, Hu, Hou, Xiao, Zhu. Improving Autoregressive Grammatical Error Correction with Non-autoregressive Models. Findings of ACL 2023. https://aclanthology.org/2023.findings-acl.760/ [19] Fomicheva, Sun, Yankovskaya, Blain, Guzmán, Fishel, Aletras, Chaudhary, Specia. Unsupervised Quality Estimation for Neural Machine Translation. TACL 2020. arXiv:2005.10608. [20] Wei, Durrett, Dillig. Coeditor: Leveraging Contextual Changes for Multi-round Code Auto-editing. ICLR 2024. arXiv:2305.18584. [21] Stein, Wayne, Naik, Naik, Wong. Where's the Bug? Attention Probing for Scalable Fault Localization. 2025. arXiv:2502.13966.
+[1] Jimenez, Yang, Wettig, Yao, Pei, Press, Narasimhan. SWE-bench: Can Language Models Resolve Real-World GitHub Issues? ICLR 2024. arXiv:2310.06770.
+
+[2] SWE-bench Verified: a human-validated subset of 500 SWE-bench instances, created in collaboration with OpenAI. 2024. https://www.swebench.com/verified.html
+
+[3] Zhang, He, Zhang, et al. SWE-bench Goes Live! 2025. arXiv:2505.23419.
+
+[4] Yang, Jimenez, Wettig, Lieret, Yao, Narasimhan, Press. SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering. 2024. arXiv:2405.15793.
+
+[5] Xia, Deng, Dunn, Zhang. Agentless: Demystifying LLM-based Software Engineering Agents. 2024. arXiv:2407.01489.
+
+[6] Chen, Tang, Deng, et al. LocAgent: Graph-Guided LLM Agents for Code Localization. 2025. arXiv:2503.09089.
+
+[7] Reddy, Suresh, Doo, et al. SweRank: Software Issue Localization with Code Ranking. 2025. arXiv:2505.07849.
+
+[8] Leviathan, Kalman, Matias. Fast Inference from Transformers via Speculative Decoding. ICML 2023. arXiv:2211.17192. See also Chen, Borgeaud, Irving, et al. Accelerating Large Language Model Decoding with Speculative Sampling. 2023. arXiv:2302.01318.
+
+[9] Wang, Zhang, Liu, et al. EfficientEdit: Accelerating Code Editing via Edit-Oriented Speculative Decoding. ASE 2025. arXiv:2506.02780.
+
+[10] Ray, Hellendoorn, Godhane, Tu, Bacchelli, Devanbu. On the "Naturalness" of Buggy Code. 2015. arXiv:1506.01159.
+
+[11] Yang, Kolak, Hellendoorn, Martins, Le Goues. Revisiting Unnaturalness for Automated Program Repair in the Era of Large Language Models. 2024. arXiv:2404.15236.
+
+[12] Yang, Martins, Le Goues, Hellendoorn. Large Language Models for Test-Free Fault Localization. 2023. arXiv:2310.01726.
+
+[13] Campos. Bug Detection and Localization using Pre-trained Code Language Models. INFORMATIK 2024. doi:10.18420/inf2024_124.
+
+[14] Hennara, Hreden, Aldallal, Chrouf, AlModhayan. Let the Fixer Decide: Training a Code Localizer from the Fixer's Likelihood. 2026. arXiv:2611.12164.
+
+[15] OpenAI. Predicted Outputs (API documentation). https://developers.openai.com/api/docs/guides/predicted-outputs ; Cursor. Editing Files at 1000 Tokens per Second. 2024. https://cursor.com/blog/instant-apply
+
+[16] Google. Gemma 4 model card. https://ai.google.dev/gemma/docs/core/model_card_4 ; Gemma Team. Gemma 4 Technical Report. 2026. arXiv:2607.02770.
+
+[17] Liang, Garg, Zilouchian Moghaddam. The SWE-Bench Illusion: When State-of-the-Art LLMs Remember Instead of Reason. 2025. arXiv:2506.12286.
+
+[18] Cao, Cao, Hu, Hou, Xiao, Zhu. Improving Autoregressive Grammatical Error Correction with Non-autoregressive Models. Findings of ACL 2023. https://aclanthology.org/2023.findings-acl.760/
+
+[19] Fomicheva, Sun, Yankovskaya, Blain, Guzmán, Fishel, Aletras, Chaudhary, Specia. Unsupervised Quality Estimation for Neural Machine Translation. TACL 2020. arXiv:2005.10608.
+
+[20] Wei, Durrett, Dillig. Coeditor: Leveraging Contextual Changes for Multi-round Code Auto-editing. ICLR 2024. arXiv:2305.18584.
+
+[21] Stein, Wayne, Naik, Naik, Wong. Where's the Bug? Attention Probing for Scalable Fault Localization. 2025. arXiv:2502.13966.

@@ -34,7 +34,9 @@ def unwrap(md: str) -> str:
     contains inline HTML. Tables, headings, images and display formulas are left as they are."""
     out = []
     for block in md.split("\n\n"):
-        lines = block.split("\n")
+        lines = [l for l in block.split("\n") if l.strip()]
+        if not lines:
+            continue
         first = lines[0].lstrip()
         if first.startswith(("|", "#", "![", "$$", "```")) or any(l.lstrip().startswith("|") for l in lines):
             out.append(block)
