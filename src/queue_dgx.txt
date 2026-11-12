@@ -77,7 +77,7 @@ edit_e4b | python run_edit.py --model ../data/models/gemma-4-E4B-it --tag e4b_te
 #   start 2026-11-12 14:22:13   end 2026-11-12 17:32:37   exit 0
 
 g31b_conf | SCORER_MEM_FRACTION=0.8 python run_conflict.py --sleep 0 --max-file-tokens 11000 --model ../data/models/gemma-4-31B-it --tag g31b_conf --instances ../results/conf_ids.txt --frames R
-#   start 2026-11-12 17:32:37   end -   exit -   (not in the paper)
+#   start 2026-11-12 17:32:37   end 2026-11-12 17:36:26   exit 143   (stopped by hand at the freeze; not in the paper)
 
 # Queued but not run when the paper was frozen:
 # g26b_test_rx | until grep -q gemma-4-26B-A4B-it ../data/logs/models.done 2>/dev/null; do sleep 20; done; python run_conflict.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-26B-A4B-it --tag g26b_test_rx --instances ../results/test_ids.txt --limit 100 --frames RX

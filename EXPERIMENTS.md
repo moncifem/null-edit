@@ -608,5 +608,5 @@ hints from the bf16 maps (`results_dgx/hints_e4b_test.json`). Declared rule: a r
 
 ## Not finished at freeze
 
-* `g31b_conf` (started 17:32 UTC), `g26b_test_rx`, `g31b_test_rx` are not in the paper (H for 26B A4B and 31B is
+* `g31b_conf` (started 17:32 UTC, stopped by hand at 17:36), `g26b_test_rx`, `g31b_test_rx` (never started) are not in the paper (H for 26B A4B and 31B is
   not reported; 31B is not part of the confirmation).

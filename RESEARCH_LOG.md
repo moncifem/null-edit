@@ -334,7 +334,7 @@ macro-average 69 vs 34; modified-lines-only labels 65.7 vs 39.5.
   are marked NOT KEPT with a description from this log instead of a reconstructed command.
 - Paper: 2,993 words by the strict count (every whitespace-separated token), no placeholders.
 
-### 17:32–17:50 UTC, 2026-11-12 — bf16 edit experiment; final text
+### 17:32–17:40 UTC, 2026-11-12 — bf16 edit experiment; final text
 
 - `edit_e4b` finished on the DGX (111 files, 3 h 10 min). Under the declared rule: on_gold 40 (no hint),
   44 (map hint), 32 (wrong-issue hint), 66 (gold lines). Map − wrong +12.6 [+3.6, +21.6]; map − none
@@ -345,4 +345,5 @@ macro-average 69 vs 34; modified-lines-only labels 65.7 vs 39.5.
 - A draft sentence said the MAC run had a shorter token cap. Checked against the data: both runs used
   640 tokens; the 4-bit model simply truncates more often (18–33% against 5–14%). Sentence corrected
   before it reached the repository.
-- `g31b_conf` started at 17:32 UTC under the memory watchdog; it is not in the paper.
+- `g31b_conf` started at 17:32 UTC and was stopped by hand at 17:36 (exit 143), and the rest of the DGX
+  queue was cleared: nothing it produced could still enter the paper. The DGX is idle.
