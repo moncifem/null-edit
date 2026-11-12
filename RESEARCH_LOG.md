@@ -348,7 +348,7 @@ macro-average 69 vs 34; modified-lines-only labels 65.7 vs 39.5.
 - `g31b_conf` started at 17:32 UTC and was stopped by hand at 17:36 (exit 143), and the rest of the DGX
   queue was cleared: nothing it produced could still enter the paper. The DGX is idle.
 
-### 18:25–19:50 UTC, 2026-11-12 — presentation, dataset release, Kaggle draft
+### 18:25–18:45 UTC, 2026-11-12 — presentation, dataset release, Kaggle draft
 
 - Two figures added, no new experiment: a method schematic on the held-out example of the hazard figure
   (real code lines and hazards) and a chart of asking against the map at each size, with the intervals
