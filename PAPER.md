@@ -141,7 +141,7 @@ advantage holds for pure insertions (55% vs 18% for BM25), with every issue weig
 **Table 1. Held-out SWE-bench Verified, Gemma 4 E4B, DGX arm: 300 files, 240 issues. hit@k (%),
 95% CI on the headline column.**
 
-| Method | Line @1 | @5 | @10 | Function @1 | @3 | @5 |
+| Method | Line top-1 | top-5 | top-10 | Function top-1 | top-3 | top-5 |
 |---|---|---|---|---|---|---|
 | Null-edit H (2 passes) | 27 | 55 | **69** [64, 74] | 50 | 75 | **84** |
 | Null-edit S (1 pass) | 23 | 51 | 64 [58, 70] | 44 | 72 | 81 |

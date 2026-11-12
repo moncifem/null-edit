@@ -29,6 +29,30 @@ def count_words(md: str) -> int:
 STRICT = True   # count every whitespace-separated token, including stand-alone symbols (=, −, →): the conservative count
 
 
+def unwrap(md: str) -> str:
+    """One line per paragraph and per list item: the Kaggle editor keeps the line breaks of a paragraph that
+    contains inline HTML. Tables, headings, images and display formulas are left as they are."""
+    out = []
+    for block in md.split("\n\n"):
+        lines = block.split("\n")
+        first = lines[0].lstrip()
+        if first.startswith(("|", "#", "![", "$$", "```")) or any(l.lstrip().startswith("|") for l in lines):
+            out.append(block)
+        elif all(re.match(r"\[\d+\] ", l) for l in lines):      # reference list: one paragraph per entry
+            out.append("\n\n".join(lines))
+        elif re.match(r"(\d+\.|[-*]) ", first):
+            items = []
+            for l in lines:
+                if re.match(r"\s*(\d+\.|[-*]) ", l) or not items:
+                    items.append(l.rstrip())
+                else:
+                    items[-1] += " " + l.strip()
+            out.append("\n".join(items))
+        else:
+            out.append(" ".join(l.strip() for l in lines if l.strip()))
+    return "\n\n".join(out)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=3000)
@@ -51,7 +75,7 @@ def main():
     (out / "kaggle_writeup_remote_images.md").write_text(re.sub(r"(!\[[^\]]*\]\()(figures/)", lambda m: m.group(1) + RAW + m.group(2), md))
     # body for the Kaggle editor: title and subtitle go into their own fields
     remote = (out / "kaggle_writeup_remote_images.md").read_text()
-    (out / "kaggle_body.md").write_text(remote[remote.index("### Abstract"):])
+    (out / "kaggle_body.md").write_text(unwrap(remote[remote.index("### Abstract"):]))
     if (ROOT / "figures/thumbnail.png").exists():
         shutil.copy(ROOT / "figures/thumbnail.png", out / "thumbnail.png")
     required = ["### Abstract", "Introduction", "Method", "Experimental setup", "Results", "Related work", "### References"]
