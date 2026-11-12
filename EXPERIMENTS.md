@@ -475,3 +475,61 @@ Gemma 4 12B 4-bit (MLX), confirmation issues 101–200, one pass, files ≤ 12,0
 Median share of hazard on comment/docstring lines 0.74 (they are 30% of lines); median total hazard 64.8 nats.
 N10 holds on this arm for 12B (secondary by declaration: 4-bit weights, short and medium files only, one model).
 The DGX runs that decide N10 have not started: the DGX has not answered since about 06:45 UTC.
+
+## Code-lines-only map: pre-registered confirmation on the DGX (Revision 3, N10/N11) — 2026-11-12
+
+DGX arm, bf16, one pass (frame R), confirmation issues 101–200 (`results/conf_ids.txt`), files ≤ 32k tokens, frozen
+analysis (`src/analyze_codeonly.py`). Report: `results_dgx/report_codeonly_conf.md`.
+
+**12B (`g12b_conf`, 10:29–11:04 UTC).** 113 files / 96 issues scored; 6 files skipped for size (> 32k tokens); no
+out-of-memory skip.
+
+| | all lines | code lines only | paired difference |
+|---|---|---|---|
+| 12B, S line@10 | 42 [32, 52] | 69 [60, 78] | **+27.4 [+19.4, +36.3], p < 0.0001** |
+| 12B, S line@1 | 12 [6, 18] | 25 [17, 32] | |
+| 12B, under 5,000 tokens (40 files) | 80 | 85 | |
+| 12B, 5,000–11,000 tokens (27 files) | 44 | 74 | |
+| 12B, over 11,000 tokens (46 files) | 7 | 52 | |
+| E4B on the same files (reference) | 65 [54, 75] | 66 [56, 76] | +1.8 [−2.6, +6.3] |
+
+Median share of 12B's hazard on comment/docstring lines: 0.79 overall (0.12 / 0.85 / 0.93 by length band); such lines are
+32% of non-blank lines. E4B: 0.05 (0.24 over 11,000 tokens). **N10 holds for 12B.** N11 (descriptive): 12B with code
+lines only against E4B over all lines, same files: +4.4 [−3.6, +12.9]; 12B over all lines against E4B: −23.0 [−33.3, −12.7].
+
+**26B A4B (`g26b_conf`, 11:04–11:40 UTC).** 113 files / 96 issues (the same files); 6 skipped for size; no
+out-of-memory skip; the memory watchdog never fired.
+
+| | all lines | code lines only | paired difference |
+|---|---|---|---|
+| 26B A4B, S line@10 | 39 [30, 48] | 66 [57, 75] | **+27.4 [+20.0, +35.5], p < 0.0001** |
+| 26B A4B, S line@1 | 7 [3, 12] | 23 [16, 31] | |
+| 26B A4B, under 5,000 tokens (40 files) | 75 | 82 | |
+| 26B A4B, 5,000–11,000 tokens (27 files) | 44 | 67 | |
+| 26B A4B, over 11,000 tokens (46 files) | 4 | 52 | |
+
+Median share of hazard on comment/docstring lines 0.79 (0.42 / 0.73 / 0.93 by band); median total hazard 123.7 nats
+(12B 53.2; E4B 5.3). **N10 is supported: the interval excludes 0 for both models.** N11 (descriptive): 26B A4B with code
+lines only against E4B over all lines +1.8 [−7.1, +10.7]; over all lines −25.7 [−35.5, −15.8]. Over 11,000 tokens all
+three models reach 52% (E4B is unchanged by the rule: 52% → 52%); this set has more long files than issues 1–100
+(46 of 113 against 37 of 111), which is why every model's overall number is lower here.
+
+## Model sizes, part 3: 31B (DGX, bf16) — 11:40–12:04 UTC, 2026-11-12
+
+`g31b_test`: first 100 held-out issues, one pass (frame R), files ≤ 11,000 tokens only (31B needs about 1 MB of cache
+per context token on top of 62 GB of weights; two earlier attempts on longer files exhausted the machine's memory).
+`SCORER_MEM_FRACTION=0.8`. 74 of the 111 files scored (61 issues); 37 skipped for length; no out-of-memory skip; lowest
+available memory seen during the run 11 GB. Report: `results_dgx/report_codeonly_31b.md` (all five sizes on these 74 files).
+
+| Model (74 files) | S line@10, all lines | code lines only | S line@1 | under 5,000 tokens (51) | 5,000–11,000 tokens (23) | prose share of hazard |
+|---|---|---|---|---|---|---|
+| E2B | 69 [57, 80] | 66 | 23 | 76 → 73 | 52 → 52 | 0.02 |
+| E4B | 80 [70, 89] | 74 | 39 | 84 → 78 | 70 → 65 | 0.02 |
+| 12B | 73 [63, 83] | 78 | 31 | 86 → 84 | 43 → 65 | 0.49 |
+| 26B A4B | 76 [65, 86] | 77 | 34 | 84 → 80 | 57 → 70 | 0.47 |
+| 31B | 80 [70, 89] | 81 | 46 | 90 → 84 | 57 → 74 | 0.31 |
+
+31B against E4B on the same files: 0.0 [−11.1, +11.3] over all lines; +1.4 [−8.1, +11.1] with code lines only. 31B is
+not covered by the pre-registered confirmation (N10 names 12B and 26B A4B) and has no file over 11,000 tokens, where
+the other large models lose most. What can be said: on short and medium files the largest model is level with E4B, and
+in the 5,000–11,000 band it shows the same drift to prose (share 0.62) and the same repair (57% → 74%) as 12B and 26B A4B.

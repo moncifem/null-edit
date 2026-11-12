@@ -152,3 +152,26 @@ is still unreachable. As insurance, the same confirmation issues are scored on t
 one pass, files of at most 12,000 tokens (laptop memory), tag `g12b_conf_mac`, same frozen analysis. It is secondary:
 the DGX runs `g12b_conf` / `g26b_conf` decide N10 if they complete; if they do not, this run is reported as the only
 confirmation, with its arm, its quantization and its file-length limit stated.
+
+
+## Status at freeze (2026-11-12) — every hypothesis, with the evidence that decides it
+
+The tables above are left as they were written. Arms: DGX = bf16, PyTorch; MAC = 4-bit, MLX. Numbers are hit rates in %
+with 95% instance-clustered bootstrap intervals; sources are the sections of `EXPERIMENTS.md` named in brackets.
+
+| ID | Status | Evidence |
+|----|--------|----------|
+| N1 | **SUPPORTED** | Held-out Verified, E4B, 300 files: H line@10 69 [64, 74], S 64 [58, 70], BM25 38 [29, 47], length 17. H − BM25 +31.0 [21, 40]. [E1b results] |
+| N2 | **PARTLY REFUTED** | The comparative claim holds: wrong issue 16 [11, 21] at line@10; on 111 files the probe reaches 74 against 35 (right issue, copy instruction) and 23 (no issue), +38.7 [29, 48]. The prediction "near chance" is refuted: both instruction controls are above random (12). [Instruction controls] |
+| N3 | **REFUTED at function@1, SUPPORTED at line level** | Function@1: asked 60, H 50 (−9.3 [−15, −4]). Line@10: H 69, asked 51 (+18.0 [12, 24]). Line@1: tied. [Asking the model instead] |
+| N4 | **SUPPORTED** (within-set) | SWE-bench-Live after the cutoff, 278 files: H 68 [62, 75], BM25 43, wrong issue 34. Not a proof of no leakage. [Post-cutoff control] |
+| N5 | **REFUTED** | S line@10 on 111 files: E2B 53, E4B 74, 12B 59, 26B A4B 59; 31B 80 = E4B 80 on the 74 files it could score. No monotone trend. [Model sizes, parts 1–3] |
+| N6 | **NOT RUN** | The fixed-point experiment was dropped for time; its scripts are in `src/` and were not used for the paper. |
+| N7 | **NOT RUN** | The file-level experiment was dropped for time; same remark. |
+| N8 | **NOT SUPPORTED** (MAC arm) | on_gold: map hint 27, no hint 28, placebo 11, gold lines 40. H − WRONG +15.3 [+6.3, +24.7]; H − none −1.0 [−9.1, +7.4]. N8 required both. [Map-guided edit, MAC arm; scoring corrected 10:35 UTC] |
+| N9 | **NOT SUPPORTED** (MAC arm) | H arm (27) exceeds the map's top-1 (21), but where the hint has no gold line on_gold is 2 against 8 without a hint. |
+| N10 | **SUPPORTED** | Confirmation issues 101–200, 113 files, DGX: 12B 42 → 69 (+27.4 [+19.4, +36.3]); 26B A4B 39 → 66 (+27.4 [+20.0, +35.5]). MAC replication (12B 4-bit, 69 files): 41 → 57 (+15.9 [+7.0, +25.4]). [Code-lines-only map: pre-registered confirmation] |
+| N11 | descriptive | With code lines only, against E4B over all lines on the same files: 12B +4.4 [−3.6, +12.9]; 26B A4B +1.8 [−7.1, +10.7]. |
+
+No-prefill check (declared with N8/N9): on the MAC arm, 4-bit E4B opened with prose in all 84 files; the statement
+"greedy rewriting reproduces the file" therefore holds only from the prefilled fence, and the paper says so.

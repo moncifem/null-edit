@@ -11,8 +11,8 @@ The work was done on two machines and the paper keeps them apart.
 
 | Arm | Machine | Software | Weights | What was run there |
 |-----|---------|----------|---------|--------------------|
-| **MAC** | Apple M5 Max laptop, 64 GB | MLX 0.32.4, mlx-lm 0.32.2 | `mlx-community/gemma-4-*-it-4bit` | Development set (25 issues), every design choice, the failed "blind" formulation, an interim look at the first 88 held-out issues |
-| **DGX** | NVIDIA DGX Spark (GB10, 121 GB) | PyTorch 2.14.1, transformers 5.14.0.dev0 | official `google/gemma-4-{E2B,E4B,12B,26B-A4B,31B}-it`, bf16 | Every held-out number of the paper: 250 SWE-bench Verified issues, 150 post-cutoff SWE-bench-Live issues, controls, all five model sizes, generated-answer baselines, the edit experiment |
+| **MAC** | Apple M5 Max laptop, 64 GB | MLX 0.32.4, mlx-lm 0.32.2 | `mlx-community/gemma-4-*-it-4bit` | Development set (25 issues), every design choice, the failed "blind" formulation, an interim look at the first 88 held-out issues, the map-guided edit experiment, the no-prefill check, a 12B replication of the code-lines-only confirmation, cross-backend length checks |
+| **DGX** | NVIDIA DGX Spark (GB10, 121 GB) | PyTorch 2.14.1, transformers 5.14.0.dev0 | official `google/gemma-4-{E2B,E4B,12B,26B-A4B,31B}-it`, bf16 | Every held-out number of the paper unless marked MAC: 250 SWE-bench Verified issues, 150 post-cutoff SWE-bench-Live issues, controls, the five model sizes (31B on files up to 11,000 tokens only), generated-answer baselines, the pre-registered confirmation of the code-lines-only rule (issues 101–200) |
 
 `SCORER_BACKEND=torch` selects the PyTorch scorer (`src/scorer_torch.py`); otherwise the MLX scorer
 (`src/scorer_mlx.py`) is used. `results/` holds the MAC arm's outputs, `results_dgx/` the DGX arm's.
@@ -60,8 +60,9 @@ python analyze_conflict.py --tag e4b_test --ids ../results/test_ids.txt --gen e4
 python report.py ../results/an_e4b_test.json
 ```
 
-`src/queue_dgx.txt` lists every DGX run of the paper as `name | command`, in the order executed
-(`src/runner.sh` executes such a list one job at a time). `src/queue_b.sh` is the MAC arm's list;
+`src/queue_dgx.txt` lists every DGX run as `name | command`, in the order executed, with start and
+end times (`src/runner.sh` executes such a list one job at a time; `src/memguard.sh` kills the job
+before the machine runs out of memory — 31B needs about 1 MB of cache per context token). `src/queue_b.sh` is the MAC arm's list;
 there `THROTTLE=1.5` kept the laptop GPU ~40% busy — it changes wall-clock time only.
 
 ## Code map
@@ -76,9 +77,11 @@ there `THROTTLE=1.5` kept the laptop GPU ~40% busy — it changes wall-clock tim
 | `make_q4_model.py` | MLX 4-bit checkpoint → de-quantized PyTorch checkpoint |
 | `context_budget.py` | How much of a file must be shown for the edit to be in view |
 | `make_hints.py`, `run_edit.py`, `analyze_edit.py` | The model writes one edit, with and without the map as a hint |
-| `build_file_cands.py`, `analyze_filelevel.py` | File-level experiment with BM25 hard negatives |
-| `fetch_patches.py`, `run_fixedpoint.py`, `analyze_fixedpoint.py` | Patch checking on public leaderboard patches |
-| `calibrate_sampling.py` | First-edit identity checked against real sampling |
+| `explore_codeonly.py`, `analyze_codeonly.py` | Code-lines-only ranking for the larger models: the exploratory script (frozen) and the confirmation analysis |
+| `run_noprefill.py` | Does the model open its answer with the file when the fence is not prefilled? |
+| `diag_long.py`, `diag_alt_mac.py` | Diagnostics for long files: chunk-size invariance of the scorer, and what the model writes instead of the original token |
+| `paper_numbers.py`, `build_submission.py` | Numbers quoted in the paper that no other report prints; word count and submission build |
+| `build_file_cands.py`, `analyze_filelevel.py`, `fetch_patches.py`, `run_fixedpoint.py`, `analyze_fixedpoint.py`, `calibrate_sampling.py` | Written for experiments that were **not run** for the paper (file level, patch checking, sampling calibration); kept for completeness |
 | `figures.py`, `analyze_all.sh` | Figures; one script that regenerates every report |
 
 ## Data sources and licences

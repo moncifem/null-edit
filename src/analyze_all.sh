@@ -54,8 +54,9 @@ done
 # --- code-lines-only map (section 4.6): exploratory on issues 1-100, pre-registered confirmation on issues 101-200 ---
 has conflict_g26b_test/log.jsonl && $PY analyze_codeonly.py --ids $T --limit 100 --common --out codeonly_sizes.json \
   --runs E2B=e2b_test 12B=g12b_test 26B-A4B=g26b_test --ref E4B=e4b_test > $R/report_codeonly_sizes.md
-has conflict_g31b_test/log.jsonl && $PY analyze_codeonly.py --ids $T --limit 100 --out codeonly_31b.json \
-  --runs 31B=g31b_test --ref E4B=e4b_test > $R/report_codeonly_31b.md
+# 31B could only be scored on files up to 11,000 tokens: all five sizes on the files 31B has
+has conflict_g31b_test/log.jsonl && $PY analyze_codeonly.py --ids $T --limit 100 --common --out codeonly_31b.json \
+  --runs 31B=g31b_test E2B=e2b_test 12B=g12b_test 26B-A4B=g26b_test --ref E4B=e4b_test > $R/report_codeonly_31b.md
 CF=(); for pair in 12B:g12b_conf "26B-A4B:g26b_conf" 31B:g31b_conf; do has conflict_${pair##*:}/log.jsonl && CF+=("${pair%%:*}=${pair##*:}"); done
 [ ${#CF} -ge 1 ] && $PY analyze_codeonly.py --ids ../results/conf_ids.txt --out codeonly_conf.json --runs $CF --ref E4B=e4b_test > $R/report_codeonly_conf.md
 

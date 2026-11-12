@@ -14,12 +14,14 @@ its answer; one forward pass yields the exact distribution of where a sampled re
 depart from the original. On 300 held-out files of SWE-bench Verified, the resulting per-line
 *edit hazard* (the "map") of Gemma 4 E4B — no fine-tuning, generation, tests or tools — puts a
 line of the human fix in its top ten for 69% of files, against 38% for BM25 and 51% when the same
-model is asked for line ranges. Asking is better at the first guess: it names the right function
-first in 60% of files, the map in 50%. The map is better after that, and the two combine: an
+model is asked for line ranges. Asking names the right function first
+more often (60% vs 50%); the map is better after that, and the two combine: an
 agent that asks for the function and then reads 5% of the file in map order sees a line of the
 fix in 71% of files (asking alone: 64%). The map falls to near chance under a wrong issue (16%), holds on
 issues created after the model's training cutoff (68% vs 43% for BM25), and still localizes the
-fix in files that greedy rewriting would leave unchanged. `[[five sizes sentence]]` Community
+fix in files that greedy rewriting would leave unchanged. Larger models are not better out of the box: 12B and 26B A4B spend their hazard on comments and
+docstrings; ranking code lines only lifts both by 27 points on fresh issues (pre-registered), level
+with E4B. Community
 4-bit weights lose 12 points to bf16. Code, per-token logs and the pre-registration are released.
 
 ### 1. Introduction
@@ -46,7 +48,8 @@ depart from the original*.
 3. *A below-threshold finding.* In files where greedy rewriting makes no change, the same forward
    pass still localizes the fix.
 4. *Controls and scope*: wrong issue, instruction controls, post-cutoff issues,
-   `[[five sizes]]`, and 4-bit versus bf16 weights.
+   the other Gemma 4 sizes (with a pre-registered repair for the larger ones), and 4-bit versus
+   bf16 weights.
 5. *Agent-facing uses*: a reading recipe (ask for the function, read in map order),
    and *two negative results*: fed back as a hint, the map leaves the accuracy of the model's
    own edit unchanged; without the file in context, likelihood shifts are no better than BM25.
@@ -90,12 +93,12 @@ H_i = Σ_{t∈i} max(0, log p_t^{wrong} − log p_t). S costs one pass, H two.
 
 ### 3. Experimental setup
 
-**Models and hardware.** All five instruction-tuned Gemma 4 checkpoints, thinking disabled, no
-fine-tuning. Two arms are kept separate throughout:
+**Models and hardware.** All five instruction-tuned Gemma 4 checkpoints (31B: files up to 11,000 tokens only), thinking
+disabled, no fine-tuning. Two arms are kept separate throughout:
 
 | Arm | Machine | Software, weights | Used for |
 |---|---|---|---|
-| **MAC** | Apple M5 Max laptop, 64 GB | MLX, community 4-bit builds | development set and every design choice; an interim held-out look (first 88 issues) |
+| **MAC** | Apple M5 Max laptop, 64 GB | MLX, community 4-bit builds | development set, every design choice, and results marked MAC |
 | **DGX** | NVIDIA DGX Spark, 121 GB | PyTorch/transformers, official bf16 weights | every held-out number below, unless marked MAC |
 
 **Data.** *Verified*: SWE-bench Verified [1, 2]. Every 20th instance (25) is the development
@@ -112,7 +115,7 @@ ranked like functions. We report the rank of the best-ranked gold line (unit) wi
 hit@k is the share of files with rank ≤ k. Intervals and paired tests use 10,000
 instance-clustered bootstrap resamples.
 
-**Baselines on the same files.** BM25 between issue and line/function; length; random; and
+**Baselines on the same files.** BM25 between issue and line/function; random; and
 *asking the model*: the same model reads the same issue and file and (i) generates line ranges
 over a numbered file (pre-registered), (ii) quotes the lines that must change (not
 pre-registered; aligned post hoc in its favour, 36% → 45% at top ten), or (iii) *writes the fix* as a search/replace edit. All three were run after the map's
@@ -130,7 +133,7 @@ were added afterwards.
 
 **4.1 The map finds the edit (Table 1, Figure 2).** With Gemma 4 E4B, a gold line is the single
 highest-hazard line of its file (median 587 non-blank lines) in 27% of files and in the top ten in 69%;
-its median rank is 4. BM25 reaches 38%, the model's line-range answer 51% and its quoted answer 45%
+its median rank is 4. BM25 reaches 38% (line length: 17%), the model's line-range answer 51% and its quoted answer 45%
 (H leads by 31.0 [21, 40], 18.0 [12, 24] and 24.3 [19, 30] points; all Holm-adjusted p < 0.01). One pass (S) gives 64%. The
 advantage holds for pure insertions (55% vs 18% for BM25), with every issue weighted equally
 (70% vs 33%), and when issues that quote a gold line are removed (67% vs 35%).
@@ -146,19 +149,16 @@ advantage holds for pure insertions (55% vs 18% for BM25), with every issue weig
 | Asked: quoted lines | 12 | 31 | 45 [38, 51] | 51 | 62 | 62 |
 | BM25 | 12 | 30 | 38 [29, 47] | 38 | 62 | 71 |
 | Wrong issue (control) | 3 | 10 | 16 [11, 21] | 19 | 35 | 44 |
-| Length in tokens | 2 | 11 | 17 [13, 22] | 30 | 44 | 53 |
 
 ![Figure 2](figures/fig2_hitk.png)
 
 **Figure 2.** Files with a gold-edited line among the top *k* lines. Left: held-out Verified.
 Right: post-cutoff Live.
 
-**4.2 Where asking wins.** At naming the single most likely *function*, asking wins: the
-line-range answer is right first time in 60% of files, the map in 50% (−9.3 [−15, −4];
-issue-weighted 65% vs 55%); the quoted answer ties the map (51%). At the single top line the two
-are tied (27% vs 23%, n.s.). The answer commits to one or two functions and then stops helping
-(75% at top-5); the map keeps ranking (84%; +9.3 [5, 14]). Its ranges contain a gold line
-*somewhere* in 62% of files; §4.8 compares equal reading budgets. The two combine: ranking lines by H
+**4.2 Where asking wins.** The line-range answer names a gold *function* first in 60% of files,
+the map in 50% (−9.3 [−15, −4]); the quoted answer ties the map (51%). At the top line the two
+are tied (27% vs 23%). The answer commits to one or two functions and then stops helping
+(75% at top-5); the map keeps ranking (84%; +9.3 [5, 14]). The two combine: ranking lines by H
 inside the first three functions the answer names lifts line top-1 from 27% to 33%
 (+6.0 [3, 9]; exploratory). H's margin over BM25 at function top-1 is modest (+12 [2, 22]; not significant after Holm
 correction).
@@ -174,8 +174,7 @@ of these files, and under sampling it would edit two files in three (median P(no
 
 **4.4 It is the issue, and the instruction.** Under a wrong issue the same prompt puts 3.9% of
 its hazard within two lines of a gold line — the chance share (3.8%); under the right issue,
-28.5%, and the median file's total hazard S rises from 1.4 to 5.0 nats: the probability of
-copying it unchanged falls from 25% to under 1%. Two more controls on the first 100 issues (111 files, where S reaches 74%) separate the
+28.5%, and the median file's total hazard S rises from 1.4 to 5.0 nats. Two more controls on the first 100 issues (111 files, where S reaches 74%) separate the
 ingredients. With no issue and the instruction to print the file unchanged, the hazard still
 finds the fix in 23% of files (random 12%), consistent with buggy lines being "unnatural"
 [10]. The right issue with the same copy instruction gives 35%, no better than BM25 (38%). Only
@@ -190,33 +189,33 @@ same: H 68% [62, 75] and S 67% at line top-ten against 43% for BM25 and 34% unde
 at function top-1, H 63% against 48% (+15 [7, 23]). Files here are smaller, so all methods,
 including random (27%), score higher; the comparison is within-set. `[[asking on Live]]`
 
-**4.6 Every Gemma 4 size: larger models rewrite the prose (Figure 3).** On the 111 files of the
-first 100 held-out issues, bigger is not better: S finds the fix in the top ten for 53% (E2B),
-74% (E4B), 59% (12B) and 59% (26B A4B) `[[31B]]`. Under 5,000 tokens every size works (76–86%);
-over 11,000 only E4B stays above BM25 (62%; BM25 41%; the others 22–32%). The larger models have
-not lost the fix. They also want to reword prose: over 11,000 tokens, 90% of the hazard of 12B
-and 26B A4B sits on comment and docstring lines (31% of lines; E4B 11%), and under a *wrong*
-issue the tokens 12B most wants to change are all in docstrings, comments and help strings (MAC
-arm, qualitative). Ranking only code lines lifts 12B from 59% to 79% and 26B A4B from 59% to 75%
-(E4B 74% → 70%). Having found this on these files, we froze the rule and tested it on 100
-further issues that neither model had scored: `[[confirmation]]` A laptop replication (12B
-4-bit, 69 files up to 12k tokens) gives 41% → 57% (+15.9 [7, 25]). `[[asked at each size]]`
+**4.6 Larger Gemma 4 models: the hazard drifts to prose (Figure 3).** On the 111 files of the
+first 100 held-out issues, bigger is not better (we had predicted the opposite): S finds the fix
+in the top ten for 53% (E2B), 74% (E4B), 59% (12B) and 59% (26B A4B, a mixture-of-experts model).
+Memory limited 31B to files up to 11,000 tokens: on those 74 it reaches 80%, as does E4B. Under 5,000 tokens the sizes are close (76–86%); over 11,000 only E4B stays above BM25
+(62%; BM25 41%; the others 22–32%). In those long files a median 90% of the hazard of 12B and
+26B A4B sits on comment and docstring lines (31% of lines; E4B 11%); under a *wrong*
+issue, the ten 12B tokens we inspected were all in docstrings, comments and help strings (MAC arm). Ranking only code lines lifts 12B from 59% to 79% and 26B A4B from 59% to 75% (E4B
+74% → 70%). Because we found this by inspecting these files, we froze the rule and pre-registered
+a test on 100 further issues that neither model had scored (113 files). It holds: 12B rises from
+42% to 69% (+27.4 [19, 36]) and 26B A4B from 39% to 66% (+27.4 [20, 36]), level with E4B on the
+same files (65%). A laptop replication (12B 4-bit, 69 files) agrees: 41% → 57%.
+`[[asked at each size]]`
 
 ![Figure 3](figures/fig3_scaling.png)
 
 **Figure 3.** Files with a gold line in the top ten of the one-pass map, by file length and
-model size (held-out issues 1–100). Left: all lines ranked. Right: code lines only.
+model size (held-out issues 1–100; 31B up to 11,000 tokens). Left: all lines ranked. Right: code
+lines only.
 
-**4.7 Quantization blunts the probe.** The MAC arm's community 4-bit weights, de-quantized into
-the DGX code (first 88 held-out issues, 98 files), reproduce the laptop's line-level numbers (H
-top-ten 63.7% vs 64.8% on 91 shared files; −1.1 [−3.5, 0.0]) and score 12.2 points [5.0, 20.2]
-below bf16 on the same 98 files (63.3% vs 75.5%). The loss is in the weights, not the software,
-apart from a smaller stack difference at function top-1 (−4.4 [−8.6, −1.1]). At 4 bits the map
-still beats BM25 on lines (+25.5 [14, 36]) but not on functions (42% vs 43%): on a laptop, use
-it to rank lines.
+**4.7 Quantization blunts the probe.** The MAC arm's community 4-bit weights, loaded into the
+DGX code (98 files), reproduce the laptop's line-level numbers (H top-ten 63.7% vs 64.8% on 91
+shared files) and score 12.2 points [5.0, 20.2] below bf16 on the same files (63.3% vs 75.5%):
+the loss is mostly in the weights, not the software. At 4 bits the map still beats BM25 on lines
+(+25.5 [14, 36]) but not on functions (42% vs 43%).
 
 **4.8 What an agent gains (*post hoc*).** *Where to read.* Open ±5-line windows in ranking order
-until a given share of the file is shown. At 10% (about 69 of the median file's 686 lines) the map
+until a given share of the file is shown. At 10% the map
 shows a gold line in 80% [75, 86] of files and *every* gold line in 53%; the line-range answer
 70% / 44%; BM25 53% / 30%. At 5% asking and the map are tied (64% vs 66%) and the recipe *ask
 for the function, then read in map order inside it* is best: 71% [66, 77] (+5.3 [1, 10] over the
@@ -226,7 +225,7 @@ five highest-hazard lines before it wrote a search/replace edit. It did not help
 touches a gold line in 27% of files with the hint and 28% without (−1.0 [−9, 7]). The model
 does follow hints: five lines from the wrong-issue map lower it to 11% (−16.3 [−27, −6]), gold
 lines raise it to 40%. Good hints help a little and bad ones hurt (hint contains a gold line: 53%
-vs 49%; none: 2% vs 8%), and the two cancel. A quarter of replies hit the length cap and count as
+vs 49%; no gold line: 2% vs 8%), and the two cancel. A quarter of replies hit the length cap and count as
 misses, as declared. `[[bf16 edit]]`
 
 **4.9 A negative result.** Our first formulation left the file out of the prompt and measured
@@ -269,9 +268,9 @@ conditional hazard S, which localizes better (first-edit probability itself: 60%
 
 ### Reproducibility
 
-`[[repository link]]` contains the scorer for both backends, per-token log-probabilities for every
-scored file, analysis code (`src/analyze_all.sh` regenerates every table), the pre-registration,
-the research log, three review rounds and an independent replication report.
+https://github.com/moncifem/null-edit — scorers for both backends, per-token log-probabilities
+for every scored file, analysis code (`src/analyze_all.sh` regenerates the reports), the
+pre-registration, research log, reviews and a replication report.
 
 ### References
 
