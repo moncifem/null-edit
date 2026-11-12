@@ -80,7 +80,10 @@ ls $R/*.md
 has conflict_e4b_test/log.jsonl && $PY context_budget.py --tag e4b_test --ids $T $(gen e4b_test_quote --gen2) $(gen e4b_test --gen) --json $R/context_budget_e4b_test.json > $R/report_context_budget.md
 
 # --- let-it-write baseline and map-guided edit ---
-has edit_e4b_test/gen.jsonl && $PY analyze_edit.py --tag e4b_test --conflict-tag e4b_test --hints $R/hints_e4b_test.json > $R/report_edit.md 2>&1
+if has edit_e4b_test/gen.jsonl; then
+  $PY analyze_edit.py --tag e4b_test --conflict-tag e4b_test --hints $R/hints_e4b_test.json > $R/report_edit.md 2>/dev/null
+  $PY analyze_edit.py --tag e4b_test --conflict-tag e4b_test --hints $R/hints_e4b_test.json --lenient-truncation > $R/report_edit_lenient.md 2>/dev/null
+fi
 
 # --- no-prefill check on the greedy-no-op files ---
 has noprefill_e4b_test/gen.jsonl && $PY -c "

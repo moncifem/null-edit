@@ -583,9 +583,30 @@ than E4B. `results_dgx/gen_{e2b,g12b,g26b}_test/`, `gen_e4b_live/`; `src/asked_v
 * **Live, E4B:** asked line@10 51 [43, 59] against H 68 (H − asked +17.6 [+10.4, +24.2]); function@1 asked 64, H 63
   (−1.4 [−8.1, +4.9]). Same pattern as on Verified at lines; at function@1 a tie where Verified had asking ahead.
 
+## Map-guided edit, DGX arm (bf16) — 14:22–17:32 UTC, 2026-11-12
+
+Same protocol, script and token cap (640) as the MAC run; E4B bf16; 111 files / 95 issues of held-out issues 1–100;
+hints from the bf16 maps (`results_dgx/hints_e4b_test.json`). Declared rule: a reply that hits the cap is invalid.
+`results_dgx/edit_e4b_test/gen.jsonl`, `results_dgx/report_edit.md` (lenient sensitivity: `report_edit_lenient.md`).
+
+| Arm | valid | truncated | on_gold (primary) | near_gold | gold_unit |
+|---|---|---|---|---|---|
+| no hint | 89 | 8 | 40 [29, 50] | 48 | 56 |
+| hint: top-5 null-edit lines | 90 | 5 | 44 [34, 54] | 53 | 59 |
+| hint: top-5 wrong-issue lines | 81 | 14 | 32 [22, 41] | 36 | 40 |
+| hint: gold lines | 90 | 7 | 66 [57, 74] | 73 | 75 |
+
+* Primary contrasts: map hint − wrong-issue hint **+12.6 [+3.6, +21.6]**, p = 0.007; map hint − no hint
+  **+4.5 [−2.7, +11.7]**, p = 0.26. N8 required both: **not supported** on bf16 either. The direction is positive here
+  (MAC: −1.0 [−9.1, +7.4]); neither arm shows a reliable gain.
+* Follow or use: hint contains a gold line (67 files) 67 with hint vs 57 without; no gold line (44 files) 9 vs 14.
+  Same pattern as on the MAC arm. Gold-line hints leave a third of edits off the gold lines (66).
+* N9: the edit with the hint (44) exceeds the map's own top-1 line (36) on these files, but in the files where the
+  hint has no gold line it is 9 against 14 without a hint; not supported as declared.
+* Lenient scoring (truncated replies with a complete SEARCH block counted): 41 / 44 / 37 / 68; same conclusions.
+* Truncation is far lower than on the MAC arm (5–14% vs 18–33%) with the same cap: the 4-bit model writes longer replies.
+
 ## Not finished at freeze
 
-* bf16 edit experiment (`edit_e4b`, DGX), started 14:22 UTC, about three hours. §4.8 "where to edit" therefore
-  reports the MAC arm only (4-bit), and says so.
-* `g31b_conf`, `g26b_test_rx`, `g31b_test_rx` were queued behind it and are not in the paper (H for 26B A4B and 31B is
+* `g31b_conf` (started 17:32 UTC), `g26b_test_rx`, `g31b_test_rx` are not in the paper (H for 26B A4B and 31B is
   not reported; 31B is not part of the confirmation).

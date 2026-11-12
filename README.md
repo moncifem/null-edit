@@ -11,8 +11,8 @@ The work was done on two machines and the paper keeps them apart.
 
 | Arm | Machine | Software | Weights | What was run there |
 |-----|---------|----------|---------|--------------------|
-| **MAC** | Apple M5 Max laptop, 64 GB | MLX 0.32.4, mlx-lm 0.32.2 | `mlx-community/gemma-4-*-it-4bit` | Development set (25 issues), every design choice, the failed "blind" formulation, an interim look at the first 88 held-out issues, the map-guided edit experiment, the no-prefill check, a 12B replication of the code-lines-only confirmation, cross-backend length checks |
-| **DGX** | NVIDIA DGX Spark (GB10, 121 GB) | PyTorch 2.14.1, transformers 5.14.0.dev0 | official `google/gemma-4-{E2B,E4B,12B,26B-A4B,31B}-it`, bf16 | Every held-out number of the paper unless marked MAC: 250 SWE-bench Verified issues, 150 post-cutoff SWE-bench-Live issues, controls, the five model sizes (31B on files up to 11,000 tokens only), generated-answer baselines, the pre-registered confirmation of the code-lines-only rule (issues 101–200) |
+| **MAC** | Apple M5 Max laptop, 64 GB | MLX 0.32.4, mlx-lm 0.32.2 | `mlx-community/gemma-4-*-it-4bit` | Development set (25 issues), every design choice, the failed "blind" formulation, an interim look at the first 88 held-out issues, the map-guided edit experiment and the no-prefill check on 4-bit weights, a 12B replication of the code-lines-only confirmation, cross-backend length checks |
+| **DGX** | NVIDIA DGX Spark (GB10, 121 GB) | PyTorch 2.14.1, transformers 5.14.0.dev0 | official `google/gemma-4-{E2B,E4B,12B,26B-A4B,31B}-it`, bf16 | Every held-out number of the paper unless marked MAC: 250 SWE-bench Verified issues, 150 post-cutoff SWE-bench-Live issues, controls, the five model sizes (31B on files up to 11,000 tokens only), generated-answer baselines, the pre-registered confirmation of the code-lines-only rule (issues 101–200), the map-guided edit experiment and the no-prefill check on bf16 weights |
 
 `SCORER_BACKEND=torch` selects the PyTorch scorer (`src/scorer_torch.py`); otherwise the MLX scorer
 (`src/scorer_mlx.py`) is used. `results/` holds the MAC arm's outputs, `results_dgx/` the DGX arm's.

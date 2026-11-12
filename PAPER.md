@@ -46,8 +46,8 @@ rewrite would first depart from the original*.
    the other Gemma 4 sizes (a pre-registered repair for the larger ones, which answer about as well
    when asked), and 4-bit versus bf16 weights.
 5. *Agent-facing uses*: a reading recipe (ask for the function, read in map order),
-   and *two negative results*: fed back as a hint, the map leaves the accuracy of the model's
-   own edit unchanged; without the file in context, likelihood shifts are no better than BM25.
+   and *two negative results*: fed back as a hint, the map does not reliably improve the model's
+   own edit; without the file in context, likelihood shifts are no better than BM25.
 
 ![Figure 1](figures/fig1_example.png)
 
@@ -212,13 +212,14 @@ shows a gold line in 80% [75, 86] of files and *every* gold line in 53%; the lin
 70% / 44%; BM25 53% / 30%. At 5% asking and the map are tied (64% vs 66%) and the recipe *ask
 for the function, then read in map order inside it* is best: 71% [66, 77] (+5.3 [1, 10] over the
 map, +7.7 [4, 12] over asking).
-*Where to edit (pre-declared; MAC arm, 4-bit, 98 files).* We showed E4B the text of the map's
-five highest-hazard lines before it wrote a search/replace edit. It did not help: the edit
-touches a gold line in 27% of files with the hint and 28% without (−1.0 [−9, 7]). The model
-does follow hints: five lines from the wrong-issue map lower it to 11% (−16.3 [−27, −6]), gold
-lines raise it to 40%. Good hints help at most a little and bad ones hurt (hint contains a gold line: 53%
-vs 49%; no gold line: 2% vs 8%), and the two cancel. 18–33% of replies hit the length cap and count as
-misses, as declared.
+*Where to edit (pre-declared).* E4B saw the map's five highest-hazard lines
+before writing a search/replace edit. On bf16 weights (DGX, 111
+files) the edit touches a gold line in 44% of files with the hint and 40% without
+(+4.5 [−3, 12], not significant); five lines from the wrong-issue map give 32% (map − wrong: +12.6 [4, 22]), gold
+lines 66%. On 4-bit weights (MAC, 98 files): 27% vs 28% (−1.0 [−9, 7]), 11%
+and 40%. The model follows hints, so good ones help somewhat and bad ones hurt (bf16; hint contains a gold
+line: 67% vs 57%; none: 9% vs 14%). Replies that hit the length cap
+(5–14% on DGX, 18–33% on MAC) count as misses, as declared.
 
 **4.9 A negative result (MAC arm).** Without the file in the prompt, the issue's shift of the
 file's likelihood was no better than BM25 on the development set (function top-1 44% vs 56%).

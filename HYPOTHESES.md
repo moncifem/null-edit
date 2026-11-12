@@ -176,7 +176,9 @@ with 95% instance-clustered bootstrap intervals; sources are the sections of `EX
 Asking at other sizes (not pre-registered; the asking baseline was registered for E4B): asked line@10 on the 111
 files is 30 (E2B), 61 (E4B), 74 (12B), 74 (26B A4B) against maps of 53, 74, 59, 59. N3's line-level support therefore
 holds for E2B and E4B only; at 12B and 26B A4B asking beats the all-lines map (+14.4 [+4.3, +24.8]; +15.3 [+5.0, +25.8])
-and is not distinguishable from the code-only map. N8/N9 on bf16 weights: run not finished at freeze.
+and is not distinguishable from the code-only map. N8/N9 on bf16 weights (DGX, 111 files, finished 17:32 UTC): on_gold map hint 44, no hint 40, wrong-issue hint 32, gold lines 66;
+H − WRONG +12.6 [+3.6, +21.6], H − none +4.5 [−2.7, +11.7]. N8 not supported (it required both); N9 not supported
+(no-gold-line hints: 9 against 14 without a hint).
 
 No-prefill check (declared with N8/N9): without the prefilled fence, bf16 E4B (DGX) starts copying the file in 26 of
 the 84 files and opens with prose in 58; 4-bit E4B (MAC) opened with prose in all 84. The statement "greedy rewriting

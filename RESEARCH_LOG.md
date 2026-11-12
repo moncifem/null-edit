@@ -333,3 +333,16 @@ macro-average 69 vs 34; modified-lines-only labels 65.7 vs 39.5.
 - `src/queue_dgx.txt` written from the DGX runner history. Ten early command lines were not kept; they
   are marked NOT KEPT with a description from this log instead of a reconstructed command.
 - Paper: 2,993 words by the strict count (every whitespace-separated token), no placeholders.
+
+### 17:32–17:50 UTC, 2026-11-12 — bf16 edit experiment; final text
+
+- `edit_e4b` finished on the DGX (111 files, 3 h 10 min). Under the declared rule: on_gold 40 (no hint),
+  44 (map hint), 32 (wrong-issue hint), 66 (gold lines). Map − wrong +12.6 [+3.6, +21.6]; map − none
+  +4.5 [−2.7, +11.7]. N8 and N9 not supported on bf16 either; the sign is positive where the 4-bit
+  arm's was zero, and neither is reliable.
+- §4.8 now leads with the bf16 numbers and keeps the MAC numbers labelled MAC. Contribution 5 reworded
+  from "leaves the accuracy unchanged" to "does not reliably improve". Paper: 2,995 words (strict count).
+- A draft sentence said the MAC run had a shorter token cap. Checked against the data: both runs used
+  640 tokens; the 4-bit model simply truncates more often (18–33% against 5–14%). Sentence corrected
+  before it reached the repository.
+- `g31b_conf` started at 17:32 UTC under the memory watchdog; it is not in the paper.
