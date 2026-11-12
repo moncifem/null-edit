@@ -49,6 +49,9 @@ def main():
     # second copy whose images point at the public repository, so the text can be pasted without uploading figures
     RAW = "https://raw.githubusercontent.com/moncifem/null-edit/main/"
     (out / "kaggle_writeup_remote_images.md").write_text(re.sub(r"(!\[[^\]]*\]\()(figures/)", lambda m: m.group(1) + RAW + m.group(2), md))
+    # body for the Kaggle editor: title and subtitle go into their own fields
+    remote = (out / "kaggle_writeup_remote_images.md").read_text()
+    (out / "kaggle_body.md").write_text(remote[remote.index("### Abstract"):])
     if (ROOT / "figures/thumbnail.png").exists():
         shutil.copy(ROOT / "figures/thumbnail.png", out / "thumbnail.png")
     required = ["### Abstract", "Introduction", "Method", "Experimental setup", "Results", "Related work", "### References"]

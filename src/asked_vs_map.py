@@ -53,11 +53,11 @@ def main():
         mf = np.array([rows[k]["urank_surp_R_sum|sum"] <= 1 for k in keys], float)
         af5 = np.array([rows[k]["urank_gen"] <= 5 for k in keys], float)
         mf5 = np.array([rows[k]["urank_surp_R_sum|sum"] <= 5 for k in keys], float)
-        cells = [f(boot(keys, a, rng)), f(boot(keys, m, rng)), f(boot(keys, c, rng)), g(boot(keys, a - m, rng)), g(boot(keys, a - c, rng)),
-                 f(boot(keys, af, rng)), f(boot(keys, mf, rng)), g(boot(keys, af - mf, rng)), f(boot(keys, af5, rng)), f(boot(keys, mf5, rng))]
+        b = [boot(keys, v, rng) for v in (a, m, c, a - m, a - c, af, mf, af - mf, af5, mf5)]   # same order as the columns
+        cells = [(g if i in (3, 4, 7) else f)(t) for i, t in enumerate(b)]
         print(f"| {name} | {len(keys)} | " + " | ".join(cells) + " |")
-        out[name] = {"n": len(keys), "asked_line10": 100 * a.mean(), "map_line10": 100 * m.mean(), "code_line10": 100 * c.mean(),
-                     "asked_func1": 100 * af.mean(), "map_func1": 100 * mf.mean()}
+        out[name] = {"n": len(keys), "asked_line10": b[0], "map_line10": b[1], "code_line10": b[2],
+                     "asked_func1": b[5], "map_func1": b[6]}   # each: [estimate, low, high] in percent
     json.dump(out, open(RESULTS / "asked_sizes.json", "w"), indent=1)
 
 

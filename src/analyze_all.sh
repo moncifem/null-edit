@@ -74,6 +74,7 @@ has file_cands.json && has conflict_e4b_test/log.jsonl && $PY analyze_filelevel.
 has fixedpoint_e4b/scores.jsonl && $PY analyze_fixedpoint.py --tag e4b > $R/report_fixedpoint.md 2>&1
 
 $PY figures.py pydata__xarray-4075 xarray/core/weighted.py
+has asked_sizes.json && $PY figures_extra.py pydata__xarray-4075 xarray/core/weighted.py
 ls $R/*.md
 
 # --- context budget (post hoc, agent-facing) ---

@@ -16,10 +16,10 @@ more often (60% vs 50%); the map is better after that, and the two combine: an
 agent that asks for the function and then reads 5% of the file in map order sees a line of the
 fix in 71% of files (asking alone: 64%). The map falls to near chance under a wrong issue (16%), holds on
 issues created after the model's training cutoff (68% vs 43% for BM25), and still localizes the
-fix in files that greedy rewriting would leave unchanged. Size changes the picture. 12B and 26B A4B spend their hazard on comments and
+fix in files that greedy rewriting would leave unchanged. 12B and 26B A4B spend their hazard on comments and
 docstrings; ranking code lines only repairs their maps (+27 points on fresh issues, pre-registered),
 but asking them is then about as good (74% vs 75–79%). E2B and E4B answer worse than their maps
-(30% vs 53%; 61% vs 74%): the map's lead is a small-model effect. Code, logs and pre-registration are released.
+(30% vs 53%; 61% vs 74%): the map's lead is a small-model effect. Code, data and pre-registration are public.
 
 ### 1. Introduction
 
@@ -30,8 +30,12 @@ Give the model an issue and a source file, ask it to rewrite the file so that
 the issue is fixed — and then, instead of sampling, feed it the **unchanged file** as its own
 answer. At every token the model reports how much probability it puts on *not* writing what is
 already there. This is the verification pass of speculative editing [8, 9]; we keep every
-probability. Together they give something exact (§2): the distribution of *where the model's
+probability. They give something exact (§2): the distribution of *where the model's
 rewrite would first depart from the original*.
+
+![Figure 1](figures/fig0_method.png)
+
+**Figure 1.** Null-edit teacher forcing on one held-out file.
 
 **Contributions.**
 
@@ -49,41 +53,43 @@ rewrite would first depart from the original*.
    and *two negative results*: fed back as a hint, the map does not reliably improve the model's
    own edit; without the file in context, likelihood shifts are no better than BM25.
 
-![Figure 1](figures/fig1_example.png)
+![Figure 2](figures/fig1_example.png)
 
-**Figure 1.** Edit hazard per line of one held-out file under the right issue (blue) and a wrong
-issue (grey). Dashed: the line the human fix edits.
+**Figure 2.** The whole file: hazard under the right issue (blue) and a wrong one (grey). Dashed: the human fix.
 
 ### 2. Method
 
-**Setup.** Let *x = x₁…x_T* be the tokens of a source file and *c* a prompt containing an issue,
+**Setup.** Let *x = x<sub>1</sub>…x<sub>T</sub>* be the tokens of a source file and *c* a prompt containing an issue,
 the file, and the instruction *"Rewrite `<path>` so that the issue is fixed. Output the complete
 file, changing only what is necessary."* The model π defines a rewrite policy π(y | c).
 
 **Null-edit teacher forcing.** Run π once on *c* followed by *x* itself — the answer opened, in
-every run, with a ```` ```python ```` fence — and record *p_t = π(x_t | c, x_<t)*.
+every run, with a ```` ```python ```` fence — and record *p<sub>t</sub> = π(x<sub>t</sub> | c, x<sub>&lt;t</sub>)*.
 
 **First-edit identity.** Let τ be the first position at which a rewrite sampled from π (temperature 1,
 no truncation) differs from *x*. Then
 
-  P(τ = t) = (1 − p_t) · ∏_{s<t} p_s,  P(no edit) = ∏_t p_t.
+$$P(\tau = t) = (1 - p_t)\prod_{s<t} p_s, \qquad P(\text{no edit}) = \prod_t p_t.$$
 
-*Proof.* A sample agrees with *x* before *t* with probability ∏_{s<t} p_s; given that, its prefix
-*is* x_<t, so it deviates at *t* with probability 1 − p_t. ∎
+*Proof.* A sample agrees with *x* before *t* with probability ∏<sub>s&lt;t</sub> p<sub>s</sub>; given that, its prefix
+*is* x<sub>&lt;t</sub>, so it deviates at *t* with probability 1 − p<sub>t</sub>. ∎
 
 The identity is elementary; it replaces sampling rewrites with one pass.
 
 **Edit hazard.** For line *i* we define
 
-  S_i = − Σ_{t ∈ line i} log p_t,
+$$S_i = -\sum_{t \in \text{line } i} \log p_t,$$
 
-so 1 − e^{−S_i} is the probability of editing line *i* given that everything before it was kept.
-Lines are ranked by S_i; a function's score is the sum over its lines; the file total
+so 1 − e<sup>−S<sub>i</sub></sup> is the probability of editing line *i* given that everything before it was kept.
+Lines are ranked by S<sub>i</sub>; a function's score is the sum over its lines; the file total
 S = −log P(no edit).
 
 **Issue-specific hazard.** Some lines are simply hard to copy. We rerun the same prompt with a
 *wrong* issue (same repository, disjoint files, similar length) and keep the excess:
-H_i = Σ_{t∈i} max(0, log p_t^{wrong} − log p_t). S costs one pass, H two.
+
+$$H_i = \sum_{t \in i} \max\left(0, \log p_t^{\text{wrong}} - \log p_t\right).$$
+
+S costs one pass, H two.
 
 ### 3. Experimental setup
 
@@ -109,7 +115,7 @@ hit@k is the share of files with rank ≤ k. Intervals and paired tests use 10,0
 instance-clustered bootstrap resamples.
 
 **Baselines on the same files.** BM25 between issue and line/function; random; and
-*asking the model*: the same model reads the same issue and file and (i) generates line ranges
+*asking the model*: it reads the same issue and file and (i) generates line ranges
 over a numbered file (pre-registered), (ii) quotes the lines that must change (not
 pre-registered; aligned post hoc in its favour, 36% → 45% at top ten), or (iii) *writes the fix* as a search/replace edit. All three were run after the map's
 held-out scores were known.
@@ -124,7 +130,7 @@ were added afterwards.
 
 ### 4. Results
 
-**4.1 The map finds the edit (Table 1, Figure 2).** With Gemma 4 E4B, a gold line is the single
+**4.1 The map finds the edit (Table 1, Figure 3).** With Gemma 4 E4B, a gold line is the single
 highest-hazard line of its file (median 587 non-blank lines) in 27% of files and in the top ten in 69%. BM25 reaches 38% (line length: 17%), the model's line-range answer 51% and its quoted answer 45%
 (H leads by 31.0 [21, 40], 18.0 [12, 24] and 24.3 [19, 30] points; all Holm-adjusted p < 0.01). One pass (S) gives 64%. The
 advantage holds for pure insertions (55% vs 18% for BM25), with every issue weighted equally
@@ -142,9 +148,9 @@ advantage holds for pure insertions (55% vs 18% for BM25), with every issue weig
 | BM25 | 12 | 30 | 38 [29, 47] | 38 | 62 | 71 |
 | Wrong issue (control) | 3 | 10 | 16 [11, 21] | 19 | 35 | 44 |
 
-![Figure 2](figures/fig2_hitk.png)
+![Figure 3](figures/fig2_hitk.png)
 
-**Figure 2.** Files with a gold-edited line among the top *k* lines. Left: held-out Verified.
+**Figure 3.** Files with a gold-edited line among the top *k* lines. Left: held-out Verified.
 Right: post-cutoff Live.
 
 **4.2 Where asking wins.** The line-range answer names a gold *function* first in 60% of files,
@@ -177,7 +183,7 @@ March and August 2025 (91 repositories, 89 absent from SWE-bench Verified): H 68
 at function top-1, H 63% against 48% (+15 [7, 23]). Files here are smaller, so every method, random included (27%), scores higher; the comparison is within-set. Asking gives 51% (H leads by 17.6 [10, 24]) and
 ties H at function top-1 (64%).
 
-**4.6 Larger models: the hazard drifts to prose, and asking catches up (Figure 3).** On the 111 files of the
+**4.6 Larger models: the hazard drifts to prose, and asking catches up (Figures 4, 5).** On the 111 files of the
 first 100 held-out issues, bigger is not better (we had predicted the opposite): S finds the fix
 in the top ten for 53% (E2B), 74% (E4B), 59% (12B) and 59% (26B A4B, a mixture-of-experts model).
 Memory limited 31B to files up to 11,000 tokens: on those 74 it reaches 80%, as does E4B. Under 5,000 tokens the four smaller sizes are close (76–86%); over 11,000 only E4B beats BM25
@@ -194,11 +200,13 @@ function first in 80% and 79% of files (maps: 34%, 37%). The map's lead over ask
 to E2B (+23.4 [14, 33]) and E4B (+12.6 [4, 21]). Asking was pre-registered for E4B only; 31B's
 asking run exceeded memory.
 
-![Figure 3](figures/fig3_scaling.png)
+![Figure 4](figures/fig3_scaling.png)
 
-**Figure 3.** Files with a gold line in the top ten of the one-pass map, by file length and
-model size (held-out issues 1–100; 31B up to 11,000 tokens). Left: all lines ranked. Right: code
-lines only.
+**Figure 4.** Top-ten hit rate of the one-pass map by file length and model size. Left: all lines. Right: code lines only.
+
+![Figure 5](figures/fig4_asked.png)
+
+**Figure 5.** Asking against the map, by model size.
 
 **4.7 Quantization blunts the probe.** The MAC arm's community 4-bit weights, loaded into the
 DGX code (98 files), reproduce the laptop's line-level numbers (H top-ten 63.7% vs 64.8% on 91
@@ -259,9 +267,9 @@ conditional hazard S, which localizes better (first-edit probability itself: 60%
 
 ### Reproducibility
 
-https://github.com/moncifem/null-edit — scorers for both backends, per-token log-probabilities
-for every scored file, analysis code, pre-registration, research log, reviews and a
-replication report.
+**Code:** https://github.com/moncifem/null-edit — scorers, analysis, pre-registration, research
+log, reviews, replication report. **Data:** https://huggingface.co/datasets/moncefem/null-edit — per-token
+log-probabilities, model replies and per-file metrics.
 
 ### References
 

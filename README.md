@@ -5,6 +5,8 @@ Reading where a small model wants to change code, without letting it write.
 Code, protocol and raw results for a submission to the Kaggle *Gemma 4 Developer Agent — Paper
 Track*. No fine-tuning, no test execution, no network access at inference time.
 
+**Data on Hugging Face:** https://huggingface.co/datasets/moncefem/null-edit (per-token log-probabilities, model replies, per-file metrics; card source: `hf_dataset_card.md`).
+
 ## Two hardware arms
 
 The work was done on two machines and the paper keeps them apart.
@@ -73,6 +75,7 @@ there `THROTTLE=1.5` kept the laptop GPU ~40% busy — it changes wall-clock tim
 | `run_conflict.py` | Prompt frames and scoring loop (R, RX, RB, R0; earlier "blind" frames U, B, F, X) |
 | `run_generative.py` | Generated-answer baselines (same model, same input): line ranges, quoted lines |
 | `analyze_conflict.py`, `report.py`, `extra_stats.py` | Labels, ranking, baselines, bootstrap tables, subsets |
+| `figures.py`, `figures_extra.py` | Figures of the paper (method schematic, example, hit@k, sizes, asking vs map) |
 | `merge_frames.py`, `scaling.py`, `asked_vs_map.py` | Controls on common files; model-size table; asking against the map at each size |
 | `make_q4_model.py` | MLX 4-bit checkpoint → de-quantized PyTorch checkpoint |
 | `context_budget.py` | How much of a file must be shown for the edit to be in view |
