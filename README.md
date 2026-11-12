@@ -61,7 +61,7 @@ python report.py ../results/an_e4b_test.json
 ```
 
 `src/queue_dgx.txt` lists every DGX run as `name | command`, in the order executed, with start and
-end times (`src/runner.sh` executes such a list one job at a time; `src/memguard.sh` kills the job
+end times (ten early command lines were not kept and are marked so; `results_dgx/runner.progress` is the raw history) (`src/runner.sh` executes such a list one job at a time; `src/memguard.sh` kills the job
 before the machine runs out of memory — 31B needs about 1 MB of cache per context token). `src/queue_b.sh` is the MAC arm's list;
 there `THROTTLE=1.5` kept the laptop GPU ~40% busy — it changes wall-clock time only.
 
@@ -73,7 +73,7 @@ there `THROTTLE=1.5` kept the laptop GPU ~40% busy — it changes wall-clock tim
 | `run_conflict.py` | Prompt frames and scoring loop (R, RX, RB, R0; earlier "blind" frames U, B, F, X) |
 | `run_generative.py` | Generated-answer baselines (same model, same input): line ranges, quoted lines |
 | `analyze_conflict.py`, `report.py`, `extra_stats.py` | Labels, ranking, baselines, bootstrap tables, subsets |
-| `merge_frames.py`, `scaling.py` | Controls on common files; model-size table |
+| `merge_frames.py`, `scaling.py`, `asked_vs_map.py` | Controls on common files; model-size table; asking against the map at each size |
 | `make_q4_model.py` | MLX 4-bit checkpoint → de-quantized PyTorch checkpoint |
 | `context_budget.py` | How much of a file must be shown for the edit to be in view |
 | `make_hints.py`, `run_edit.py`, `analyze_edit.py` | The model writes one edit, with and without the map as a hint |

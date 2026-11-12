@@ -71,9 +71,11 @@ print("\n## Label-free check: S line hit@10 by the file's total hazard (threshol
 runs = [(n, rows(f)) for n, f in (("E2B", "an_e2b_test.json"), ("E4B", "an_e4b_test.json"), ("12B", "an_g12b_test.json"),
                                   ("26B-A4B", "an_g26b_test.json"), ("26B-A4B", "an_g26b_test_h.json"), ("31B", "an_g31b_test.json"), ("31B", "an_g31b_test_h.json"))]
 runs = [(n, a) for n, a in runs if a]
-common = sorted(set.intersection(*[set(a) for _, a in runs]))
-print(f"{len(common)} common files\n\n| Model | total hazard ≤ 50 nats | > 50 nats |\n|---|---|---|")
+# 31B covers files up to 11,000 tokens only: it does not restrict the common set and is reported on the files it has
+common = sorted(set.intersection(*[set(a) for n, a in runs if n != "31B"]))
+print(f"{len(common)} common files (31B: the {sum(k in a for n, a in runs if n == '31B' for k in common)} of them it could score)\n\n| Model | total hazard ≤ 50 nats | > 50 nats |\n|---|---|---|")
 for n, a in runs:
-    tot = np.array([a[k]["total_surp_R_sum"] for k in common]); hit = np.array([a[k][S] <= 10 for k in common]); m = tot <= 50
+    ks = [k for k in common if k in a]
+    tot = np.array([a[k]["total_surp_R_sum"] for k in ks]); hit = np.array([a[k][S] <= 10 for k in ks]); m = tot <= 50
     f = lambda x: f"{100*hit[x].mean():.0f}% ({hit[x].sum()}/{x.sum()})" if x.sum() else "– (0 files)"
     print(f"| {n} | {f(m)} | {f(~m)} |")

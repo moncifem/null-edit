@@ -60,6 +60,9 @@ has conflict_g31b_test/log.jsonl && $PY analyze_codeonly.py --ids $T --limit 100
 CF=(); for pair in 12B:g12b_conf "26B-A4B:g26b_conf" 31B:g31b_conf; do has conflict_${pair##*:}/log.jsonl && CF+=("${pair%%:*}=${pair##*:}"); done
 [ ${#CF} -ge 1 ] && $PY analyze_codeonly.py --ids ../results/conf_ids.txt --out codeonly_conf.json --runs $CF --ref E4B=e4b_test > $R/report_codeonly_conf.md
 
+# --- asking each size against its own map (section 4.6; needs codeonly_sizes.json and the gen_* runs) ---
+has codeonly_sizes.json && has gen_g12b_test/gen.jsonl && $PY asked_vs_map.py > $R/report_asked_sizes.md
+
 # --- live, other sizes ---
 for pair in E2B:e2b_live 12B:g12b_live "26B-A4B:g26b_live" 31B:g31b_live; do
   name=${pair%%:*}; tag=${pair##*:}

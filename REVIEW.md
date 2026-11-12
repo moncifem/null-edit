@@ -108,3 +108,28 @@ borderline count is reported in the experiment log instead.
 | A3 | Contribution 2 "beats BM25 at every cut-off": function hit@1 is not significant after Holm. | Fixed: "on lines at every cut-off" (line hit@1 +15.0 [2.4, 25.2], @5 +24.7 [13.2, 35.0], @10 +31.0 [21.3, 40.2]). |
 | A4 | §3 "All five … checkpoints" while only three sizes are scored. | Pending 26B A4B and 31B; wording will follow what is actually run. |
 | A5 | Several numbers exist only in hand-written logs (4-bit paired differences, P(no edit) median, 62% "somewhere", 89 of 91 repositories, 60% first-edit ranking). | To do at freeze: a script that regenerates them (`extra_stats.py`), or drop the number. |
+
+## Round 8 — number audit and critic on the draft with the confirmation (subagents, 2026-11-12 ~10:35 UTC)
+
+| # | Finding | Response |
+|---|---|---|
+| H1 | Audit: 157 numbers checked against the reports, no mismatch; "median 587 non-blank lines" vs "10% ≈ 69 lines" ambiguous. | Clarified. |
+| H2 | Critic: §4.6 stated a mechanism from post hoc evidence and omitted that N5 was refuted. | §4.6 says "we had predicted the opposite"; the rule was frozen and tested on 100 further issues (N10, supported). |
+| H3 | Critic: §4.8 said the hint "does not move" the edit although it moves it both ways. | Rewritten: good hints help at most a little, bad ones hurt, the two cancel. |
+| H4 | Critic: word count about 3,137 by a strict count. | `build_submission.py` now counts every whitespace-separated token; text trimmed. |
+| H5 | Found while applying H3: truncated replies had been scored although Revision 2c declares them invalid. | `analyze_edit.py` applies the declared rule by default; corrected numbers everywhere; lenient table kept as sensitivity. Conclusions for N8/N9 unchanged. |
+| H6 | Critic: "Gemma 4 reveals" in the abstract generalizes from E4B. | Kept, but the abstract now states where the map does and does not beat asking at each size (see Round 9). |
+
+## Round 9 — number audit of the final text (Sonnet subagent, 2026-11-12 ~14:50 UTC)
+
+Priority: the passages added after Round 8 (asking at every size, asking on Live, no-prefill, §4.6, §4.8). No numeric
+mismatch; no number without a source report. Wording findings, all fixed:
+
+| # | Finding | Response |
+|---|---|---|
+| I1 | "match their code-only maps": differences −5.4 [−14.0, +2.8] and −0.9 [−10.3, +8.6] support "not distinguishable", not "match". | "are not distinguishable from"; abstract "about as good"; contribution 4 "about as well". |
+| I2 | "Under 5,000 tokens the sizes are close (76–86%)" leaves out 31B (90 on its 51 files). | "the four smaller sizes". |
+| I3 | §4.3 "BM25 39%" on Live no-op files is 39.5%. | 40%. |
+| I4 | "Good hints help a little" (53 vs 49, overlapping intervals); "a quarter of replies" truncated is 18–33% by arm. | "help at most a little"; "18–33%". |
+
+Not re-checked in Round 9: §4.4 and §4.7 line by line (unchanged since Round 8 except for deletions).

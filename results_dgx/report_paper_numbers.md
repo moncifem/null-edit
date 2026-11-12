@@ -21,10 +21,12 @@
 
 ## Label-free check: S line hit@10 by the file's total hazard (threshold 50 nats, post hoc)
 
-111 common files
+111 common files (31B: the 74 of them it could score)
 
 | Model | total hazard ≤ 50 nats | > 50 nats |
 |---|---|---|
 | E2B | 60% (57/95) | 12% (2/16) |
 | E4B | 74% (82/111) | – (0 files) |
 | 12B | 77% (54/70) | 29% (12/41) |
+| 26B-A4B | 82% (37/45) | 42% (28/66) |
+| 31B | 92% (45/49) | 56% (14/25) |

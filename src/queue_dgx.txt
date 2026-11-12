@@ -1,0 +1,82 @@
+# Every run on the DGX arm, in the order executed (UTC).
+# Format: name | command, followed by start, end and exit status. Run from src/ by src/runner.sh; paths are relative to it.
+# exit 137 = stopped by the memory watchdog (src/memguard.sh) or by the kernel; a run with no end stalled with the machine
+#            or was still running when this file was written.
+# The queue file kept one line per name. Where a name was run more than once with different options, every recorded
+# variant is listed in the order it was written; the last one produced the stored result.
+# 'NOT KEPT' = the exact command line of an early run was not saved; the description is from the experiment log, not a record.
+
+e4b_dev | NOT KEPT (run_conflict.py, E4B bf16, development instances, frames R,RX)
+#   start 2026-11-11 20:19:23   end 2026-11-11 20:34:54   exit 0
+gen_e4b_dev | NOT KEPT (run_generative.py, E4B bf16, development instances)
+#   start 2026-11-11 20:34:54   end 2026-11-11 20:42:12   exit 0
+e4b_test_250 | NOT KEPT (as e2b_test below with gemma-4-E4B-it, --tag e4b_test, --limit 250)
+#   start 2026-11-11 20:42:12   end 2026-11-11 22:14:55   exit 0
+genq_e4b_dev | NOT KEPT (run_generative.py in quoted-lines mode, E4B bf16, development instances)
+#   start 2026-11-11 22:14:55   end 2026-11-11 22:19:13   exit 0
+genq_e4b_test | NOT KEPT (run_generative.py in quoted-lines mode, E4B bf16, --tag e4b_test_quote, --limit 250)
+#   start 2026-11-11 22:19:13   end 2026-11-11 23:37:25   exit 0
+e4b_live | NOT KEPT (run_conflict.py, E4B bf16, --dataset ../data/swebench_live_post.jsonl --instances ../results/live_ids.txt --limit 150, frames R,RX)
+#   start 2026-11-11 23:37:25   end 2026-11-12 00:28:32   exit 0
+gen_e4b_test | python run_generative.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-E4B-it --tag e4b_test --instances ../results/test_ids.txt --limit 150
+#   recorded variant 1: python run_generative.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-E4B-it --tag e4b_test --instances ../results/test_ids.txt --limit 150
+#   recorded variant 2: python run_generative.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-E4B-it --tag e4b_test --instances ../results/test_ids.txt --limit 250
+#   start 2026-11-12 00:28:32   end 2026-11-12 01:17:16   exit 0
+e4b_q4_test | grep -q gemma-4-E4B-it-q4mlx ../data/logs/models.done && python run_conflict.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-E4B-it-q4mlx --tag e4b_q4_test --instances ../results/test_ids.txt --limit 88 --frames R,RX
+#   start 2026-11-12 01:17:16   end 2026-11-12 01:43:49   exit 0
+e4b_ctrl | python run_conflict.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-E4B-it --tag e4b_ctrl --instances ../results/test_ids.txt --limit 100 --frames RB,R0
+#   start 2026-11-12 01:43:49   end 2026-11-12 02:13:08   exit 0
+e2b_test | until grep -q gemma-4-E2B-it ../data/logs/models.done 2>/dev/null; do sleep 20; done; python run_conflict.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-E2B-it --tag e2b_test --instances ../results/test_ids.txt --limit 100 --frames R,RX
+#   start 2026-11-12 02:13:08   end 2026-11-12 02:32:40   exit 0
+g12b_test | until grep -q gemma-4-12B-it ../data/logs/models.done 2>/dev/null; do sleep 20; done; python run_conflict.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-12B-it --tag g12b_test --instances ../results/test_ids.txt --limit 100 --frames R,RX
+#   start 2026-11-12 02:32:40   end 2026-11-12 03:30:51   exit 0
+g26b_test | until grep -q gemma-4-26B-A4B-it ../data/logs/models.done 2>/dev/null; do sleep 20; done; python run_conflict.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-26B-A4B-it --tag g26b_test --instances ../results/test_ids.txt --limit 100 --frames R
+#   start 2026-11-12 03:30:51   end 2026-11-12 03:31:02   exit 1
+g31b_test | until grep -q gemma-4-31B-it ../data/logs/models.done 2>/dev/null; do sleep 20; done; python run_conflict.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-31B-it --tag g31b_test --instances ../results/test_ids.txt --limit 100 --frames R
+#   recorded variant 1: until grep -q gemma-4-31B-it ../data/logs/models.done 2>/dev/null; do sleep 20; done; python run_conflict.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-31B-it --tag g31b_test --instances ../results/test_ids.txt --limit 100 --frames R
+#   recorded variant 2: until grep -q gemma-4-31B-it ../data/logs/models.done 2>/dev/null; do sleep 20; done; python run_conflict.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-31B-it --tag g31b_test --instances ../results/test_ids.txt --limit 60 --frames R
+#   start 2026-11-12 03:31:02   end 2026-11-12 06:12:07   exit 137
+g26b_test | until grep -q gemma-4-26B-A4B-it ../data/logs/models.done 2>/dev/null; do sleep 20; done; python run_conflict.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-26B-A4B-it --tag g26b_test --instances ../results/test_ids.txt --limit 100 --frames R
+#   start 2026-11-12 06:12:07   end 2026-11-12 06:43:39   exit 0
+g31b_test | until grep -q gemma-4-31B-it ../data/logs/models.done 2>/dev/null; do sleep 20; done; python run_conflict.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-31B-it --tag g31b_test --instances ../results/test_ids.txt --limit 60 --frames R
+#   start 2026-11-12 06:43:39   end 2026-11-12 10:28:31   exit 137
+diag_12b | NOT KEPT (as diag_g26b below with gemma-4-12B-it and --ref-tag g12b_test)
+#   start 2026-11-12 10:28:31   end 2026-11-12 10:29:24   exit 143
+g12b_conf | NOT KEPT (as g31b_conf with gemma-4-12B-it, --max-file-tokens 32000, no memory cap, --tag g12b_conf)
+#   start 2026-11-12 10:29:24   end 2026-11-12 11:04:35   exit 0
+g26b_conf | NOT KEPT (as g31b_conf with gemma-4-26B-A4B-it, --max-file-tokens 32000, no memory cap, --tag g26b_conf)
+#   start 2026-11-12 11:04:35   end 2026-11-12 11:40:08   exit 0
+g31b_test | until grep -q gemma-4-31B-it ../data/logs/models.done 2>/dev/null; do sleep 20; done; python run_conflict.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-31B-it --tag g31b_test --instances ../results/test_ids.txt --limit 60 --frames R
+#   start 2026-11-12 11:40:08   end 2026-11-12 12:04:40   exit 0
+diag_12b | NOT KEPT (as diag_g26b below with gemma-4-12B-it and --ref-tag g12b_test)
+#   start 2026-11-12 12:04:40   end 2026-11-12 12:10:02   exit 0
+diag_g26b | python diag_long.py --model ../data/models/gemma-4-26B-A4B-it --ref-tag g26b_test --n 2
+#   start 2026-11-12 12:10:02   end 2026-11-12 12:17:46   exit 0
+noprefill_e4b | python run_noprefill.py --model ../data/models/gemma-4-E4B-it --tag e4b_test --files ../results/noop_e4b_test.json
+#   start 2026-11-12 12:17:46   end 2026-11-12 12:28:45   exit 0
+gen_e2b_test | python run_generative.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-E2B-it --tag e2b_test --instances ../results/test_ids.txt --limit 100
+#   start 2026-11-12 12:28:45   end 2026-11-12 12:45:08   exit 0
+gen_g12b_test | python run_generative.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-12B-it --tag g12b_test --instances ../results/test_ids.txt --limit 100
+#   start 2026-11-12 12:45:08   end 2026-11-12 13:17:40   exit 0
+gen_g26b_test | python run_generative.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-26B-A4B-it --tag g26b_test --instances ../results/test_ids.txt --limit 100
+#   recorded variant 1: python run_generative.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-26B-A4B-it --tag g26b_test --instances ../results/test_ids.txt --limit 100
+#   recorded variant 2: python run_generative.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-26B-A4B-it --tag g26b_test --instances ../results/test_ids.txt --limit 60
+#   start 2026-11-12 13:17:40   end 2026-11-12 13:45:20   exit 0
+gen_g31b_test | SCORER_MEM_FRACTION=0.8 python run_generative.py --sleep 0 --max-file-tokens 11000 --model ../data/models/gemma-4-31B-it --tag g31b_test --instances ../results/test_ids.txt --limit 100
+#   recorded variant 1: SCORER_MEM_FRACTION=0.8 python run_generative.py --sleep 0 --max-file-tokens 11000 --model ../data/models/gemma-4-31B-it --tag g31b_test --instances ../results/test_ids.txt --limit 100
+#   recorded variant 2: python run_generative.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-31B-it --tag g31b_test --instances ../results/test_ids.txt --limit 60
+#   recorded variant 3: python run_generative.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-31B-it --tag g31b_test --instances ../results/test_ids.txt --limit 100
+#   start 2026-11-12 13:45:20   end 2026-11-12 13:51:06   exit 137
+gen_e4b_live | python run_generative.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-E4B-it --tag e4b_live --dataset ../data/swebench_live_post.jsonl --instances ../results/live_ids.txt --limit 150
+#   recorded variant 1: python run_generative.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-E4B-it --tag e4b_live --dataset ../data/swebench_live_post.jsonl --instances ../results/live_ids.txt --limit 150
+#   recorded variant 2: python run_generative.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-E4B-it --tag e4b_live --dataset ../data/swebench_live_post.jsonl --instances ../results/live_ids.txt --limit 100
+#   start 2026-11-12 13:51:06   end 2026-11-12 14:22:13   exit 0
+edit_e4b | python run_edit.py --model ../data/models/gemma-4-E4B-it --tag e4b_test --instances ../results/test_ids.txt --hints ../results/hints_e4b_test.json --limit 100 --max-tokens 640
+#   recorded variant 1: python run_edit.py --model ../data/models/gemma-4-E4B-it --tag e4b_test --instances ../results/test_ids.txt --hints ../results/hints_e4b_test.json --limit 100 --max-tokens 640
+#   recorded variant 2: python run_edit.py --model ../data/models/gemma-4-E4B-it --tag e4b_test --instances ../results/test_ids.txt --hints ../results/hints_e4b_test.json --limit 100
+#   start 2026-11-12 14:22:13   end -   exit -
+
+# Queued but not run, or not finished, when the paper was frozen:
+# g31b_conf | SCORER_MEM_FRACTION=0.8 python run_conflict.py --sleep 0 --max-file-tokens 11000 --model ../data/models/gemma-4-31B-it --tag g31b_conf --instances ../results/conf_ids.txt --frames R
+# g26b_test_rx | until grep -q gemma-4-26B-A4B-it ../data/logs/models.done 2>/dev/null; do sleep 20; done; python run_conflict.py --sleep 0 --max-file-tokens 32000 --model ../data/models/gemma-4-26B-A4B-it --tag g26b_test_rx --instances ../results/test_ids.txt --limit 100 --frames RX
+# g31b_test_rx | SCORER_MEM_FRACTION=0.8 python run_conflict.py --sleep 0 --max-file-tokens 11000 --model ../data/models/gemma-4-31B-it --tag g31b_test_rx --instances ../results/test_ids.txt --limit 100 --frames RX

@@ -312,3 +312,24 @@ macro-average 69 vs 34; modified-lines-only labels 65.7 vs 39.5.
   on_gold 28 / 27 / 11 / 40 (none / map hint / placebo / gold); H − WRONG +15.3 [+6.3, +24.7];
   H − none −1.0 [−9.1, +7.4]. N8 and N9 remain not supported. The earlier (lenient) table is kept
   as a sensitivity analysis. EXPERIMENTS.md and the paper corrected.
+
+### 14:22–15:00 UTC, 2026-11-12 — asking at every size; freeze of the text
+
+- Asking baselines finished for E2B, 12B, 26B A4B (111 files) and for E4B on Live. 31B's was stopped by
+  the memory watchdog (exit 137, six minutes in); no other service was affected.
+- **Result that narrows the paper's claim:** asked for line ranges, 12B and 26B A4B put a gold line in
+  their ten for 74% of files, above their all-lines maps (59%) and level with their code-only maps
+  (79%, 75%), and name the gold function first in 80% / 79% (maps 34% / 37%). The map beats asking
+  only for E2B (53 vs 30) and E4B (74 vs 61). Abstract, contribution 4 and §4.6 rewritten to say that
+  the map's lead is a small-model effect. Decision: report it in the abstract, not only in §4.6.
+- Live: asking 51% against H 68% at line top-ten; tie at function top-1 (64 vs 63).
+- The bf16 edit run started at 14:22 UTC and will not finish before the freeze; its placeholder was
+  removed and §4.8 stays labelled MAC arm.
+- `analyze_all.sh` rerun end to end (3 min 56 s, no failure). `paper_numbers.py` restricted its
+  label-free table to the 74 files 31B has; fixed to treat 31B as partial coverage, as `scaling.py` does.
+- Number audit of the final text (subagent, read-only): no numeric mismatch in the new passages; four
+  wording points fixed ("match" → "not distinguishable from"; "the sizes" → "the four smaller sizes";
+  BM25 39% → 40% on Live no-op files; "a quarter" → "18–33%" of replies truncated).
+- `src/queue_dgx.txt` written from the DGX runner history. Ten early command lines were not kept; they
+  are marked NOT KEPT with a description from this log instead of a reconstructed command.
+- Paper: 2,993 words by the strict count (every whitespace-separated token), no placeholders.

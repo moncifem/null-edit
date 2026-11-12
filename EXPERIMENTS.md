@@ -320,8 +320,7 @@ file's total hazard under the right issue, 111 files:
 | E4B | 74% (82/111) | – (0 files) |
 | 12B | 77% (54/70) | 29% (12/41) |
 
-Not yet verified: that the long-file copy cost of 12B/E2B is a property of the models and not of the
-chunked KV-cache scoring loop (`src/diag_long.py`, pending).
+Chunked scoring loop checked afterwards (12:04–12:18 UTC, `results_dgx/diag/`): see "Chunk-size diagnostic" below.
 
 ## Map-guided edit, MAC arm (Revision 2b/2c) — finished 06:30 UTC, 2026-11-12; scoring corrected 10:35 UTC
 
@@ -533,3 +532,60 @@ available memory seen during the run 11 GB. Report: `results_dgx/report_codeonly
 not covered by the pre-registered confirmation (N10 names 12B and 26B A4B) and has no file over 11,000 tokens, where
 the other large models lose most. What can be said: on short and medium files the largest model is level with E4B, and
 in the 5,000–11,000 band it shows the same drift to prose (share 0.62) and the same repair (57% → 74%) as 12B and 26B A4B.
+
+## Chunk-size diagnostic for the scoring loop (DGX, bf16) — 12:04–12:18 UTC, 2026-11-12
+
+`src/diag_long.py` re-scores two medium-length files (8,138 and 10,702 tokens) with the KV-cache chunk size set to 1024
+(as in every run), 512 and 4096, for 12B and for 26B A4B. Logs: `results_dgx/diag/diag_12b.log`, `diag_g26b.log`.
+
+* The stored scores are reproduced exactly (max per-token difference 0.000) in all four cases.
+* The one case with substantial hazard (26B A4B, sympy `printing/str.py`): total 38.1 / 38.8 / 40.3 nats for chunk sizes
+  1024 / 512 / 4096; per-token correlation with the 1024 run 0.991 and 0.992; 4, 5 and 4 tokens with p < 0.1. The three
+  other cases have almost no hazard (0.04–0.6 nats in total), so their per-token correlations (0.04–0.99) only compare
+  rounding noise.
+* At the most surprising 26B A4B tokens the greedy continuation is a code change, e.g. `"Limit(%s, %s, %s)" % (e, z, z0)`
+  → `(self._print(e), self._print(z), self._print(z0))`, which is what the human fix of that issue does.
+* Limits: two files, none over 11,000 tokens (where the larger models' hazard is highest); bf16 arithmetic moves single
+  tokens by up to 2.2 nats between chunk sizes. Reading: the hazard is not produced by chunk boundaries (also: the
+  chunk-boundary histogram of surprising tokens is flat, 05:52 UTC), but the check does not cover the longest files.
+
+## No-prefill check, DGX arm (bf16) — 12:17–12:28 UTC, 2026-11-12
+
+Declared with N8/N9. E4B bf16, the 84 held-out files where every original token has p ≥ 0.5 under the fix-it prompt;
+the same prompt answered freely (greedy, 40 tokens, no prefilled fence). `results_dgx/noprefill_e4b_test/gen.jsonl`.
+
+* 26 of 84 replies open with a python fence and the file's first lines; 58 open with prose ("The issue arises
+  because …"). MAC arm, 4-bit: 0 of 84 (06:31 UTC).
+* So "greedy decoding reproduces the file" is a statement about decoding *from the prefilled fence*. Without the prefill
+  the bf16 model starts copying in about a third of these files and explains first in the rest; with a 40-token cap we
+  do not know what follows the explanation. The paper says this in §4.3.
+
+## Asking each size, and asking on Live (DGX arm, bf16) — 12:28–14:22 UTC, 2026-11-12
+
+Line-range generation (`run_generative.py`, the baseline pre-registered for E4B) with E2B, 12B and 26B A4B on the
+111 files of held-out issues 1–100, and with E4B on SWE-bench-Live (278 files). Not pre-registered for sizes other
+than E4B. `results_dgx/gen_{e2b,g12b,g26b}_test/`, `gen_e4b_live/`; `src/asked_vs_map.py` →
+`results_dgx/report_asked_sizes.md`; `results_dgx/scaling.md`; `results_dgx/report_e4b_live.md`.
+
+| Model | asked line@10 | map S line@10 | map, code lines only | asked − map | asked − code-only map | asked func@1 | map func@1 |
+|---|---|---|---|---|---|---|---|
+| E2B | 30 [21, 39] | 53 [43, 63] | 56 | −23.4 [−33.0, −13.5] | −26.1 [−37.2, −14.9] | 45 | 38 |
+| E4B | 61 [51, 71] | 74 [65, 82] | 70 | −12.6 [−21.4, −3.7] | −9.0 [−19.2, +0.9] | 69 | 54 |
+| 12B | 74 [65, 83] | 59 [50, 69] | 79 | +14.4 [+4.3, +24.8] | −5.4 [−14.0, +2.8] | 80 | 34 |
+| 26B A4B | 74 [65, 83] | 59 [50, 68] | 75 | +15.3 [+5.0, +25.8] | −0.9 [−10.3, +8.6] | 79 | 37 |
+
+* **The map's lead over asking is confined to E2B and E4B.** At 12B and 26B A4B, asking beats the all-lines map, is not
+  distinguishable from the code-only map, and names the gold function first in 80% / 79% of files against 34% / 37%
+  for the map (+45.9 [+35.3, +56.4]; +42.3 [+31.5, +53.2]). This limits the paper's claim to the small models and is
+  stated in the abstract, contribution 4 and §4.6.
+* **31B: no asking result.** `gen_g31b_test` was stopped by the memory watchdog after six minutes (available memory
+  7 GB; exit 137). Nothing else on the machine was affected.
+* **Live, E4B:** asked line@10 51 [43, 59] against H 68 (H − asked +17.6 [+10.4, +24.2]); function@1 asked 64, H 63
+  (−1.4 [−8.1, +4.9]). Same pattern as on Verified at lines; at function@1 a tie where Verified had asking ahead.
+
+## Not finished at freeze
+
+* bf16 edit experiment (`edit_e4b`, DGX), started 14:22 UTC, about three hours. §4.8 "where to edit" therefore
+  reports the MAC arm only (4-bit), and says so.
+* `g31b_conf`, `g26b_test_rx`, `g31b_test_rx` were queued behind it and are not in the paper (H for 26B A4B and 31B is
+  not reported; 31B is not part of the confirmation).

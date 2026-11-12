@@ -173,5 +173,11 @@ with 95% instance-clustered bootstrap intervals; sources are the sections of `EX
 | N10 | **SUPPORTED** | Confirmation issues 101–200, 113 files, DGX: 12B 42 → 69 (+27.4 [+19.4, +36.3]); 26B A4B 39 → 66 (+27.4 [+20.0, +35.5]). MAC replication (12B 4-bit, 69 files): 41 → 57 (+15.9 [+7.0, +25.4]). [Code-lines-only map: pre-registered confirmation] |
 | N11 | descriptive | With code lines only, against E4B over all lines on the same files: 12B +4.4 [−3.6, +12.9]; 26B A4B +1.8 [−7.1, +10.7]. |
 
-No-prefill check (declared with N8/N9): on the MAC arm, 4-bit E4B opened with prose in all 84 files; the statement
-"greedy rewriting reproduces the file" therefore holds only from the prefilled fence, and the paper says so.
+Asking at other sizes (not pre-registered; the asking baseline was registered for E4B): asked line@10 on the 111
+files is 30 (E2B), 61 (E4B), 74 (12B), 74 (26B A4B) against maps of 53, 74, 59, 59. N3's line-level support therefore
+holds for E2B and E4B only; at 12B and 26B A4B asking beats the all-lines map (+14.4 [+4.3, +24.8]; +15.3 [+5.0, +25.8])
+and is not distinguishable from the code-only map. N8/N9 on bf16 weights: run not finished at freeze.
+
+No-prefill check (declared with N8/N9): without the prefilled fence, bf16 E4B (DGX) starts copying the file in 26 of
+the 84 files and opens with prose in 58; 4-bit E4B (MAC) opened with prose in all 84. The statement "greedy rewriting
+reproduces the file" therefore holds from the prefilled fence, and the paper says so.

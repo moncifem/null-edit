@@ -1,0 +1,42 @@
+<unknown>:609: SyntaxWarning: invalid escape sequence '\*'
+files analysed: 74; median lines 324; median units 36; chance unit hit@1 0.084
+
+LINE level (rank of best gold line among all lines of the file)
+feature                 AUROC  hit@1  hit@5 hit@10 medRank
+surp_R_max              0.827  0.378  0.743  0.797       2
+Snorm                   0.826  0.405  0.743  0.811       2
+surp_R_sum              0.826  0.459  0.730  0.797       2
+first_R                 0.763  0.500  0.662  0.703       2
+bm25                    0.633  0.095  0.257  0.365      20
+line_ntok               0.588  0.000  0.176  0.230      33
+random                  0.514  0.014  0.108  0.176      46
+position                0.487  0.014  0.041  0.108      84
+
+UNIT (function) level
+feature|agg                   hit@1  hit@3  hit@5    MRR
+first_R|max                   0.676  0.865  0.932  0.777
+first_R|top3                  0.676  0.865  0.932  0.777
+first_R|sum                   0.676  0.865  0.932  0.776
+surp_R_sum|top3               0.608  0.811  0.905  0.728
+Snorm|sum                     0.595  0.838  0.919  0.726
+Snorm|top3                    0.595  0.838  0.905  0.724
+surp_R_sum|sum                0.595  0.824  0.905  0.723
+surp_R_sum|max                0.595  0.811  0.878  0.722
+surp_R_max|top3               0.581  0.797  0.905  0.709
+surp_R_max|sum                0.568  0.811  0.905  0.703
+Snorm|max                     0.541  0.824  0.905  0.700
+surp_R_max|max                0.554  0.797  0.878  0.694
+bm25|top3                     0.554  0.730  0.824  0.672
+bm25|sum                      0.514  0.757  0.838  0.658
+bm25_unit|-                   0.500  0.743  0.824  0.650
+bm25|max                      0.486  0.689  0.865  0.629
+line_ntok|sum                 0.459  0.689  0.757  0.592
+random|sum                    0.446  0.662  0.770  0.572
+unit_length|-                 0.432  0.649  0.770  0.570
+line_ntok|top3                0.311  0.527  0.716  0.473
+random|top3                   0.270  0.500  0.676  0.440
+line_ntok|max                 0.230  0.500  0.635  0.417
+random|max                    0.189  0.459  0.541  0.370
+position|max                  0.230  0.351  0.459  0.351
+position|top3                 0.230  0.351  0.459  0.351
+position|sum                  0.027  0.243  0.297  0.181

@@ -3,6 +3,7 @@ files analysed: 111; median lines 493; median units 60; chance unit hit@1 0.063
 
 LINE level (rank of best gold line among all lines of the file)
 feature                 AUROC  hit@1  hit@5 hit@10 medRank
+GENERATIVE                nan  0.270  0.631  0.739       4
 Snorm                   0.844  0.180  0.495  0.604       6
 surp_R_sum              0.844  0.234  0.514  0.586       5
 surp_R_max              0.841  0.225  0.505  0.595       5
@@ -14,6 +15,7 @@ position                0.489  0.009  0.036  0.081     172
 
 UNIT (function) level
 feature|agg                   hit@1  hit@3  hit@5    MRR
+GENERATIVE|-                  0.793  0.865  0.883  0.832
 bm25|top3                     0.450  0.640  0.739  0.579
 bm25_unit|-                   0.432  0.649  0.757  0.578
 bm25|sum                      0.414  0.604  0.703  0.548

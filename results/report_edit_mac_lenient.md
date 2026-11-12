@@ -1,4 +1,3 @@
-<unknown>:609: SyntaxWarning: invalid escape sequence '\*'
 98 files, 83 issues; one greedy search/replace edit per file and arm; oracle file; nothing executed; a reply that hit the token cap is scored if its SEARCH block is complete (sensitivity analysis)
 
 | Arm | valid | ambiguous | truncated | noop | on_gold | near_gold | gold_unit | adds_gold | on_hint | on_gold if valid | median tokens |
