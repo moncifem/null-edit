@@ -365,3 +365,13 @@ macro-average 69 vs 34; modified-lines-only labels 65.7 vs 39.5.
   now one line per paragraph). Kaggle's own counter shows 3,344 words for the body including the
   reference list (387 tokens by our count).
 - Not done by the agent: clicking Submit. The draft is marked "Ready to Submit".
+
+### 19:12 UTC, 2026-11-12 — submitted
+
+- The writeup "The Null Edit" is submitted to the Gemma 4 Developer Agent Paper Track:
+  https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/the-null-edit
+  The competition's writeups page lists it under "Your Work" with the status "Submitted".
+- Authorization: the user approved the submission, and separately accepted the terms shown in
+  Kaggle's final dialog (CC BY 4.0, public under the Kaggle display name once the hackathon closes).
+- The submitted body is `paper/kaggle_body.md` at commit 2c91fb6 (2,994 words by the strict count).
+  Kaggle allows edits until the deadline (2026-11-12 23:59 UTC); none are planned.
