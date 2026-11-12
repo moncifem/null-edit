@@ -64,15 +64,17 @@ the file, and the instruction *"Rewrite `<path>` so that the issue is fixed. Out
 file, changing only what is necessary."* The model π defines a rewrite policy π(y | c).
 
 **Null-edit teacher forcing.** Run π once on *c* followed by *x* itself — the answer opened, in
-every run, with a ```` ```python ```` fence — and record *p<sub>t</sub> = π(x<sub>t</sub> | c, x<sub>&lt;t</sub>)*.
+every run, with a ```` ```python ```` fence — and record
+
+$$p_t = \pi(x_t \mid c, x_{<t}).$$
 
 **First-edit identity.** Let τ be the first position at which a rewrite sampled from π (temperature 1,
 no truncation) differs from *x*. Then
 
 $$P(\tau = t) = (1 - p_t)\prod_{s<t} p_s, \qquad P(\text{no edit}) = \prod_t p_t.$$
 
-*Proof.* A sample agrees with *x* before *t* with probability ∏<sub>s&lt;t</sub> p<sub>s</sub>; given that, its prefix
-*is* x<sub>&lt;t</sub>, so it deviates at *t* with probability 1 − p<sub>t</sub>. ∎
+*Proof.* A sample agrees with *x* before *t* with the product of the earlier p<sub>s</sub>; given that, its prefix
+*is* the file's, so it deviates at *t* with probability 1 − p<sub>t</sub>. ∎
 
 The identity is elementary; it replaces sampling rewrites with one pass.
 

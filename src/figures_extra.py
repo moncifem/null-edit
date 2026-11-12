@@ -125,3 +125,41 @@ def fig_asked():
 if __name__ == "__main__":
     fig_method(*sys.argv[1:3])
     fig_asked()
+
+
+def card(iid="pydata__xarray-4075", path="xarray/core/weighted.py", tag="e4b_test"):
+    """1120x560 card for the Kaggle writeup. Title and peak sit inside the central square, which is the thumbnail crop."""
+    sys.path.insert(0, str(ROOT / "src"))
+    from analyze_conflict import fix_anchors, line_features
+    from common import file_at, gold_edits, load_instances
+    from run_conflict import key
+
+    inst = {i["instance_id"]: i for i in load_instances()}[iid]
+    src = file_at(inst["repo"], inst["base_commit"], path)
+    f = line_features(src, np.load(RES / f"conflict_{tag}" / (key(iid, path) + ".npz")))
+    gold = sorted(fix_anchors(gold_edits(inst["patch"])[path], f["ntok"] > 0, len(f["ntok"]), "all"))
+    S, SX = f["surp_R_sum"], f["surp_RX_sum"]
+    x = np.arange(1, len(S) + 1)
+    fig = plt.figure(figsize=(11.2, 5.6), dpi=100)
+    fig.patch.set_facecolor("white")
+    fig.text(0.5, 0.80, "The Null Edit", fontsize=46, fontweight="bold", color="#111111", ha="center")
+    fig.text(0.5, 0.705, "Reading where a small model wants", fontsize=17, color="#444444", ha="center")
+    fig.text(0.5, 0.645, "to change code, without letting it write", fontsize=17, color="#444444", ha="center")
+    ax = fig.add_axes([0.05, 0.15, 0.90, 0.42])
+    c = gold[0]
+    ax.set_xlim(c - 140, c + 140)                      # the human-edited line sits in the middle of the card
+    ax.bar(x, SX, width=1.6, color=C["wrong"], alpha=0.9)
+    ax.bar(x, S, width=1.6, color=C["H"], alpha=0.95)
+    for gl in gold:
+        ax.axvline(gl, color=C["gen"], lw=2, ls="--")
+    ax.set_yticks([]); ax.set_xticks([])
+    for sp in ("left", "top", "right"):
+        ax.spines[sp].set_visible(False)
+    fig.text(0.5, 0.075, "Gemma 4 · one forward pass · nothing generated", fontsize=13, color="#444444", ha="center")
+    with plt.rc_context({"savefig.bbox": "standard"}):
+        fig.savefig(FIG / "card_1120x560.png", dpi=100)
+    plt.close(fig)
+
+
+if __name__ == "__main__":
+    card(*sys.argv[1:3])
